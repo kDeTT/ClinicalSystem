@@ -7,5 +7,14 @@
  */
 public abstract class Servico
 {
+    private int inicio;
+    private int duracao; // Duração do exame em minutos
+    private int fim;
+    private boolean status;
     
+    public Servico(int inicio, int duracao)
+    {
+        this.inicio = inicio;
+        this.duracao = duracao;
+    }
 }

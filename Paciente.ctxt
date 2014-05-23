@@ -1,2 +1,4 @@
 #BlueJ class context
-numComments=0
+comment0.params=nome\ idade
+comment0.target=Paciente(java.lang.String,\ int)
+numComments=1

@@ -1,2 +1,4 @@
 #BlueJ class context
-numComments=0
+comment0.params=tecnico\ paciente\ inicio\ duracao
+comment0.target=Exame(Tecnico,\ Paciente,\ int,\ int)
+numComments=1

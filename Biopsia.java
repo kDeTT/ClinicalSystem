@@ -7,5 +7,8 @@
  */
 public class Biopsia extends Exame
 {
-    
+    public Biopsia(Tecnico tecnico, Paciente paciente, int inicio)
+    {
+        super(tecnico, paciente, inicio, 20);
+    }
 }

@@ -1,2 +1,4 @@
 #BlueJ class context
-numComments=0
+comment0.params=medico\ paciente\ inicio
+comment0.target=ConsultaRetorno(Medico,\ Paciente,\ int)
+numComments=1

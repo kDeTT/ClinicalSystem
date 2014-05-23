@@ -7,5 +7,14 @@
  */
 public abstract class Consulta extends Servico
 {
+    private Medico medico;
+    private Paciente paciente;
     
+    public Consulta(Medico medico, Paciente paciente, int inicio, int duracao)
+    {
+        super(inicio, duracao);
+        
+        this.medico = medico;
+        this.paciente = paciente;
+    }
 }
