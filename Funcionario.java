@@ -18,4 +18,9 @@ public abstract class Funcionario
         this.nome = nome;
         this.agendaList = new ArrayList<Agenda>();
     }
+    
+    public String getNome()
+    {
+        return this.nome;
+    }
 }

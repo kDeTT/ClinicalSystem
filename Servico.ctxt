@@ -1,4 +1,8 @@
 #BlueJ class context
-comment0.params=inicio\ duracao
-comment0.target=Servico(int,\ int)
-numComments=1
+comment0.params=
+comment0.target=Funcionario\ getFuncionario()
+comment1.params=
+comment1.target=Paciente\ getPaciente()
+comment2.params=inicio\ duracao
+comment2.target=Servico(int,\ int)
+numComments=3

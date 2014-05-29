@@ -17,4 +17,14 @@ public abstract class Consulta extends Servico
         this.medico = medico;
         this.paciente = paciente;
     }
+    
+    public Funcionario getFuncionario()
+    {
+        return this.medico;
+    }
+    
+    public Paciente getPaciente()
+    {
+        return this.paciente;
+    }
 }

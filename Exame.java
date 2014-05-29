@@ -17,4 +17,14 @@ public abstract class Exame extends Servico
         this.tecnico = tecnico;
         this.paciente = paciente;
     }
+    
+    public Funcionario getFuncionario()
+    {
+        return this.tecnico;
+    }
+    
+    public Paciente getPaciente()
+    {
+        return this.paciente;
+    }
 }

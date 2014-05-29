@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=filePath
+comment0.target=java.util.ArrayList\ readFile(java.lang.String)
+comment1.params=filePath\ agendaList
+comment1.target=boolean\ writeFile(java.lang.String,\ java.util.ArrayList)
+comment2.params=filePath\ agenda
+comment2.target=boolean\ testWrite(java.lang.String,\ Agenda)
+numComments=3

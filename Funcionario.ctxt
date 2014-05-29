@@ -1,4 +1,6 @@
 #BlueJ class context
 comment0.params=nome
 comment0.target=Funcionario(java.lang.String)
-numComments=1
+comment1.params=
+comment1.target=java.lang.String\ getNome()
+numComments=2

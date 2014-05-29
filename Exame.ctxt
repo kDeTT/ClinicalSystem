@@ -1,4 +1,8 @@
 #BlueJ class context
 comment0.params=tecnico\ paciente\ inicio\ duracao
 comment0.target=Exame(Tecnico,\ Paciente,\ int,\ int)
-numComments=1
+comment1.params=
+comment1.target=Funcionario\ getFuncionario()
+comment2.params=
+comment2.target=Paciente\ getPaciente()
+numComments=3

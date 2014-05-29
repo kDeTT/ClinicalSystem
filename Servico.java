@@ -12,6 +12,9 @@ public abstract class Servico
     private int fim;
     private boolean status;
     
+    public abstract Funcionario getFuncionario();
+    public abstract Paciente getPaciente();
+    
     public Servico(int inicio, int duracao)
     {
         this.inicio = inicio;
