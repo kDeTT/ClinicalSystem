@@ -1,5 +1,5 @@
 #BlueJ class context
-comment0.params=tecnico\ paciente\ inicio\ duracao
+comment0.params=tecnico\ paciente\ dataInicio\ duracao
 comment0.target=Exame(Tecnico,\ Paciente,\ int,\ int)
 comment1.params=
 comment1.target=Funcionario\ getFuncionario()

@@ -1,4 +1,4 @@
 #BlueJ class context
-comment0.params=tecnico\ paciente\ inicio
+comment0.params=tecnico\ paciente\ dataInicio
 comment0.target=Ressonancia(Tecnico,\ Paciente,\ int)
 numComments=1

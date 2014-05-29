@@ -7,8 +7,8 @@
  */
 public class Ressonancia extends Exame
 {
-    public Ressonancia(Tecnico tecnico, Paciente paciente, int inicio)
+    public Ressonancia(Tecnico tecnico, Paciente paciente, int dataInicio)
     {
-        super(tecnico, paciente, inicio, 30);
+        super(tecnico, paciente, dataInicio, 30);
     }
 }

@@ -10,9 +10,9 @@ public abstract class Exame extends Servico
     private Tecnico tecnico;
     private Paciente paciente;
     
-    public Exame(Tecnico tecnico, Paciente paciente, int inicio, int duracao)
+    public Exame(Tecnico tecnico, Paciente paciente, int dataInicio, int duracao)
     {
-        super(inicio, duracao);
+        super(dataInicio, duracao);
         
         this.tecnico = tecnico;
         this.paciente = paciente;

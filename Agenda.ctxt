@@ -1,12 +1,14 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Agenda()
-comment1.params=servico
-comment1.target=void\ addServico(Servico)
+comment0.params=data
+comment0.target=Agenda(int)
+comment1.params=
+comment1.target=int\ getData()
 comment2.params=
-comment2.target=int\ getData()
-comment3.params=
-comment3.target=java.util.ArrayList\ getServicoList()
-comment4.params=servicoList
-comment4.target=void\ setServicoList(java.util.ArrayList)
-numComments=5
+comment2.target=java.util.ArrayList\ getServicoList()
+comment3.params=servico
+comment3.target=boolean\ addServico(Servico)
+comment4.params=servico
+comment4.target=boolean\ cancelServico(Servico)
+comment5.params=paciente
+comment5.target=Servico\ findServicoByPaciente(Paciente)
+numComments=6

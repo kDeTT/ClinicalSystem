@@ -10,17 +10,13 @@ import java.util.ArrayList;
 
 public class Agenda
 {
-    private int data; // Data da agenda
+    private int data;
     private ArrayList<Servico> servicoList;
     
-    public Agenda()
+    public Agenda(int data)
     {
+        this.data = data;
         this.servicoList = new ArrayList<Servico>();
-    }
-    
-    public void addServico(Servico servico) // TODO
-    {
-        this.servicoList.add(servico); // Tratar conflitos de horário
     }
     
     public int getData()
@@ -33,8 +29,34 @@ public class Agenda
         return this.servicoList;
     }
     
-    public void setServicoList(ArrayList<Servico> servicoList)
+    public boolean addServico(Servico servico) // TODO
     {
-        this.servicoList = servicoList;
+        return this.servicoList.add(servico); // Tratar conflitos de horário
     }
+    
+    public boolean cancelServico(Servico servico)
+    {
+        int index = this.servicoList.indexOf(servico);
+        
+        if(index != -1)
+        {
+            servico.setStatus(false);
+            this.servicoList.set(index, servico);
+            return true;
+        }
+        
+        return false;
+    }
+    
+    public Servico findServicoByPaciente(Paciente paciente)
+    {
+        for(Servico servico : servicoList)
+        {
+            if(servico.getPaciente().getNome().equals(paciente.getNome()))
+                return servico;
+        }
+        
+        return null;
+    }
+    
 }

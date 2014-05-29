@@ -15,15 +15,13 @@ import java.util.ArrayList;
 public class FileHelper
 {
     private final String CONSULTA_PATTERN = "CONSULTA";
-    private final int CONSULTA_DATA_LENGTH = 4;
+    private final int CONSULTA_DATA_LENGTH = 6;
     
     private final String EXAME_PATTERN = "EXAME";
-    private final int EXAME_DATA_LENGTH = 5;
+    private final int EXAME_DATA_LENGTH = 7;
     
-    public ArrayList<Servico> readFile(String filePath)
+    public ArrayList<Funcionario> readFile(String filePath, ArrayList<Funcionario> funcionarioList)
     {
-        ArrayList<Servico> servicoList = new ArrayList<Servico>();
-        
         Servico servico = null;
         FileReader reader = null;
         BufferedReader buffer = null;
@@ -38,29 +36,34 @@ public class FileHelper
             
             while(line != null) // Lê o arquivo até o fim
             {
-                String data[] = new String[dataLength];
+                ArrayList<String> data = new ArrayList<String>();
                     
-                for(int i = 0; i < data.length; i++) // Lê os dados do serviço
+                for(int i = 0; i < dataLength; i++) // Lê os dados do serviço
                 {
-                    data[i] = buffer.readLine();
+                    line = buffer.readLine();
+
+                    if((line != null) && (line.trim().length() != 0))
+                    {
+                        System.out.println(line);
+                        data.add(line);
+                    }
                 }
                 
-                if(data.length == CONSULTA_DATA_LENGTH) // É um serviço do tipo Consulta
+                if(data.size() == CONSULTA_DATA_LENGTH) // É um serviço do tipo Consulta
                 {
-                    String nomePaciente = data[0];
-                    int idadePaciente = Integer.parseInt(data[1]);
+                    String nomePaciente = data.get(1);
+                    int idadePaciente = Integer.parseInt(data.get(2));
                     
                     servico = new ConsultaInicial(new Medico("Nome do médico"), new Paciente(nomePaciente, idadePaciente), 0);
                 }
-                else // É um serviço do tipo Exame
+                else if(data.size() == EXAME_DATA_LENGTH)
                 {
-                    String nomePaciente = data[1];
-                    int idadePaciente = Integer.parseInt(data[2]);
+                    System.out.println(data);
+                    String nomePaciente = data.get(3);
+                    int idadePaciente = Integer.parseInt(data.get(4));
                     
                     servico = new Endoscopia(new Tecnico("Nome do técnico"), new Paciente(nomePaciente, idadePaciente), 0);
                 }
-                
-                servicoList.add(servico);
 
                 line = buffer.readLine();
                 dataLength = (((line != null) && line.toUpperCase().equals(CONSULTA_PATTERN)) ? CONSULTA_DATA_LENGTH : EXAME_DATA_LENGTH);
@@ -68,8 +71,6 @@ public class FileHelper
             
             buffer.close();
             reader.close();
-            
-            return servicoList;
         }
         catch(java.io.IOException ex)
         {
@@ -79,7 +80,7 @@ public class FileHelper
         return null;
     }
     
-    public boolean writeFile(String filePath, ArrayList<Agenda> agendaList)
+    public boolean writeFile(String filePath, ArrayList<Funcionario> funcionarioList)
     {
         FileWriter writer = null;
         BufferedWriter buffer = null;
@@ -89,37 +90,40 @@ public class FileHelper
             writer = new FileWriter(filePath);
             buffer = new BufferedWriter(writer);
             
-            for(Agenda agenda : agendaList)
+            ArrayList<Agenda> filtredAgendaList = new ArrayList<Agenda>();
+            
+            for(int i = 0; i < funcionarioList.size(); i++)
             {
-                buffer.write("<Data do serviço>");
-                buffer.newLine();
-                buffer.newLine();
+                ArrayList<Agenda> funcAgendaList = funcionarioList.get(i).getAgendaList();
                 
+                for(int j = 0; j < funcAgendaList.size(); j++)
+                {
+                    if(!containsAgendaByData(funcAgendaList.get(j).getData(), filtredAgendaList))
+                    {
+                        Agenda filtredAgenda = filterAgendaByData(funcAgendaList.get(j).getData(), funcionarioList);
+                        filtredAgendaList.add(filtredAgenda);
+                    }
+                }
+            }
+ 
+            for(Agenda agenda : filtredAgendaList)
+            {
+                buffer.write(appendLine(String.valueOf(agenda.getData()), 2));
                 ArrayList<Servico> servicoList = agenda.getServicoList();
                 
                 for(Servico servico : servicoList)
                 {
                     if(servico instanceof Consulta)
-                        buffer.write("Consulta");
+                        buffer.write(appendLine("Consulta", 1));
                     else
-                        buffer.write("Exame");
+                        buffer.write(appendLine("Exame", 1));
                     
-                    buffer.newLine();
-                    buffer.write(servico.getPaciente().getNome());
-                    buffer.newLine();
-                    buffer.write(String.valueOf(servico.getPaciente().getIdade()));
-                    buffer.newLine();
-                    buffer.write(servico.getClass().getName());
-                    buffer.newLine();
-                    buffer.write(servico.getFuncionario().getNome());
-                    buffer.newLine();
-                    buffer.write("<Hora do serviço>");
-                    buffer.newLine();
-                    buffer.newLine();
+                    buffer.write(appendLine(servico.getPaciente().getNome(), 1));
+                    buffer.write(appendLine(String.valueOf(servico.getPaciente().getIdade()), 1));
+                    buffer.write(appendLine(servico.getClass().getName(), 1));
+                    buffer.write(appendLine(servico.getFuncionario().getNome(), 1));
+                    buffer.write(appendLine("<Hora do serviço>", 2));
                 }
-                
-                buffer.newLine();
-                buffer.newLine();
             }
             
             buffer.flush();
@@ -136,11 +140,46 @@ public class FileHelper
         return false;
     }
     
-    public boolean testWrite(String filePath, Agenda agenda)
+    private String appendLine(String text, int lineNumber)
     {
-        ArrayList<Agenda> agendaList = new ArrayList<Agenda>();
-        agendaList.add(agenda);
+        StringBuilder strBuilder = new StringBuilder();
         
-        return this.writeFile(filePath, agendaList);
+        for(int i = 0; i < lineNumber; i++)
+            strBuilder.append(System.getProperty("line.separator"));
+        
+        return String.format("%s%s", text, strBuilder.toString());
+    }
+    
+    private Agenda filterAgendaByData(int data, ArrayList<Funcionario> funcionarioList)
+    {
+        Agenda filtredAgenda = new Agenda(data);
+        
+        for(Funcionario funcionario : funcionarioList)
+        {
+            Agenda agenda = funcionario.findAgendaByData(data);
+            
+            if(agenda != null)
+            {
+                ArrayList<Servico> servicoList = agenda.getServicoList();
+                
+                for(Servico servico : servicoList)
+                {
+                    filtredAgenda.addServico(servico);
+                }
+            }
+        }
+        
+        return filtredAgenda;
+    }
+    
+    private boolean containsAgendaByData(int data, ArrayList<Agenda> agendaList)
+    {
+        for(Agenda agenda : agendaList)
+        {
+            if(agenda.getData() == data)
+                return true;
+        }
+        
+        return false;
     }
 }

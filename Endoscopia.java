@@ -7,8 +7,8 @@
  */
 public class Endoscopia extends Exame
 {
-    public Endoscopia(Tecnico tecnico, Paciente paciente, int inicio)
+    public Endoscopia(Tecnico tecnico, Paciente paciente, int dataInicio)
     {
-        super(tecnico, paciente, inicio, 30);
+        super(tecnico, paciente, dataInicio, 30);
     }
 }

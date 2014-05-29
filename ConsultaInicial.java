@@ -7,8 +7,8 @@
  */
 public class ConsultaInicial extends Consulta
 {
-    public ConsultaInicial(Medico medico, Paciente paciente, int inicio)
+    public ConsultaInicial(Medico medico, Paciente paciente, int dataInicio)
     {
-        super(medico, paciente, inicio, 30);
+        super(medico, paciente, dataInicio, 30);
     }
 }

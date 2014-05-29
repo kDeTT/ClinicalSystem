@@ -10,9 +10,9 @@ public abstract class Consulta extends Servico
     private Medico medico;
     private Paciente paciente;
     
-    public Consulta(Medico medico, Paciente paciente, int inicio, int duracao)
+    public Consulta(Medico medico, Paciente paciente, int dataInicio, int duracao)
     {
-        super(inicio, duracao);
+        super(dataInicio, duracao);
         
         this.medico = medico;
         this.paciente = paciente;

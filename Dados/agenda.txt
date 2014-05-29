@@ -1,0 +1,25 @@
+10
+
+Consulta
+Diva
+80
+ConsultaInicial
+Luis
+<Hora do serviço>
+
+Consulta
+Diva
+80
+ConsultaRetorno
+Carla
+<Hora do serviço>
+
+20
+
+Exame
+Diva
+80
+Endoscopia
+Guilherme
+<Hora do serviço>
+
