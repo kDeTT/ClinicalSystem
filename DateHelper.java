@@ -1,3 +1,6 @@
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
 
 /**
  * Write a description of class DateHelper here.
@@ -7,27 +10,23 @@
  */
 public class DateHelper
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class DateHelper
-     */
-    public DateHelper()
+    private Date data;
+    
+    public Date stringToData(String date, String time)
     {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+        try{
+            String format = "dd/MM/yyyy,HH:mm";
+            String texto = date + "," + time;
+            SimpleDateFormat dt = new SimpleDateFormat(format);
+            
+            data = dt.parse(texto);
+            
+            return data;
+        } 
+        catch(ParseException e){
+            System.out.println(e.getMessage());
+        }
+        
+        return null;
     }
 }

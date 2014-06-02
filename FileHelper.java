@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class FileHelper
 {
@@ -19,6 +20,8 @@ public class FileHelper
     
     private final String EXAME_PATTERN = "EXAME";
     private final int EXAME_DATA_LENGTH = 7;
+    
+    private DateHelper dateHelper = new DateHelper();
     
     public ArrayList<Funcionario> readFile(String filePath, ArrayList<Funcionario> funcionarioList)
     {
@@ -53,14 +56,17 @@ public class FileHelper
                 {
                     String nomePaciente = data.get(1);
                     int idadePaciente = Integer.parseInt(data.get(2));
+                    Date date = dateHelper.stringToData(data.get(3), data.get(4));
+                    
                     
                     servico = new ConsultaInicial(new Medico("Nome do médico"), new Paciente(nomePaciente, idadePaciente), 0);
                 }
                 else if(data.size() == EXAME_DATA_LENGTH)
                 {
                     System.out.println(data);
-                    String nomePaciente = data.get(3);
-                    int idadePaciente = Integer.parseInt(data.get(4));
+                    String nomePaciente = data.get(2);
+                    int idadePaciente = Integer.parseInt(data.get(3));
+                    Date date = dateHelper.stringToData(data.get(4), data.get(5));
                     
                     servico = new Endoscopia(new Tecnico("Nome do técnico"), new Paciente(nomePaciente, idadePaciente), 0);
                 }
