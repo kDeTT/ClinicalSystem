@@ -1,6 +1,7 @@
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
+import java.util.Calendar;
 
 /**
  * Write a description of class DateHelper here.
@@ -28,5 +29,46 @@ public class DateHelper
         }
         
         return null;
+    }
+    
+    /** Método que retorna a data atual
+     * 
+     * @return String nowDate; 
+     */
+    public Date getNow()
+    {
+        return Calendar.getInstance().getTime();
+    }
+    
+    /** Método que compara a data atual com a data do parâmetro
+     * 
+     * @param date Data a ser comparada com a atual
+     * @return (true) se a data atual é menor que a data comparada (false) se a data atual é maior que a data comparada
+     */
+    public boolean compareDate(Date date)
+    {
+        return (getNow().compareTo(date) < 0);
+    }
+    
+    /** Método que adiciona minutos à data passada como parâmetro
+     * 
+     * @param date Data em que será adicionado minutos
+     * @param minutes Quantidade de minutos que será adicionado à data
+     * @return Date newDate 
+     */
+    public Date addMinutes(Date date, int minutes)
+    {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.MINUTE, minutes);
+        
+        return cal.getTime();
+    }
+    
+    public int getMinutes(Date date)
+    {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        return cal.get(Calendar.MINUTE);
     }
 }

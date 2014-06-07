@@ -1,4 +1,15 @@
 #BlueJ class context
 comment0.params=date\ time
 comment0.target=java.util.Date\ stringToData(java.lang.String,\ java.lang.String)
-numComments=1
+comment1.params=
+comment1.target=java.util.Date\ getNow()
+comment1.text=\ M\u00E9todo\ que\ retorna\ a\ data\ atual\r\n\ \r\n\ @return\ String\ nowDate;\ \r\n
+comment2.params=date
+comment2.target=boolean\ compareDate(java.util.Date)
+comment2.text=\ M\u00E9todo\ que\ compara\ a\ data\ atual\ com\ a\ data\ do\ par\u00E2metro\r\n\ \r\n\ @param\ date\ Data\ a\ ser\ comparada\ com\ a\ atual\r\n\ @return\ (true)\ se\ a\ data\ atual\ \u00E9\ menor\ que\ a\ data\ comparada\ (false)\ se\ a\ data\ atual\ \u00E9\ maior\ que\ a\ data\ comparada\r\n
+comment3.params=date\ minutes
+comment3.target=java.util.Date\ addMinutes(java.util.Date,\ int)
+comment3.text=\ M\u00E9todo\ que\ adiciona\ minutos\ \u00E0\ data\ passada\ como\ par\u00E2metro\r\n\ \r\n\ @param\ date\ Data\ em\ que\ ser\u00E1\ adicionado\ minutos\r\n\ @param\ minutes\ Quantidade\ de\ minutos\ que\ ser\u00E1\ adicionado\ \u00E0\ data\r\n\ @return\ Date\ newDate\ \r\n
+comment4.params=date
+comment4.target=int\ getMinutes(java.util.Date)
+numComments=5
