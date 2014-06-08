@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=className\ params
+comment0.target=java.lang.Object\ createObject(java.lang.String,\ java.lang.Object[])
+comment1.params=objClass\ params
+comment1.target=java.lang.Object\ getConstructor(java.lang.Class,\ java.lang.Object[])
+numComments=2

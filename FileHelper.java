@@ -16,73 +16,64 @@ import java.util.Date;
 public class FileHelper
 {
     private final String CONSULTA_PATTERN = "CONSULTA";
-    private final int CONSULTA_DATA_LENGTH = 6;
-    
     private final String EXAME_PATTERN = "EXAME";
-    private final int EXAME_DATA_LENGTH = 7;
+    
+    private final int DATA_LENGTH = 5;
     
     private DateHelper dateHelper = new DateHelper();
     
-    public ArrayList<Funcionario> readFile(String filePath, ArrayList<Funcionario> funcionarioList)
+    public ArrayList<Servico> readFile(String filePath)
     {
-        Servico servico = null;
-        FileReader reader = null;
-        BufferedReader buffer = null;
-        String line = null;
-        
         try
         {
-            reader = new FileReader(filePath);
-            buffer = new BufferedReader(reader);
-            line = buffer.readLine();
-            int dataLength = (((line != null) && line.toUpperCase().equals(CONSULTA_PATTERN)) ? CONSULTA_DATA_LENGTH : EXAME_DATA_LENGTH);
+            ArrayList<Servico> servicoList = new ArrayList<Servico>();
+            
+            FileReader reader = new FileReader(filePath);
+            BufferedReader buffer = new BufferedReader(reader);
+            String line = buffer.readLine();
             
             while(line != null) // Lê o arquivo até o fim
             {
                 ArrayList<String> data = new ArrayList<String>();
                     
-                for(int i = 0; i < dataLength; i++) // Lê os dados do serviço
+                for(int i = 0; i < DATA_LENGTH; i++) // Lê os dados do serviço
                 {
                     line = buffer.readLine();
 
                     if((line != null) && (line.trim().length() != 0))
-                    {
-                        System.out.println(line);
                         data.add(line);
-                    }
-                }
-                
-                if(data.size() == CONSULTA_DATA_LENGTH) // É um serviço do tipo Consulta
-                {
-                    String nomePaciente = data.get(1);
-                    int idadePaciente = Integer.parseInt(data.get(2));
-                    Date date = dateHelper.stringToData(data.get(3), data.get(4));
-                    
-                    
-                    servico = new ConsultaInicial(new Medico("Nome do médico"), new Paciente(nomePaciente, idadePaciente), 0);
-                }
-                else if(data.size() == EXAME_DATA_LENGTH)
-                {
-                    System.out.println(data);
-                    String nomePaciente = data.get(2);
-                    int idadePaciente = Integer.parseInt(data.get(3));
-                    Date date = dateHelper.stringToData(data.get(4), data.get(5));
-                    
-                    servico = new Endoscopia(new Tecnico("Nome do técnico"), new Paciente(nomePaciente, idadePaciente), 0);
                 }
 
+                String tipoServico = data.get(0);
+                String nomePaciente = data.get(1);
+                int idadePaciente = Integer.parseInt(data.get(2));
+                Date date = dateHelper.stringToData(data.get(3), data.get(4));
+                    
+                try
+                {
+                    if(tipoServico.toUpperCase().equals(CONSULTA_PATTERN))
+                        tipoServico = "Inicial";
+                    
+                    servicoList.add((Servico)ObjectHelper.createObject(tipoServico, new Object[] { null, new Paciente(nomePaciente, idadePaciente), -1 }));
+                }
+                catch(ClassNotFoundException ex)
+                {
+                    System.out.println(String.format("Não foi possível ler o arquivo. Mensagem: %s", ex.getMessage()));
+                }
+                
                 line = buffer.readLine();
-                dataLength = (((line != null) && line.toUpperCase().equals(CONSULTA_PATTERN)) ? CONSULTA_DATA_LENGTH : EXAME_DATA_LENGTH);
             }
             
             buffer.close();
             reader.close();
+            
+            return servicoList;
         }
         catch(java.io.IOException ex)
         {
             System.out.println(String.format("Não foi possível ler o arquivo. Mensagem: %s", ex.getMessage()));
         }
-        
+
         return null;
     }
     
@@ -104,9 +95,9 @@ public class FileHelper
                 
                 for(int j = 0; j < funcAgendaList.size(); j++)
                 {
-                    if(!containsAgendaByData(funcAgendaList.get(j).getData(), filtredAgendaList))
+                    if(!containsAgenda(funcAgendaList.get(j).getData(), filtredAgendaList))
                     {
-                        Agenda filtredAgenda = filterAgendaByData(funcAgendaList.get(j).getData(), funcionarioList);
+                        Agenda filtredAgenda = filterAgenda(funcAgendaList.get(j).getData(), funcionarioList);
                         filtredAgendaList.add(filtredAgenda);
                     }
                 }
@@ -120,9 +111,9 @@ public class FileHelper
                 for(Servico servico : servicoList)
                 {
                     if(servico instanceof Consulta)
-                        buffer.write(appendLine("Consulta", 1));
+                        buffer.write(appendLine(CONSULTA_PATTERN, 1));
                     else
-                        buffer.write(appendLine("Exame", 1));
+                        buffer.write(appendLine(EXAME_PATTERN, 1));
                     
                     buffer.write(appendLine(servico.getPaciente().getNome(), 1));
                     buffer.write(appendLine(String.valueOf(servico.getPaciente().getIdade()), 1));
@@ -156,13 +147,13 @@ public class FileHelper
         return String.format("%s%s", text, strBuilder.toString());
     }
     
-    private Agenda filterAgendaByData(int data, ArrayList<Funcionario> funcionarioList)
+    private Agenda filterAgenda(int data, ArrayList<Funcionario> funcionarioList)
     {
         Agenda filtredAgenda = new Agenda(data);
         
         for(Funcionario funcionario : funcionarioList)
         {
-            Agenda agenda = funcionario.findAgendaByData(data);
+            Agenda agenda = funcionario.findAgenda(data);
             
             if(agenda != null)
             {
@@ -178,7 +169,7 @@ public class FileHelper
         return filtredAgenda;
     }
     
-    private boolean containsAgendaByData(int data, ArrayList<Agenda> agendaList)
+    private boolean containsAgenda(int data, ArrayList<Agenda> agendaList)
     {
         for(Agenda agenda : agendaList)
         {

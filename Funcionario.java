@@ -31,7 +31,7 @@ public abstract class Funcionario
     
     public boolean addServico(int data, Servico servico)
     {
-        Agenda agenda = this.findAgendaByData(data);
+        Agenda agenda = this.findAgenda(data);
         
         if(agenda == null)
             agenda = new Agenda(data);
@@ -42,7 +42,7 @@ public abstract class Funcionario
     
     public boolean removeServico(int data, Servico servico)
     {
-        Agenda agenda = this.findAgendaByData(data);
+        Agenda agenda = this.findAgenda(data);
         
         if(agenda != null)
         {
@@ -67,7 +67,7 @@ public abstract class Funcionario
     
     public boolean removeAgenda(int data)
     {
-        Agenda agenda = this.findAgendaByData(data);
+        Agenda agenda = this.findAgenda(data);
         
         if(agenda != null)
         {
@@ -78,7 +78,7 @@ public abstract class Funcionario
         return false;
     }
     
-    public Agenda findAgendaByData(int data)
+    public Agenda findAgenda(int data)
     {
         for(Agenda agenda : agendaList)
         {
@@ -89,8 +89,8 @@ public abstract class Funcionario
         return null;
     }
     
-    public ArrayList<Servico> findServicoListByData(int dataInicio)
+    public ArrayList<Servico> getServicoList(int dataInicio)
     {
-        return this.findAgendaByData(dataInicio).getServicoList();
+        return this.findAgenda(dataInicio).getServicoList();
     }
 }
