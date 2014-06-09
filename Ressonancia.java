@@ -1,3 +1,4 @@
+import java.util.Date;
 
 /**
  * Write a description of class Ressonancia here.
@@ -7,7 +8,7 @@
  */
 public class Ressonancia extends Exame
 {
-    public Ressonancia(Tecnico tecnico, Paciente paciente, int dataInicio)
+    public Ressonancia(Tecnico tecnico, Paciente paciente, Date dataInicio)
     {
         super(tecnico, paciente, dataInicio, 30);
     }

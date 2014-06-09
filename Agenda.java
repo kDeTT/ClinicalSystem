@@ -1,3 +1,4 @@
+import java.util.Date;
 
 /**
  * Write a description of class Agendamento here.
@@ -10,16 +11,18 @@ import java.util.ArrayList;
 
 public class Agenda
 {
-    private int data;
+    private Date data;
     private ArrayList<Servico> servicoList;
+    private DateHelper dateHelper;
     
-    public Agenda(int data)
+    public Agenda(Date data)
     {
         this.data = data;
         this.servicoList = new ArrayList<Servico>();
+        dateHelper = new DateHelper();
     }
     
-    public int getData()
+    public Date getData()
     {
         return this.data;
     }
@@ -31,6 +34,22 @@ public class Agenda
     
     public boolean addServico(Servico servico) // TODO
     {
+        if(!dateHelper.compareDate(servico.getDataInicio())){
+                return false;
+        }
+        for(Servico s : servicoList){
+            if(s.getDataInicio().equals(servico.getDataInicio())){
+                return false;
+            } else if(s.getDataInicio().before(servico.getDataInicio())){
+                if(s.getDataFim().after(servico.getDataInicio())){
+                    return false;
+                }
+            } else {
+                if(s.getDataInicio().before(servico.getDataFim())){
+                    return false;
+                }
+            }
+        }
         return this.servicoList.add(servico); // Tratar conflitos de horário
     }
     

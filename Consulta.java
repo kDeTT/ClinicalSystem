@@ -1,3 +1,4 @@
+import java.util.Date;
 
 /**
  * Write a description of class Consulta here.
@@ -10,7 +11,7 @@ public abstract class Consulta extends Servico
     private Medico medico;
     private Paciente paciente;
 
-    public Consulta(Medico medico, Paciente paciente, int dataInicio, int duracao)
+    public Consulta(Medico medico, Paciente paciente, Date dataInicio, int duracao)
     {
         super(dataInicio, duracao);
         

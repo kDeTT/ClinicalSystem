@@ -1,4 +1,4 @@
 #BlueJ class context
 comment0.params=tecnico\ paciente\ dataInicio
-comment0.target=Biopsia(Tecnico,\ Paciente,\ int)
+comment0.target=Biopsia(Tecnico,\ Paciente,\ java.util.Date)
 numComments=1

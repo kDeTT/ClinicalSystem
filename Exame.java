@@ -1,3 +1,4 @@
+import java.util.Date;
 
 /**
  * Write a description of class Exame here.
@@ -10,7 +11,7 @@ public abstract class Exame extends Servico
     private Tecnico tecnico;
     private Paciente paciente;
     
-    public Exame(Tecnico tecnico, Paciente paciente, int dataInicio, int duracao)
+    public Exame(Tecnico tecnico, Paciente paciente, Date dataInicio, int duracao)
     {
         super(dataInicio, duracao);
         

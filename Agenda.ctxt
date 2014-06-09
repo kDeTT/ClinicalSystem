@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=data
-comment0.target=Agenda(int)
+comment0.target=Agenda(java.util.Date)
 comment1.params=
-comment1.target=int\ getData()
+comment1.target=java.util.Date\ getData()
 comment2.params=
 comment2.target=java.util.ArrayList\ getServicoList()
 comment3.params=servico

@@ -1,3 +1,4 @@
+import java.util.Date;
 
 /**
  * Write a description of class ConsultaInicial here.
@@ -7,7 +8,7 @@
  */
 public class Inicial extends Consulta
 {
-    public Inicial(Medico medico, Paciente paciente, int dataInicio)
+    public Inicial(Medico medico, Paciente paciente, Date dataInicio)
     {
         super(medico, paciente, dataInicio, 30);
     }

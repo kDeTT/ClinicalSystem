@@ -1,3 +1,4 @@
+import java.util.Date;
 
 /**
  * Write a description of class Funcionarios here.
@@ -12,11 +13,13 @@ public abstract class Funcionario
 {
     private String nome;
     private ArrayList<Agenda> agendaList;
+    private DateHelper dateHelper;
     
     public Funcionario(String nome)
     {
         this.nome = nome;
         this.agendaList = new ArrayList<Agenda>();
+        dateHelper = new DateHelper();
     }
     
     public String getNome()
@@ -29,7 +32,7 @@ public abstract class Funcionario
         return this.agendaList;
     }
     
-    public boolean addServico(int data, Servico servico)
+    public boolean addServico(Date data, Servico servico)
     {
         Agenda agenda = this.findAgenda(data);
         
@@ -40,7 +43,7 @@ public abstract class Funcionario
         return agendaList.add(agenda);
     }
     
-    public boolean removeServico(int data, Servico servico)
+    public boolean removeServico(Date data, Servico servico)
     {
         Agenda agenda = this.findAgenda(data);
         
@@ -65,7 +68,7 @@ public abstract class Funcionario
         return false;
     }
     
-    public boolean removeAgenda(int data)
+    public boolean removeAgenda(Date data)
     {
         Agenda agenda = this.findAgenda(data);
         
@@ -78,18 +81,18 @@ public abstract class Funcionario
         return false;
     }
     
-    public Agenda findAgenda(int data)
+    public Agenda findAgenda(Date data)
     {
         for(Agenda agenda : agendaList)
         {
-            if(agenda.getData() == data)
+            if(dateHelper.compareDay(agenda.getData(),data))
                 return agenda;
         }
         
         return null;
     }
     
-    public ArrayList<Servico> getServicoList(int dataInicio)
+    public ArrayList<Servico> getServicoList(Date dataInicio)
     {
         return this.findAgenda(dataInicio).getServicoList();
     }

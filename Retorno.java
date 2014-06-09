@@ -1,3 +1,5 @@
+import java.util.Date;
+
 /**
  * Write a description of class ConsultaRetorno here.
  * 
@@ -6,7 +8,7 @@
  */
 public class Retorno extends Consulta
 {
-    public Retorno(Medico medico, Paciente paciente, int dataInicio)
+    public Retorno(Medico medico, Paciente paciente, Date dataInicio)
     {
         super(medico, paciente, dataInicio, 20);
     }

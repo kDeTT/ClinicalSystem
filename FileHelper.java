@@ -147,7 +147,7 @@ public class FileHelper
         return String.format("%s%s", text, strBuilder.toString());
     }
     
-    private Agenda filterAgenda(int data, ArrayList<Funcionario> funcionarioList)
+    private Agenda filterAgenda(Date data, ArrayList<Funcionario> funcionarioList)
     {
         Agenda filtredAgenda = new Agenda(data);
         
@@ -169,11 +169,11 @@ public class FileHelper
         return filtredAgenda;
     }
     
-    private boolean containsAgenda(int data, ArrayList<Agenda> agendaList)
+    private boolean containsAgenda(Date data, ArrayList<Agenda> agendaList)
     {
         for(Agenda agenda : agendaList)
         {
-            if(agenda.getData() == data)
+            if(dateHelper.compareDay(agenda.getData(), data))
                 return true;
         }
         

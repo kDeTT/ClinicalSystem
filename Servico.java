@@ -1,3 +1,4 @@
+import java.util.Date;
 
 /**
  * Write a description of class Servico here.
@@ -7,38 +8,40 @@
  */
 public abstract class Servico
 {
-    private int dataInicio; // Data de início do serviço
+    private Date dataInicio; // Data de início do serviço
     private int duracao; // Duração do serviço
-    private int dataFim; // Data do fim do serviço
+    private Date dataFim; // Data do fim do serviço
     private boolean status; // Se o serviço está agendado (true), senão (false)
+    private DateHelper dateHelper;
     
     public abstract Funcionario getFuncionario();
     
     public abstract Paciente getPaciente();
     
-    public Servico(int dataInicio, int duracao)
+    public Servico(Date dataInicio, int duracao)
     {
+        dateHelper = new DateHelper();
         this.dataInicio = dataInicio;
         this.duracao = duracao;
-        this.dataFim = dataInicio + this.duracao;
+        this.dataFim = dateHelper.addMinutes(dataInicio, duracao);
     }
     
-    public int getDataInicio()
+    public Date getDataInicio()
     {
         return this.dataInicio;
     }
     
-    public void setDataInicio(int dataInicio)
+    public void setDataInicio(Date dataInicio)
     {
         this.dataInicio = dataInicio;
     }
     
-    public int getDataFim()
+    public Date getDataFim()
     {
         return this.dataFim;
     }
     
-    public void setDataFim(int dataFim)
+    public void setDataFim(Date dataFim)
     {
         this.dataFim = dataFim;
     }

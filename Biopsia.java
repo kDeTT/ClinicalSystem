@@ -1,3 +1,4 @@
+import java.util.Date;
 
 /**
  * Write a description of class Biopsia here.
@@ -7,7 +8,7 @@
  */
 public class Biopsia extends Exame
 {
-    public Biopsia(Tecnico tecnico, Paciente paciente, int dataInicio)
+    public Biopsia(Tecnico tecnico, Paciente paciente, Date dataInicio)
     {
         super(tecnico, paciente, dataInicio, 20);
     }

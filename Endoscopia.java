@@ -1,3 +1,4 @@
+import java.util.Date;
 
 /**
  * Write a description of class Endoscopia here.
@@ -7,7 +8,7 @@
  */
 public class Endoscopia extends Exame
 {
-    public Endoscopia(Tecnico tecnico, Paciente paciente, int dataInicio)
+    public Endoscopia(Tecnico tecnico, Paciente paciente, Date dataInicio)
     {
         super(tecnico, paciente, dataInicio, 30);
     }

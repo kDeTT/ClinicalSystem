@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=medico\ paciente\ dataInicio\ duracao
-comment0.target=Consulta(Medico,\ Paciente,\ int,\ int)
+comment0.target=Consulta(Medico,\ Paciente,\ java.util.Date,\ int)
 comment1.params=
 comment1.target=Funcionario\ getFuncionario()
 comment2.params=

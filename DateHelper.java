@@ -50,6 +50,25 @@ public class DateHelper
         return (getNow().compareTo(date) < 0);
     }
     
+    /** Método que compara o dia de duas datas
+     * 
+     * @param date Date a ser comparada com seconDate
+     * @param seconDate Date a ser comparada com date
+     * @return (true) se a data atual é menor que a data comparada (false) se a data atual é maior que a data comparada
+     */
+    public boolean compareDay(Date date, Date seconDate)
+    {
+        String format = "dd/MM/yyyy";
+        SimpleDateFormat dt = new SimpleDateFormat(format);
+        String dateOne = dt.format(date);
+        String dateTwo = dt.format(date);
+        
+        if(dateOne == dateTwo){
+            return true;
+        }
+        return false;
+    }
+    
     /** Método que adiciona minutos à data passada como parâmetro
      * 
      * @param date Data em que será adicionado minutos
