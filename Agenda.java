@@ -37,20 +37,89 @@ public class Agenda
         if(!dateHelper.compareDate(servico.getDataInicio())){
                 return false;
         }
+        
+        if(isConflicted(servico)){
+            if(servico.getPaciente().getIdade() >= 60){
+                delayServicos(servico);
+                return this.servicoList.add(servico);
+            }
+            return false;
+        }
+        
+        return this.servicoList.add(servico);
+    }
+    
+    /**
+     * O metodo recebe o servico que precisa ser encaixado na agenda e abre espaço para este serviço
+     *
+     * @param  servico Servico servico que precisa ser encaixado na agenda
+     */
+    private void delayServicos(Servico servico)
+    {
         for(Servico s : servicoList){
             if(s.getDataInicio().equals(servico.getDataInicio())){
-                return false;
+                s.setDataInicio(dateHelper.addMinutes(servico.getDataInicio(),servico.getDuracao()));
+                s.setDataFim(dateHelper.addMinutes(servico.getDataFim(),servico.getDuracao()));
             } else if(s.getDataInicio().before(servico.getDataInicio())){
                 if(s.getDataFim().after(servico.getDataInicio())){
-                    return false;
+                    s.setDataFim(servico.getDataInicio());
+                    s.setDataInicio(dateHelper.addMinutes(s.getDataFim(),-s.getDuracao());
                 }
             } else {
                 if(s.getDataInicio().before(servico.getDataFim())){
-                    return false;
+                    return true;
                 }
             }
         }
-        return this.servicoList.add(servico); // Tratar conflitos de horário
+    }
+    
+    private Date findNextWindow(Date inicio, int duracao){
+        Date previousEnd = inicio;
+        Date nextBegin;
+        boolean finished = false;
+        while(true){
+            Servico closestService;
+            for(Servico s : servicoList){
+                if(s.getDataInicio().after(previousEnd)){
+                    if(nextBegin != null){
+                        if(s.getDataInicio.before(nextBegin)){
+                            closestService = s;
+                            nextBegin = s.getDataInicio();
+                        }
+                    } else {
+                        closestService = s;
+                        nextBegin = s.getDataInicio();
+                    }
+                }
+            }
+            
+            if(nextBegin == null)
+                break;
+            if(dateHelper.timeFits(previousEnd, nextBegin, duracao)
+                break;
+                
+            previousEnd = s.getDataFim();
+        }
+        
+        return previousEnd;
+    }
+    
+    private boolean isConflicted(Servico servico){
+        for(Servico s : servicoList){
+            if(s.getDataInicio().equals(servico.getDataInicio())){
+                return true;
+            } else if(s.getDataInicio().before(servico.getDataInicio())){
+                if(s.getDataFim().after(servico.getDataInicio())){
+                    return true;
+                }
+            } else {
+                if(s.getDataInicio().before(servico.getDataFim())){
+                    return true;
+                }
+            }
+        }
+        
+        return false;
     }
     
     public boolean cancelServico(Servico servico)

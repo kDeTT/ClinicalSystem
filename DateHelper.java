@@ -90,4 +90,21 @@ public class DateHelper
         cal.setTime(date);
         return cal.get(Calendar.MINUTE);
     }
+    
+    public boolean timeFits(Date begin, Date end, int minutes){
+        if(begin.before(end)){
+            Calendar b = Calendar.getInstance();
+            Calendar e = Calendar.getInstance();
+            b.setTime(begin);
+            e.setTime(end);
+            
+            int min = (e.get(Calendar.HOUR) - b.get(Calendar.HOUR)) * 60;
+            min = min + (e.get(Calendar.MINUTE) - b.get(Calendar.MINUTE));
+            
+            if(min > minutes){
+                return true;
+            }
+        }
+        return false;
+    }
 }
