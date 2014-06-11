@@ -107,4 +107,26 @@ public class DateHelper
         }
         return false;
     }
+    
+    public Date[] comercialTime(Date date){
+        int TAM = 4;
+        Date[] comercialTime = new Date[TAM];
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.HOUR, 8);
+        comercialTime[0] = cal.getTime();
+        
+        cal.set(Calendar.HOUR, 12);
+        comercialTime[1] = cal.getTime();
+        
+        cal.set(Calendar.HOUR, 14);
+        comercialTime[2] = cal.getTime();
+        
+        cal.set(Calendar.HOUR, 18);
+        comercialTime[3] = cal.getTime();
+        
+        return comercialTime;
+    }
 }

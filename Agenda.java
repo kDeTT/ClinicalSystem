@@ -14,12 +14,14 @@ public class Agenda
     private Date data;
     private ArrayList<Servico> servicoList;
     private DateHelper dateHelper;
+    private Date[] expediente;
     
     public Agenda(Date data)
     {
         this.data = data;
         this.servicoList = new ArrayList<Servico>();
         dateHelper = new DateHelper();
+        expediente = dateHelper.comercialTime(data);
     }
     
     public Date getData()
@@ -38,6 +40,10 @@ public class Agenda
                 return false;
         }
         
+        if(!isComercialTime(servico.getDataInicio(),servico.getDataFim())){
+            return false;
+        }
+        
         if(isConflicted(servico)){
             if(servico.getPaciente().getIdade() >= 60){
                 delayServicos(servico);
@@ -49,40 +55,50 @@ public class Agenda
         return this.servicoList.add(servico);
     }
     
+    //TODO
     /**
      * O metodo recebe o servico que precisa ser encaixado na agenda e abre espaço para este serviço
      *
-     * @param  servico Servico servico que precisa ser encaixado na agenda
+     * @param  servico Servico que precisa ser encaixado na agenda
      */
     private void delayServicos(Servico servico)
     {
         for(Servico s : servicoList){
             if(s.getDataInicio().equals(servico.getDataInicio())){
-                s.setDataInicio(dateHelper.addMinutes(servico.getDataInicio(),servico.getDuracao()));
-                s.setDataFim(dateHelper.addMinutes(servico.getDataFim(),servico.getDuracao()));
+                reallocate(s);
             } else if(s.getDataInicio().before(servico.getDataInicio())){
                 if(s.getDataFim().after(servico.getDataInicio())){
-                    s.setDataFim(servico.getDataInicio());
-                    s.setDataInicio(dateHelper.addMinutes(s.getDataFim(),-s.getDuracao());
+                    reallocate(s);
                 }
             } else {
                 if(s.getDataInicio().before(servico.getDataFim())){
-                    return true;
+                   reallocate(s);
                 }
             }
         }
     }
     
-    private Date findNextWindow(Date inicio, int duracao){
-        Date previousEnd = inicio;
+    private void reallocate(Servico servico){
+        Date data = findWindow(servico.getDuracao());
+        if(data != null){
+            servico.setDataInicio(findWindow(servico.getDuracao()));
+        } else {
+            cancelServico(servico);
+        }
+    }
+    
+    private Date findWindow(int duracao){
+        Date previousEnd = expediente[0];
         Date nextBegin;
-        boolean finished = false;
         while(true){
-            Servico closestService;
+            Servico closestService = null;
+            nextBegin = null;
+            
+            //Procura o servico mais proximo e seta nextBegin
             for(Servico s : servicoList){
                 if(s.getDataInicio().after(previousEnd)){
                     if(nextBegin != null){
-                        if(s.getDataInicio.before(nextBegin)){
+                        if(s.getDataInicio().before(nextBegin)){
                             closestService = s;
                             nextBegin = s.getDataInicio();
                         }
@@ -93,12 +109,28 @@ public class Agenda
                 }
             }
             
-            if(nextBegin == null)
+            //Se não houver um próximo servico seta o fim do expediente(matutino ou vespertino)
+            if(nextBegin == null){
+                if(previousEnd.before(expediente[1]))
+                    nextBegin = expediente[1];
+                else
+                    nextBegin = expediente[3];
+            }
+            
+            //Verifica se o servico cabe e se está no horário comercial
+            if(dateHelper.timeFits(previousEnd, nextBegin, duracao) && isComercialTime(previousEnd, nextBegin))
                 break;
-            if(dateHelper.timeFits(previousEnd, nextBegin, duracao)
-                break;
-                
-            previousEnd = s.getDataFim();
+            
+            //Verifica se já passou do limite do expediente, se não, seta a variavel previousEnd
+            if(nextBegin.equals(expediente[1])){
+                previousEnd = expediente[2];
+            } else if(nextBegin.equals(expediente[3])){
+                return null;
+            } else {
+                previousEnd = closestService.getDataFim();
+            }
+            
+            nextBegin = null;
         }
         
         return previousEnd;
@@ -122,6 +154,7 @@ public class Agenda
         return false;
     }
     
+    //TODO
     public boolean cancelServico(Servico servico)
     {
         int index = this.servicoList.indexOf(servico);
@@ -147,4 +180,15 @@ public class Agenda
         return null;
     }
     
+    public boolean isComercialTime(Date inicio, Date fim){
+        if(inicio.after(expediente[0]) || inicio.equals(expediente[0]))
+            if(fim.before(expediente[1]) || inicio.equals(expediente[1]))
+                return true;
+                
+        if(inicio.after(expediente[2]) || inicio.equals(expediente[2]))
+            if(fim.before(expediente[3]) || inicio.equals(expediente[3]))
+                return true;
+                
+        return false;
+    }
 }

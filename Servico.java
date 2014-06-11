@@ -34,6 +34,7 @@ public abstract class Servico
     public void setDataInicio(Date dataInicio)
     {
         this.dataInicio = dataInicio;
+        dataFim = dateHelper.addMinutes(dataInicio, duracao);
     }
     
     public Date getDataFim()
@@ -44,6 +45,7 @@ public abstract class Servico
     public void setDataFim(Date dataFim)
     {
         this.dataFim = dataFim;
+        dataInicio = dateHelper.addMinutes(dataFim, -duracao);
     }
     
     public boolean getStatus()
@@ -54,5 +56,9 @@ public abstract class Servico
     public void setStatus(boolean status)
     {
         this.status = status;
+    }
+    
+    public int getDuracao(){
+        return this.duracao;
     }
 }
