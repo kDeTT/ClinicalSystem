@@ -38,6 +38,9 @@ public abstract class Funcionario
         
         if(agenda == null)
             agenda = new Agenda(data);
+        
+        if(servico instanceof Consulta)
+            servico = isReturn(servico);
             
         agenda.addServico(servico);
         return agendaList.add(agenda);
@@ -95,5 +98,18 @@ public abstract class Funcionario
     public ArrayList<Servico> getServicoList(Date dataInicio)
     {
         return this.findAgenda(dataInicio).getServicoList();
+    }
+    
+    private Servico isReturn(Servico servico){
+        
+        for(Agenda agenda : agendaList){
+            Servico s = agenda.findServicoByPaciente(servico.getPaciente());
+            
+            if(servico != null)            
+                if(dateHelper.isInRangeBefore(servico.getDataInicio(), s.getDataInicio(), 20))
+                    servico.setDuracao(20);
+        }
+        
+        return servico;
     }
 }

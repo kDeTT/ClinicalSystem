@@ -19,4 +19,6 @@ comment6.params=begin\ end\ minutes
 comment6.target=boolean\ timeFits(java.util.Date,\ java.util.Date,\ int)
 comment7.params=date
 comment7.target=java.util.Date[]\ comercialTime(java.util.Date)
-numComments=8
+comment8.params=date\ inicio\ range
+comment8.target=boolean\ isInRangeBefore(java.util.Date,\ java.util.Date,\ int)
+numComments=9

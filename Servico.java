@@ -58,6 +58,10 @@ public abstract class Servico
         this.status = status;
     }
     
+    public void setDuracao(int duracao){
+        this.duracao = duracao;
+    }
+    
     public int getDuracao(){
         return this.duracao;
     }

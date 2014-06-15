@@ -17,4 +17,6 @@ comment7.params=data
 comment7.target=Agenda\ findAgenda(java.util.Date)
 comment8.params=dataInicio
 comment8.target=java.util.ArrayList\ getServicoList(java.util.Date)
-numComments=9
+comment9.params=servico
+comment9.target=Servico\ isReturn(Servico)
+numComments=10
