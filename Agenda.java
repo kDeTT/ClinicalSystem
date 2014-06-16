@@ -47,8 +47,7 @@ public class Agenda
         
         if(isConflicted(servico)){
             if(servico.getPaciente().getIdade() >= 60){//Idosos
-                delayServicos(servico);
-                return this.servicoList.add(servico);
+                return delayServicos(servico);
             }
             
             Date window = findWindow(servico.getDuracao());
@@ -68,23 +67,34 @@ public class Agenda
      *
      * @param  servico Servico que precisa ser encaixado na agenda
      */
-    private void delayServicos(Servico servico)
+    private boolean delayServicos(Servico servico)
     {
         for(Servico s : servicoList){
             if(s.getStatus()){
                 if(s.getDataInicio().equals(servico.getDataInicio())){
-                    reallocate(s);
+                    if(s.getPaciente().getIdade() >= 65)
+                        return false;
+                    else
+                        reallocate(s);
                 } else if(s.getDataInicio().before(servico.getDataInicio())){
                     if(s.getDataFim().after(servico.getDataInicio())){
-                        reallocate(s);
+                        if(s.getPaciente().getIdade() >= 65)
+                            return false;
+                        else
+                            reallocate(s);
                     }
                 } else {
                     if(s.getDataInicio().before(servico.getDataFim())){
-                       reallocate(s);
+                        if(s.getPaciente().getIdade() >= 65)
+                            return false;
+                        else
+                            reallocate(s);
                     }
                 }
             }
         }
+        
+        return this.servicoList.add(servico);
     }
     
     private void reallocate(Servico servico){
