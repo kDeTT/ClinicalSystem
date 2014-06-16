@@ -34,7 +34,8 @@ public class Agenda
         return this.servicoList;
     }
     
-    public boolean addServico(Servico servico) // TODO
+    //TODO eu preciso imprimir em arquivo qual a consulta que foi marcada e/ou desmarcada
+    public boolean addServico(Servico servico)
     {
         if(!dateHelper.compareDate(servico.getDataInicio())){
                 return false;
@@ -45,17 +46,23 @@ public class Agenda
         }
         
         if(isConflicted(servico)){
-            if(servico.getPaciente().getIdade() >= 60){
+            if(servico.getPaciente().getIdade() >= 60){//Idosos
                 delayServicos(servico);
                 return this.servicoList.add(servico);
             }
+            
+            Date window = findWindow(servico.getDuracao());
+            if(window != null){
+                servico.setDataInicio(window);
+                return this.servicoList.add(servico);
+            }
+            
             return false;
         }
         
         return this.servicoList.add(servico);
     }
     
-    //TODO
     /**
      * O metodo recebe o servico que precisa ser encaixado na agenda e abre espaço para este serviço
      *
@@ -64,15 +71,17 @@ public class Agenda
     private void delayServicos(Servico servico)
     {
         for(Servico s : servicoList){
-            if(s.getDataInicio().equals(servico.getDataInicio())){
-                reallocate(s);
-            } else if(s.getDataInicio().before(servico.getDataInicio())){
-                if(s.getDataFim().after(servico.getDataInicio())){
+            if(s.getStatus()){
+                if(s.getDataInicio().equals(servico.getDataInicio())){
                     reallocate(s);
-                }
-            } else {
-                if(s.getDataInicio().before(servico.getDataFim())){
-                   reallocate(s);
+                } else if(s.getDataInicio().before(servico.getDataInicio())){
+                    if(s.getDataFim().after(servico.getDataInicio())){
+                        reallocate(s);
+                    }
+                } else {
+                    if(s.getDataInicio().before(servico.getDataFim())){
+                       reallocate(s);
+                    }
                 }
             }
         }
@@ -81,7 +90,9 @@ public class Agenda
     private void reallocate(Servico servico){
         Date data = findWindow(servico.getDuracao());
         if(data != null){
+            cancelServico(servico);
             servico.setDataInicio(findWindow(servico.getDuracao()));
+            this.servicoList.add(servico);
         } else {
             cancelServico(servico);
         }
@@ -96,7 +107,7 @@ public class Agenda
             
             //Procura o servico mais proximo e seta nextBegin
             for(Servico s : servicoList){
-                if(s.getDataInicio().after(previousEnd)){
+                if(s.getDataInicio().after(previousEnd) && s.getStatus()){
                     if(nextBegin != null){
                         if(s.getDataInicio().before(nextBegin)){
                             closestService = s;
@@ -138,15 +149,17 @@ public class Agenda
     
     private boolean isConflicted(Servico servico){
         for(Servico s : servicoList){
-            if(s.getDataInicio().equals(servico.getDataInicio())){
-                return true;
-            } else if(s.getDataInicio().before(servico.getDataInicio())){
-                if(s.getDataFim().after(servico.getDataInicio())){
+            if(s.getStatus()){
+                if(s.getDataInicio().equals(servico.getDataInicio())){
                     return true;
-                }
-            } else {
-                if(s.getDataInicio().before(servico.getDataFim())){
-                    return true;
+                } else if(s.getDataInicio().before(servico.getDataInicio())){
+                    if(s.getDataFim().after(servico.getDataInicio())){
+                        return true;
+                    }
+                } else {
+                    if(s.getDataInicio().before(servico.getDataFim())){
+                        return true;
+                    }
                 }
             }
         }
@@ -173,8 +186,9 @@ public class Agenda
     {
         for(Servico servico : servicoList)
         {
-            if(servico.getPaciente().getNome().equals(paciente.getNome()))
-                return servico;
+            if(servico.getStatus())
+                if(servico.getPaciente().getNome().equals(paciente.getNome()))
+                    return servico;
         }
         
         return null;
