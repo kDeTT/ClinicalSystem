@@ -18,8 +18,6 @@ public class FileHelper
     private final String CONSULTA_PATTERN = "CONSULTA";
     private final String EXAME_PATTERN = "EXAME";
     
-    private final int DATA_LENGTH = 5;
-    
     private DateHelper dateHelper = new DateHelper();
     
     public ArrayList<Servico> readFile(String filePath)
@@ -30,38 +28,40 @@ public class FileHelper
             
             FileReader reader = new FileReader(filePath);
             BufferedReader buffer = new BufferedReader(reader);
-            String line = buffer.readLine();
-            
-            while(line != null) // Lê o arquivo até o fim
+            //String line = buffer.readLine();
+            String line;
+
+            while((line = buffer.readLine()) != null) // Lê o arquivo até o fim
             {
                 ArrayList<String> data = new ArrayList<String>();
-                    
-                for(int i = 0; i < DATA_LENGTH; i++) // Lê os dados do serviço
+                
+                int dataRead = 0;
+                int dataLength = (line.trim().toUpperCase().equals(EXAME_PATTERN)) ? 5 : 4;
+                
+                while(dataRead <= dataLength)
                 {
+                    if ((line != null) && !line.equals(""))
+                    {
+                        data.add(line.trim());
+                        dataRead++;
+                    }
+                    
                     line = buffer.readLine();
-
-                    if((line != null) && (line.trim().length() != 0))
-                        data.add(line);
                 }
 
-                String tipoServico = data.get(0);
-                String nomePaciente = data.get(1);
-                int idadePaciente = Integer.parseInt(data.get(2));
-                Date date = dateHelper.stringToData(data.get(3), data.get(4));
-                    
+                String tipoServico = (dataLength == 5) ? data.get(1) : "Inicial";
+                String nomePaciente = (dataLength == 5) ? data.get(2) : data.get(1);
+                int idadePaciente = (dataLength == 5) ? Integer.parseInt(data.get(3)) : Integer.parseInt(data.get(2));
+                Date dateInicio = (dataLength == 5) ?  dateHelper.stringToData(data.get(4), data.get(5)) : dateHelper.stringToData(data.get(3), data.get(4));
+
                 try
                 {
-                    if(tipoServico.toUpperCase().equals(CONSULTA_PATTERN))
-                        tipoServico = "Inicial";
-                    
-                    servicoList.add((Servico)ObjectHelper.createObject(tipoServico, new Object[] { null, new Paciente(nomePaciente, idadePaciente), -1 }));
+                    servicoList.add((Servico)ObjectHelper.createObject(tipoServico, new Object[] { null, new Paciente(nomePaciente, idadePaciente), dateInicio }));
                 }
                 catch(ClassNotFoundException ex)
                 {
                     System.out.println(String.format("Não foi possível ler o arquivo. Mensagem: %s", ex.getMessage()));
                 }
-                
-                line = buffer.readLine();
             }
             
             buffer.close();
@@ -107,9 +107,12 @@ public class FileHelper
             {
                 buffer.write(appendLine(String.valueOf(agenda.getData()), 2));
                 ArrayList<Servico> servicoList = agenda.getServicoList();
+                System.out.println("Agenda filtrada!!! Serviços: " + servicoList.size());
                 
                 for(Servico servico : servicoList)
                 {
+                    System.out.println("Salvando lista de serviços!!!");
+                    
                     if(servico instanceof Consulta)
                         buffer.write(appendLine(CONSULTA_PATTERN, 1));
                     else

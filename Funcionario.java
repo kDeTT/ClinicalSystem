@@ -42,7 +42,7 @@ public abstract class Funcionario
         if(servico instanceof Consulta)
             servico = isReturn(servico);
             
-        agenda.addServico(servico);
+        System.out.println("Agendando> " + agenda.addServico(servico));
         return agendaList.add(agenda);
     }
     
@@ -88,7 +88,7 @@ public abstract class Funcionario
     {
         for(Agenda agenda : agendaList)
         {
-            if(dateHelper.compareDay(agenda.getData(),data))
+            if(dateHelper.compareDay(agenda.getData(), data))
                 return agenda;
         }
         
@@ -97,12 +97,23 @@ public abstract class Funcionario
     
     public ArrayList<Servico> getServicoList(Date dataInicio)
     {
-        return this.findAgenda(dataInicio).getServicoList();
+        Agenda agenda = this.findAgenda(dataInicio);
+        
+        return (agenda == null) ? null : agenda.getServicoList();
     }
     
-    private Servico isReturn(Servico servico){
+    public int getServicoListCount(Date dataInicio)
+    {
+        Agenda agenda = this.findAgenda(dataInicio);
         
-        for(Agenda agenda : agendaList){
+        return (agenda == null) ? -1 : agenda.getServicoList().size();
+    }
+    
+    // TODO - Problemas aqui!
+    private Servico isReturn(Servico servico)
+    {
+        for(Agenda agenda : agendaList)
+        {
             Servico s = agenda.findServicoByPaciente(servico.getPaciente());
             
             if(servico != null)            

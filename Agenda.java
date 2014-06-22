@@ -37,28 +37,36 @@ public class Agenda
     //TODO eu preciso imprimir em arquivo qual a consulta que foi marcada e/ou desmarcada
     public boolean addServico(Servico servico)
     {
-        if(!dateHelper.compareDate(servico.getDataInicio())){
-                return false;
-        }
-        
-        if(!isComercialTime(servico.getDataInicio(),servico.getDataFim())){
+        if(!dateHelper.compareDate(servico.getDataInicio()))
+        {
+            System.out.println("Estou aqui!! Não agendando!");
             return false;
         }
         
-        if(isConflicted(servico)){
-            if(servico.getPaciente().getIdade() >= 60){//Idosos
+        if(!isComercialTime(servico.getDataInicio(), servico.getDataFim()))
+        {
+            System.out.println("Estou aqui!! Não agendando 2!");
+            return false;
+        }
+        
+        if(isConflicted(servico))
+        {
+            if(servico.getPaciente().getIdade() >= 60)
+            {//Idosos
                 return delayServicos(servico);
             }
             
             Date window = findWindow(servico.getDuracao());
-            if(window != null){
+            if(window != null)
+            {
                 servico.setDataInicio(window);
                 return this.servicoList.add(servico);
             }
             
+            System.out.println("Estou aqui!! Não agendando 3!");
             return false;
         }
-        
+
         return this.servicoList.add(servico);
     }
     
@@ -204,14 +212,19 @@ public class Agenda
         return null;
     }
     
-    public boolean isComercialTime(Date inicio, Date fim){
+    public boolean isComercialTime(Date inicio, Date fim)
+    {
         if(inicio.after(expediente[0]) || inicio.equals(expediente[0]))
+        {
             if(fim.before(expediente[1]) || inicio.equals(expediente[1]))
                 return true;
+        }
                 
         if(inicio.after(expediente[2]) || inicio.equals(expediente[2]))
+        {
             if(fim.before(expediente[3]) || inicio.equals(expediente[3]))
                 return true;
+        }
                 
         return false;
     }

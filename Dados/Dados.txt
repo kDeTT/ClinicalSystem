@@ -1,12 +1,12 @@
-Exame
-Endoscopia
-José Maria
+Exame 
+Endoscopia 
+José
 60
-17/05/2014
-14:00
+23/06/2014 
+15:00 
 
 Consulta
-Gustavo Matos
-35
-19/05/2014
-15:00
+Carlos 
+30
+23/06/2014 
+16:00

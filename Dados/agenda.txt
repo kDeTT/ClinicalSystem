@@ -1,18 +1,16 @@
-10
+Mon Jun 23 16:00:00 BRT 2014
 
-Consulta
-Paciente1
-20
+CONSULTA
+Carlos
+30
 Inicial
-Medico1
+Sandra
 <Hora do serviço>
 
-20
-
-Consulta
-Paciente1
-20
-Retorno
-Medico2
+EXAME
+José
+60
+Endoscopia
+Jonas
 <Hora do serviço>
 

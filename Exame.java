@@ -8,24 +8,8 @@ import java.util.Date;
  */
 public abstract class Exame extends Servico
 {
-    private Tecnico tecnico;
-    private Paciente paciente;
-    
     public Exame(Tecnico tecnico, Paciente paciente, Date dataInicio, int duracao)
     {
-        super(dataInicio, duracao);
-        
-        this.tecnico = tecnico;
-        this.paciente = paciente;
-    }
-    
-    public Funcionario getFuncionario()
-    {
-        return this.tecnico;
-    }
-    
-    public Paciente getPaciente()
-    {
-        return this.paciente;
+        super(dataInicio, duracao, tecnico, paciente);
     }
 }

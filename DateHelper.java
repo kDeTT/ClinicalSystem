@@ -2,6 +2,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Write a description of class DateHelper here.
@@ -58,12 +59,12 @@ public class DateHelper
      */
     public boolean compareDay(Date date, Date seconDate)
     {
-        String format = "dd/MM/yyyy";
+        /*String format = "dd/MM/yyyy";
         SimpleDateFormat dt = new SimpleDateFormat(format);
         String dateOne = dt.format(date);
-        String dateTwo = dt.format(date);
+        String dateTwo = dt.format(date);*/
         
-        if(dateOne == dateTwo){
+        if(date.getDay() == seconDate.getDay()){
             return true;
         }
         return false;
@@ -108,24 +109,40 @@ public class DateHelper
         return false;
     }
     
-    public Date[] comercialTime(Date date){
+    public Date[] comercialTime(Date date)
+    {
         int TAM = 4;
         Date[] comercialTime = new Date[TAM];
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
+        Calendar cal = Calendar.getInstance(new Locale("pt", "BR"));
+
+        //cal.setTime(date);
         
-        cal.set(Calendar.MINUTE, 0);
-        cal.set(Calendar.HOUR, 8);
+        cal.set(2014, 5, 23, 8, 0, 0);
         comercialTime[0] = cal.getTime();
         
-        cal.set(Calendar.HOUR, 12);
+        cal.set(2014, 5, 23, 12, 0, 0);
         comercialTime[1] = cal.getTime();
         
-        cal.set(Calendar.HOUR, 14);
+        cal.set(2014, 5, 23, 14, 0, 0);
         comercialTime[2] = cal.getTime();
         
-        cal.set(Calendar.HOUR, 18);
+        cal.set(2014, 5, 23, 18, 0, 0);
         comercialTime[3] = cal.getTime();
+        
+        /*cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.HOUR, 8);
+        comercialTime[0] = cal.getTime();
+
+        cal.set(Calendar.HOUR, 12);
+        comercialTime[1] = cal.getTime();
+       
+        cal.set(Calendar.DAY_OF_MONTH, date.getDay());
+        cal.set(Calendar.HOUR, 14);
+        comercialTime[2] = cal.getTime();
+
+        cal.set(Calendar.DAY_OF_MONTH, date.getDay());
+        cal.set(Calendar.HOUR, 18);
+        comercialTime[3] = cal.getTime();*/
         
         return comercialTime;
     }
