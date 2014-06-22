@@ -8,6 +8,7 @@ import java.util.Date;
  */
 
 import java.util.ArrayList;
+import Exceptions.*;
 
 public abstract class Funcionario
 {
@@ -32,7 +33,7 @@ public abstract class Funcionario
         return this.agendaList;
     }
     
-    public boolean addServico(Date data, Servico servico)
+    public boolean addServico(Date data, Servico servico) throws AgendaException
     {
         Agenda agenda = this.findAgenda(data);
         
@@ -42,7 +43,7 @@ public abstract class Funcionario
         if(servico instanceof Consulta)
             servico = isReturn(servico);
             
-        System.out.println("Agendando> " + agenda.addServico(servico));
+        agenda.addServico(servico);
         return agendaList.add(agenda);
     }
     

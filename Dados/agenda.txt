@@ -5,12 +5,12 @@ Carlos
 30
 Inicial
 Sandra
-<Hora do serviço>
+Mon Jun 23 16:00:00 BRT 2014
 
 EXAME
 José
 60
 Endoscopia
 Jonas
-<Hora do serviço>
+Mon Jun 23 15:00:00 BRT 2014
 

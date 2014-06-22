@@ -8,6 +8,7 @@ import java.util.Date;
  */
 
 import java.util.ArrayList;
+import Exceptions.*;
 
 public class Agenda
 {
@@ -35,38 +36,38 @@ public class Agenda
     }
     
     //TODO eu preciso imprimir em arquivo qual a consulta que foi marcada e/ou desmarcada
-    public boolean addServico(Servico servico)
+    public boolean addServico(Servico servico) throws AgendaException
     {
         if(!dateHelper.compareDate(servico.getDataInicio()))
         {
-            System.out.println("Estou aqui!! Não agendando!");
-            return false;
+            throw new OutdatedException();
         }
         
         if(!isComercialTime(servico.getDataInicio(), servico.getDataFim()))
         {
-            System.out.println("Estou aqui!! Não agendando 2!");
-            return false;
+            throw new OutOfBusinessException();
         }
         
         if(isConflicted(servico))
         {
-            if(servico.getPaciente().getIdade() >= 60)
+            if(servico.getPaciente().getIdade() >= 65)
             {//Idosos
                 return delayServicos(servico);
             }
             
             Date window = findWindow(servico.getDuracao());
+            
             if(window != null)
             {
                 servico.setDataInicio(window);
+                servico.setStatus(true);
                 return this.servicoList.add(servico);
             }
-            
-            System.out.println("Estou aqui!! Não agendando 3!");
-            return false;
+            else
+                throw new NoWindowException();
         }
-
+        
+        servico.setStatus(true);
         return this.servicoList.add(servico);
     }
     
@@ -75,26 +76,37 @@ public class Agenda
      *
      * @param  servico Servico que precisa ser encaixado na agenda
      */
-    private boolean delayServicos(Servico servico)
+    
+    //TODO - Mandar só o serviço que está conflitando ao invés de percorrer a lista de novo
+    private boolean delayServicos(Servico servico) throws PriorityException
     {
-        for(Servico s : servicoList){
-            if(s.getStatus()){
-                if(s.getDataInicio().equals(servico.getDataInicio())){
+        for(Servico s : servicoList)
+        {
+            if(s.getStatus())
+            {
+                if(s.getDataInicio().equals(servico.getDataInicio()))
+                {
                     if(s.getPaciente().getIdade() >= 65)
-                        return false;
+                        throw new PriorityException();
                     else
                         reallocate(s);
-                } else if(s.getDataInicio().before(servico.getDataInicio())){
-                    if(s.getDataFim().after(servico.getDataInicio())){
+                } 
+                else if(s.getDataInicio().before(servico.getDataInicio()))
+                {
+                    if(s.getDataFim().after(servico.getDataInicio()))
+                    {
                         if(s.getPaciente().getIdade() >= 65)
-                            return false;
+                            throw new PriorityException();
                         else
                             reallocate(s);
                     }
-                } else {
-                    if(s.getDataInicio().before(servico.getDataFim())){
+                } 
+                else 
+                {
+                    if(s.getDataInicio().before(servico.getDataFim()))
+                    {
                         if(s.getPaciente().getIdade() >= 65)
-                            return false;
+                            throw new PriorityException();
                         else
                             reallocate(s);
                     }
@@ -105,33 +117,47 @@ public class Agenda
         return this.servicoList.add(servico);
     }
     
-    private void reallocate(Servico servico){
+    private void reallocate(Servico servico)
+    {
         Date data = findWindow(servico.getDuracao());
-        if(data != null){
+        
+        if(data != null)
+        {
             cancelServico(servico);
             servico.setDataInicio(findWindow(servico.getDuracao()));
             this.servicoList.add(servico);
-        } else {
+        } 
+        else 
+        {
             cancelServico(servico);
         }
     }
     
-    private Date findWindow(int duracao){
+    private Date findWindow(int duracao)
+    {
         Date previousEnd = expediente[0];
         Date nextBegin;
-        while(true){
+        
+        while(true)
+        {
             Servico closestService = null;
             nextBegin = null;
             
             //Procura o servico mais proximo e seta nextBegin
-            for(Servico s : servicoList){
-                if(s.getDataInicio().after(previousEnd) && s.getStatus()){
-                    if(nextBegin != null){
-                        if(s.getDataInicio().before(nextBegin)){
+            for(Servico s : servicoList)
+            {
+                if(s.getDataInicio().after(previousEnd) && s.getStatus())
+                {
+                    if(nextBegin != null)
+                    {
+                        if(s.getDataInicio().before(nextBegin))
+                        {
                             closestService = s;
                             nextBegin = s.getDataInicio();
                         }
-                    } else {
+                    } 
+                    else 
+                    {
                         closestService = s;
                         nextBegin = s.getDataInicio();
                     }
@@ -139,7 +165,8 @@ public class Agenda
             }
             
             //Se não houver um próximo servico seta o fim do expediente(matutino ou vespertino)
-            if(nextBegin == null){
+            if(nextBegin == null)
+            {
                 if(previousEnd.before(expediente[1]))
                     nextBegin = expediente[1];
                 else
@@ -151,11 +178,16 @@ public class Agenda
                 break;
             
             //Verifica se já passou do limite do expediente, se não, seta a variavel previousEnd
-            if(nextBegin.equals(expediente[1])){
+            if(nextBegin.equals(expediente[1]))
+            {
                 previousEnd = expediente[2];
-            } else if(nextBegin.equals(expediente[3])){
+            } 
+            else if(nextBegin.equals(expediente[3]))
+            {
                 return null;
-            } else {
+            } 
+            else 
+            {
                 previousEnd = closestService.getDataFim();
             }
             
@@ -165,17 +197,27 @@ public class Agenda
         return previousEnd;
     }
     
-    private boolean isConflicted(Servico servico){
-        for(Servico s : servicoList){
-            if(s.getStatus()){
-                if(s.getDataInicio().equals(servico.getDataInicio())){
+    private boolean isConflicted(Servico servico)
+    {
+        for(Servico s : servicoList)
+        {
+            if(s.getStatus())
+            {
+                if(s.getDataInicio().equals(servico.getDataInicio()))
+                {
                     return true;
-                } else if(s.getDataInicio().before(servico.getDataInicio())){
-                    if(s.getDataFim().after(servico.getDataInicio())){
+                } 
+                else if(s.getDataInicio().before(servico.getDataInicio()))
+                {
+                    if(s.getDataFim().after(servico.getDataInicio()))
+                    {
                         return true;
                     }
-                } else {
-                    if(s.getDataInicio().before(servico.getDataFim())){
+                } 
+                else 
+                {
+                    if(s.getDataInicio().before(servico.getDataFim()))
+                    {
                         return true;
                     }
                 }
@@ -185,7 +227,6 @@ public class Agenda
         return false;
     }
     
-    //TODO
     public boolean cancelServico(Servico servico)
     {
         int index = this.servicoList.indexOf(servico);
@@ -194,6 +235,9 @@ public class Agenda
         {
             servico.setStatus(false);
             this.servicoList.set(index, servico);
+            
+            String tipoServico = (servico.getClass().getName().equals("Exame")) ? servico.getClass().getName() : String.format("Consulta %s", servico.getClass().getName());
+            System.out.println(String.format("O serviço de %s do paciente %s foi cancelado!", tipoServico, servico.getPaciente().getNome()));
             return true;
         }
         

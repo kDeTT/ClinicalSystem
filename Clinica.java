@@ -8,10 +8,12 @@
 
 import java.util.ArrayList;
 import java.util.Date;
+import Exceptions.*;
 
 public class Clinica
 {
     private final String AGENDA_FILE_PATH = "Dados/agenda.txt";
+    private final String CANCELAMENTO_FILE_PATH = "Dados/cancelamento.txt";
 
     private ArrayList<Funcionario> funcionarioList;
     
@@ -31,9 +33,9 @@ public class Clinica
             System.out.println("Funcionário já está cadastrado!");
     }
     
-    public void agendarByFile(String filePath)
+    public void agendarByFile(String filePath) throws AgendaException
     {
-        FileHelper fileHelp = new FileHelper();
+        InputFileHelper fileHelp = new InputFileHelper();
         
         ArrayList<Servico> servicoList = fileHelp.readFile(filePath);
         
@@ -73,17 +75,30 @@ public class Clinica
         return (Tecnico)this.getFuncionarioMinServicoByAgenda(date, Tecnico.class);
     }
     
-    public void saveAgenda()
+    public void saveAgenda() throws AgendaException
     {
         this.saveAgenda(AGENDA_FILE_PATH);
     }
     
-    public void saveAgenda(String filePath)
+    public void saveAgenda(String filePath) throws AgendaException
     {
-        FileHelper helper = new FileHelper();
+        AgendaFileHelper agendaFileHelp = new AgendaFileHelper();
         
-        if(helper.writeFile(filePath, funcionarioList))
+        if(agendaFileHelp.writeFile(filePath, funcionarioList))
             System.out.println("Agenda da clínica salva com sucesso!");
+    }
+    
+    public void saveCancelamento()
+    {
+        this.saveCancelamento(CANCELAMENTO_FILE_PATH);
+    }
+    
+    public void saveCancelamento(String filePath)
+    {
+        LogFileHelper logFileHelp = new LogFileHelper();
+        
+        if(logFileHelp.writeFile(filePath, funcionarioList))
+            System.out.println("Cancelamentos da clínica salvos com sucesso!");
     }
     
     private Funcionario getFuncionarioMinServicoByAgenda(Date date, Class filter)

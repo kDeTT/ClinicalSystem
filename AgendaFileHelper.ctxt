@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=filePath\ funcionarioList
+comment0.target=boolean\ writeFile(java.lang.String,\ java.util.ArrayList)
+comment1.params=data\ funcionarioList
+comment1.target=Agenda\ filterAgenda(java.util.Date,\ java.util.ArrayList)
+comment2.params=data\ agendaList
+comment2.target=boolean\ containsAgenda(java.util.Date,\ java.util.ArrayList)
+numComments=3
