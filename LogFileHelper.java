@@ -1,11 +1,3 @@
-
-/**
- * Write a description of class LogHelper here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileWriter;
@@ -13,29 +5,44 @@ import java.io.BufferedWriter;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Classe que trata arquivos de saída para cancelamentos
+ * 
+ * @author Luis Augusto
+ */
 public class LogFileHelper extends FileHelper
 {
+    /**
+     * Escreve o arquivo de cancelamentos
+     * 
+     * @param filePath Caminho do arquivo de saída
+     * @param funcionarioList Lista de funcionários do sistema
+     * @return (true) Se o arquivo é salvo com sucesso; (false) Se o processo falha
+     */
     public boolean writeFile(String filePath, ArrayList<Funcionario> funcionarioList)
     {
         try
         {
-            try (FileWriter writer = new FileWriter(filePath); BufferedWriter buffer = new BufferedWriter(writer);)
+            try (FileWriter writer = new FileWriter(filePath); BufferedWriter buffer = new BufferedWriter(writer);) // Try-with-resources
             {
-                buffer.write(appendLine("Cancelamentos", 2));
+                buffer.write(appendLine("Cancelamentos", 2)); // Adiciona título ao arquivo de saída
                 
+                // Pega a lista de todos os serviços cancelados no sistema
                 ArrayList<Servico> cancelamentoList = this.getAllCancelamentoList(funcionarioList);
                 
                 for(Servico service : cancelamentoList)
                 {
+                    // Adiciona o tipo de serviço que foi cancelado
                     if(service instanceof Consulta)
                         buffer.write(appendLine(CONSULTA_PATTERN, 1));
                     else
                         buffer.write(appendLine(EXAME_PATTERN, 1));
                     
-                    buffer.write(appendLine(service.getPaciente().getNome(), 1));
-                    buffer.write(appendLine(String.valueOf(service.getPaciente().getIdade()), 1));
-                    buffer.write(appendLine(service.getClass().getName(), 1));
-                    buffer.write(appendLine(service.getDataInicio().toString(), 2));
+                    // Adiciona informações do serviço que cancelado
+                    buffer.write(appendLine(service.getPaciente().getNome(), 1)); // Nome do paciente
+                    buffer.write(appendLine(String.valueOf(service.getPaciente().getIdade()), 1)); // Idade do paciente
+                    buffer.write(appendLine(service.getClass().getName(), 1)); // Tipo de serviço
+                    buffer.write(appendLine(service.getDataInicio().toString(), 2)); // Data inicial do serviço
                 }
             
                 buffer.flush();
@@ -51,23 +58,30 @@ public class LogFileHelper extends FileHelper
         return false;
     }
     
+    /**
+     * Retorna a lista de todos os serviços cancelados
+     * 
+     * @param funcionarioList Lista de funcionários do sistema
+     * @return Lista de serviços cancelados
+     */
     private ArrayList<Servico> getAllCancelamentoList(ArrayList<Funcionario> funcionarioList)
     {
-        ArrayList<Servico> cancelamentoList = new ArrayList<Servico>();
+        ArrayList<Servico> cancelamentoList = new ArrayList<Servico>(); // Lista de cancelamentos
             
-        for(int i = 0; i < funcionarioList.size(); i++)
+        for(int i = 0; i < funcionarioList.size(); i++) // Percorre todos os funcionários
         {
-            ArrayList<Agenda> funcAgendaList = funcionarioList.get(i).getAgendaList();
+            ArrayList<Agenda> funcAgendaList = funcionarioList.get(i).getAgendaList(); // Pega a lista de agendas do funcionário
                 
-            for(int j = 0; j < funcAgendaList.size(); j++)
+            for(int j = 0; j < funcAgendaList.size(); j++) // Percorre a lista de agendas do funcionário
             {
+                // Pega a lista de serviços de uma agenda do funcionário
                 ArrayList<Servico> agendaServicoList = funcAgendaList.get(j).getServicoList();
                         
-                for(Servico service : agendaServicoList)
+                for(Servico service : agendaServicoList) // Percorre todos os serviços da agenda
                 {
-                    if(!service.getStatus())
+                    if(!service.getStatus()) // Verifica se o status do serviço está como (false), ou seja, cancelado
                     {
-                        cancelamentoList.add(service);
+                        cancelamentoList.add(service); // Se estiver, adiciona na lista de cancelados
                     }
                 }
             }

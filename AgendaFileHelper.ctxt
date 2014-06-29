@@ -1,8 +1,11 @@
 #BlueJ class context
 comment0.params=filePath\ funcionarioList
 comment0.target=boolean\ writeFile(java.lang.String,\ java.util.ArrayList)
+comment0.text=\r\n\ Escreve\ o\ arquivo\ de\ agendamentos\r\n\ \r\n\ @param\ filePath\ Caminho\ do\ arquivo\ de\ sa\u00EDda\r\n\ @param\ funcionarioList\ Lista\ de\ funcion\u00E1rios\ do\ sistema\r\n\ @return\ (true)\ Se\ o\ arquivo\ \u00E9\ salvo\ com\ sucesso;\ (false)\ Se\ o\ processo\ falha\r\n
 comment1.params=data\ funcionarioList
 comment1.target=Agenda\ filterAgenda(java.util.Date,\ java.util.ArrayList)
+comment1.text=\r\n\ Retorna\ uma\ agenda\ com\ todos\ os\ servi\u00E7os\ de\ funcion\u00E1rios\ que\ tem\ a\ mesma\ agenda\r\n\ \r\n\ @param\ data\ Data\ da\ agenda\ a\ ser\ filtrada\r\n\ @param\ funcionarioList\ Lista\ de\ funcion\u00E1rios\r\n\ @return\ Agenda\ filtrada\r\n\ @throws\ AgendaException\r\n
 comment2.params=data\ agendaList
 comment2.target=boolean\ containsAgenda(java.util.Date,\ java.util.ArrayList)
+comment2.text=\r\n\ Verifica\ se\ uma\ agenda\ est\u00E1\ contida\ em\ uma\ lista\ de\ agendas\r\n\ \r\n\ @param\ data\ Data\ para\ busca\r\n\ @param\ agendaList\ Lista\ de\ agendas\ para\ busca\r\n\ @return\ (true)\ Se\ a\ lista\ de\ agendas\ cont\u00E9m\ uma\ agenda\ com\ a\ data\ buscada;\ (false)\ Se\ n\u00E3o\ cont\u00E9m\ a\ agenda\r\n
 numComments=3

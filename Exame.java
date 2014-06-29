@@ -1,10 +1,10 @@
 import java.util.Date;
 
+
 /**
- * Write a description of class Exame here.
+ * Classe abstrata que representa um serviço do tipo exame
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Luis Augusto
  */
 public abstract class Exame extends Servico
 {

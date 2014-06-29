@@ -1,10 +1,9 @@
 import java.util.Date;
 
 /**
- * Write a description of class Consulta here.
+ * Classe que representa um serviço do tipo Consulta
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Luis Augusto
  */
 public abstract class Consulta extends Servico
 {

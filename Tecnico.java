@@ -1,13 +1,10 @@
-
-/**
- * Write a description of class Tecnico here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-
 import java.util.ArrayList;
 
+/**
+ * Classe que representa um funcionário do tipo Técnico
+ * 
+ * @author Luis Augusto
+ */
 public class Tecnico extends Funcionario
 {
     public Tecnico(String nome)

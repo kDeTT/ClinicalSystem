@@ -11,6 +11,6 @@ public class NoWindowException extends AgendaException
 {
     public NoWindowException()
     {
-        super("Não há um espaço vago para realocar o serviço!");
+        super("Erro ao agendar: Não há um espaço vago para realocar o serviço!");
     }
 }

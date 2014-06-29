@@ -1,10 +1,9 @@
 import java.util.Date;
 
 /**
- * Write a description of class Servico here.
+ * Classe abstrata que representa um serviço
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Luis Augusto
  */
 public abstract class Servico
 {
@@ -12,8 +11,8 @@ public abstract class Servico
     private int duracao; // Duração do serviço
     private Date dataFim; // Data do fim do serviço
     
-    private Funcionario funcionario;
-    private Paciente paciente;
+    private Funcionario funcionario; // Funcionário do serviço
+    private Paciente paciente; // Paciente do serviço
     
     private boolean status; // Se o serviço está agendado (true), senão (false)
     private DateHelper dateHelper;

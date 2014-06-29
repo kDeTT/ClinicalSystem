@@ -1,10 +1,9 @@
 import java.util.Date;
 
 /**
- * Write a description of class Ressonancia here.
+ * Classe que representa um exame do tipo Ressonancia
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Luis Augusto
  */
 public class Ressonancia extends Exame
 {

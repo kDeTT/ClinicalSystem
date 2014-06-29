@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=className\ params
 comment0.target=java.lang.Object\ createObject(java.lang.String,\ java.lang.Object[])
+comment0.text=\r\n\ Retorna\ um\ objeto\ da\ classe\ instanciada\ caso\ ela\ seja\ encontrada\ e\ se\ existir\ par\u00E2metros\ do\ construtor\ compat\u00EDveis.\ \r\n\ Faz\ uso\ de\ Reflection\ e\ gen\u00E9ricos.\r\n\ \r\n\ @param\ className\ Nome\ da\ classe\ a\ ser\ instanciada\r\n\ @param\ params\ Par\u00E2metros\ do\ construtor\ da\ classe\ a\ ser\ instanciada\r\n\ @return\ Objeto\ da\ classe\r\n\ @throws\ ClassNotFoundException\r\n
 comment1.params=objClass\ params
 comment1.target=java.lang.Object\ getConstructor(java.lang.Class,\ java.lang.Object[])
+comment1.text=\r\n\ Busca\ por\ um\ construtor\ da\ classe\ compat\u00EDvel\ com\ os\ par\u00E2metros\r\n\ \r\n\ @param\ objClass\ Tipo\ da\ classe\r\n\ @param\ params\ Par\u00E2metros\ do\ construtor\ da\ classe\r\n\ @return\ Objeto\ instanciado\r\n\ @throws\ InstantiationException\r\n\ @throws\ IllegalAccessException\r\n\ @throws\ InvocationTargetException\r\n
 numComments=2

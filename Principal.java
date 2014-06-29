@@ -1,9 +1,7 @@
-
 /**
- * Write a description of class Principal here.
+ * Classe principal do sistema
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Luis Augusto
  */
 public class Principal
 {

@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=filePath\ funcionarioList
 comment0.target=boolean\ writeFile(java.lang.String,\ java.util.ArrayList)
+comment0.text=\r\n\ Escreve\ o\ arquivo\ de\ cancelamentos\r\n\ \r\n\ @param\ filePath\ Caminho\ do\ arquivo\ de\ sa\u00EDda\r\n\ @param\ funcionarioList\ Lista\ de\ funcion\u00E1rios\ do\ sistema\r\n\ @return\ (true)\ Se\ o\ arquivo\ \u00E9\ salvo\ com\ sucesso;\ (false)\ Se\ o\ processo\ falha\r\n
 comment1.params=funcionarioList
 comment1.target=java.util.ArrayList\ getAllCancelamentoList(java.util.ArrayList)
+comment1.text=\r\n\ Retorna\ a\ lista\ de\ todos\ os\ servi\u00E7os\ cancelados\r\n\ \r\n\ @param\ funcionarioList\ Lista\ de\ funcion\u00E1rios\ do\ sistema\r\n\ @return\ Lista\ de\ servi\u00E7os\ cancelados\r\n
 numComments=2

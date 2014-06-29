@@ -1,9 +1,7 @@
-
 /**
- * Write a description of class Paciente here.
+ * Classe que representa um paciente
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Luis Augusto
  */
 public class Paciente
 {

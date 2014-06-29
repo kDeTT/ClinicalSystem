@@ -1,10 +1,9 @@
 import java.util.Date;
 
 /**
- * Write a description of class ConsultaRetorno here.
+ * Classe que representa uma consulta do tipo Retorno
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Luis Augusto
  */
 public class Retorno extends Consulta
 {

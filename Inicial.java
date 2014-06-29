@@ -1,10 +1,9 @@
 import java.util.Date;
 
 /**
- * Write a description of class ConsultaInicial here.
+ * Classe que representa uma consulta do tipo Inicial
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Luis Augusto
  */
 public class Inicial extends Consulta
 {

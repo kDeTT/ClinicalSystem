@@ -1,4 +1,5 @@
 #BlueJ class context
 comment0.params=text\ lineNumber
 comment0.target=java.lang.String\ appendLine(java.lang.String,\ int)
+comment0.text=\r\n\ Faz\ quebras\ de\ linha\ ap\u00F3s\ o\ texto\r\n\ \r\n\ @param\ text\ Linha\ de\ texto\r\n\ @param\ lineNumber\ Quantidade\ de\ quebras\ de\ linha\ que\ ser\u00E3o\ adicionadas\ ao\ final\ do\ texto\r\n\ @return\ Texto\ com\ quebras\ de\ linha\r\n
 numComments=1
