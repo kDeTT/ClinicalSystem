@@ -2,11 +2,23 @@ Exame
 Endoscopia 
 José
 60
-23/06/2014 
+23/07/2014 
 15:00 
 
 Consulta
 Carlos 
 30
-23/06/2014 
+23/07/2014 
+16:00
+
+Consulta
+Ortomênio
+70
+23/07/2014 
+16:00
+
+Consulta
+Ortomênio
+70
+01/08/2014 
 16:00

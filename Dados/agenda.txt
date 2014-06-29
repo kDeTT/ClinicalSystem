@@ -1,16 +1,32 @@
-Mon Jun 23 16:00:00 BRT 2014
+Wed Jul 23 16:00:00 BRT 2014
 
 CONSULTA
 Carlos
 30
 Inicial
 Sandra
-Mon Jun 23 16:00:00 BRT 2014
+Wed Jul 23 16:00:00 BRT 2014
+
+CONSULTA
+Ortomênio
+70
+Inicial
+André
+Wed Jul 23 16:00:00 BRT 2014
 
 EXAME
 José
 60
 Endoscopia
 Jonas
-Mon Jun 23 15:00:00 BRT 2014
+Wed Jul 23 15:00:00 BRT 2014
+
+Fri Aug 01 16:00:00 BRT 2014
+
+CONSULTA
+Ortomênio
+70
+Inicial
+Sandra
+Fri Aug 01 16:00:00 BRT 2014
 

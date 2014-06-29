@@ -154,13 +154,19 @@ public abstract class Funcionario
     // TODO - Problemas aqui!
     private Servico isReturn(Servico servico) // Este método deveria ir para a classe Médico
     {
+        if(servico == null)
+            return null;
+            
         for(Agenda agenda : agendaList)
         {
             Servico s = agenda.findServicoByPaciente(servico.getPaciente());
             
-            if(servico != null)            
-                if(dateHelper.isInRangeBefore(servico.getDataInicio(), s.getDataInicio(), 20))
-                    servico.setDuracao(20); // Eu não devo apenas alterar a duração do serviço e sim instanciar um novo objeto
+            if(s != null){            
+                if(dateHelper.isInRangeBefore(servico.getDataInicio(), s.getDataInicio(), 20)){
+                    Servico retorno = new Retorno((Medico)servico.getFuncionario(), servico.getPaciente(), servico.getDataInicio());
+                    return retorno;
+                }
+            }
         }
         
         return servico;

@@ -48,25 +48,27 @@ public class DateHelper
      */
     public boolean compareDate(Date date)
     {
-        return (getNow().compareTo(date) < 0);
+        return (getNow().before(date));
     }
     
     /** Método que compara o dia de duas datas
      * 
      * @param date Date a ser comparada com seconDate
      * @param seconDate Date a ser comparada com date
-     * @return (true) se a data atual é menor que a data comparada (false) se a data atual é maior que a data comparada
+     * @return (true) se a 1ª data é igual que a 2ª data comparada (false) se a 1ª data é diferente que a 2ª data comparada
      */
     public boolean compareDay(Date date, Date seconDate)
     {
-        /*String format = "dd/MM/yyyy";
-        SimpleDateFormat dt = new SimpleDateFormat(format);
-        String dateOne = dt.format(date);
-        String dateTwo = dt.format(date);*/
+        Calendar dateOne = Calendar.getInstance(new Locale("pt", "BR"));
+        Calendar dateTwo = Calendar.getInstance(new Locale("pt", "BR"));
+        dateOne.setTime(date);
+        dateTwo.setTime(seconDate);
         
-        if(date.getDay() == seconDate.getDay()){
-            return true;
-        }
+        if(dateOne.get(Calendar.YEAR) == dateOne.get(Calendar.YEAR))
+            if(dateOne.get(Calendar.MONTH) == dateTwo.get(Calendar.MONTH))
+                if(dateOne.get(Calendar.DATE) == dateTwo.get(Calendar.DATE))
+                    return true;
+                    
         return false;
     }
     
@@ -114,35 +116,21 @@ public class DateHelper
         int TAM = 4;
         Date[] comercialTime = new Date[TAM];
         Calendar cal = Calendar.getInstance(new Locale("pt", "BR"));
-
-        //cal.setTime(date);
+        Calendar commercial = Calendar.getInstance(new Locale("pt", "BR"));
         
-        cal.set(2014, 5, 23, 8, 0, 0);
-        comercialTime[0] = cal.getTime();
+        cal.setTime(date);
         
-        cal.set(2014, 5, 23, 12, 0, 0);
-        comercialTime[1] = cal.getTime();
+        commercial.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE), 8, 0, 0);
+        comercialTime[0] = commercial.getTime();
         
-        cal.set(2014, 5, 23, 14, 0, 0);
-        comercialTime[2] = cal.getTime();
+        commercial.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE), 12, 0, 0);
+        comercialTime[1] = commercial.getTime();
         
-        cal.set(2014, 5, 23, 18, 0, 0);
-        comercialTime[3] = cal.getTime();
+        commercial.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE), 14, 0, 0);
+        comercialTime[2] = commercial.getTime();
         
-        /*cal.set(Calendar.MINUTE, 0);
-        cal.set(Calendar.HOUR, 8);
-        comercialTime[0] = cal.getTime();
-
-        cal.set(Calendar.HOUR, 12);
-        comercialTime[1] = cal.getTime();
-       
-        cal.set(Calendar.DAY_OF_MONTH, date.getDay());
-        cal.set(Calendar.HOUR, 14);
-        comercialTime[2] = cal.getTime();
-
-        cal.set(Calendar.DAY_OF_MONTH, date.getDay());
-        cal.set(Calendar.HOUR, 18);
-        comercialTime[3] = cal.getTime();*/
+        commercial.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE), 18, 0, 0);
+        comercialTime[3] = commercial.getTime();
         
         return comercialTime;
     }
