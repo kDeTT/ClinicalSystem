@@ -244,16 +244,18 @@ public class Agenda
         return false;
     }
     
-    public Servico findServicoByPaciente(Paciente paciente)
+    public ArrayList<Servico> findServicoListByPaciente(Paciente paciente)
     {
+        ArrayList<Servico> serviceListForPaciente = new ArrayList<Servico>();
+        
         for(Servico servico : servicoList)
         {
             if(servico.getStatus())
                 if(servico.getPaciente().getNome().equals(paciente.getNome()))
-                    return servico;
+                    serviceListForPaciente.add(servico);
         }
         
-        return null;
+        return serviceListForPaciente;
     }
     
     public boolean isComercialTime(Date inicio, Date fim)

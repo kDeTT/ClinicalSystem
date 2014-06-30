@@ -43,14 +43,22 @@ public abstract class Funcionario
         
         if(agenda == null) // Se não existir, crio uma nova
             agenda = new Agenda(data);
-        
-        // Isto deve ir para a classe Médico
-        if(servico instanceof Consulta) // Verifico se o serviço é do tipo Consulta
-            servico = isReturn(servico); // Se for, verifico se é uma consulta de Retorno
-        
+
         // Faço o agendamento
         agenda.addServico(servico);
         return agendaList.add(agenda); // TODO
+    }
+    
+    public ArrayList<Servico> findAllServicoByPaciente(Paciente paciente)
+    {
+        ArrayList<Servico> allServicesForPaciente = new ArrayList<Servico>();
+        
+        for(Agenda agenda : agendaList)
+        {
+            allServicesForPaciente.addAll(agenda.findServicoListByPaciente(paciente));
+        }
+        
+        return (allServicesForPaciente.size() != 0) ? allServicesForPaciente : null;
     }
     
     /**
@@ -149,26 +157,5 @@ public abstract class Funcionario
         Agenda agenda = this.findAgenda(data); // Busco por uma agenda da data
         
         return (agenda != null) ? agenda.getServicoList().size() : -1; // Verifico se existe uma agenda, se existir retorno a lista de serviços
-    }
-    
-    // TODO - Problemas aqui!
-    private Servico isReturn(Servico servico) // Este método deveria ir para a classe Médico
-    {
-        if(servico == null)
-            return null;
-            
-        for(Agenda agenda : agendaList)
-        {
-            Servico s = agenda.findServicoByPaciente(servico.getPaciente());
-            
-            if(s != null){            
-                if(dateHelper.isInRangeBefore(servico.getDataInicio(), s.getDataInicio(), 20)){
-                    Servico retorno = new Retorno((Medico)servico.getFuncionario(), servico.getPaciente(), servico.getDataInicio());
-                    return retorno;
-                }
-            }
-        }
-        
-        return servico;
     }
 }

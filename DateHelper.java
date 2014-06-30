@@ -135,12 +135,16 @@ public class DateHelper
         return comercialTime;
     }
     
-    public boolean isInRangeBefore(Date date, Date inicio, int range){
-        if(date.before(inicio)){
+    public boolean isInRangeBefore(Date date, Date inicio, int range)
+    {
+        if(date.before(inicio))
+        {
               Calendar a = Calendar.getInstance();
               a.setTime(date);
-              int dias = 0;  
-              while (a.before(inicio)) {  
+              int dias = 0; 
+              
+              while (a.before(inicio)) 
+              {  
                 a.add(Calendar.DAY_OF_MONTH, 1);  
                 dias++;  
               }  

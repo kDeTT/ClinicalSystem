@@ -1,10 +1,3 @@
-Exame 
-Endoscopia 
-José
-60
-23/07/2014 
-15:00 
-
 Consulta
 Carlos 
 30
@@ -12,13 +5,7 @@ Carlos
 16:00
 
 Consulta
-Ortomênio
-70
-23/07/2014 
-16:00
-
-Consulta
-Ortomênio
-70
-01/08/2014 
+Carlos
+30
+26/07/2014 
 16:00

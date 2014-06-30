@@ -54,13 +54,34 @@ public class Clinica
         {
             if(servico instanceof Consulta)
             {
-                Medico medico = this.getMedicoMinServicoByAgenda(servico.getDataInicio());
+                Funcionario servFunc = null;
                 
-                if(medico != null)
+                ArrayList<Funcionario> medicoList = this.filterFuncionarioList(Medico.class);
+                
+                for(Funcionario func : medicoList)
                 {
-                    servico.setFuncionario(medico);
-                    medico.addServico(servico.getDataInicio(), servico);
+                    ArrayList<Servico> servicoListByPaciente = func.findAllServicoByPaciente(servico.getPaciente());
+                    
+                    // Médicos só fazem consultas, se encontrou algo, é porque já tenho consultas marcadas para este médico e este paciente
+                    if(servicoListByPaciente != null) 
+                    {
+                        servFunc = func;
+                        break;
+                    }
                 }
+
+                if(servFunc == null)
+                {
+                    servFunc = this.getMedicoMinServicoByAgenda(servico.getDataInicio());
+                }
+                
+                if(servFunc != null)
+                {
+                    servico.setFuncionario(servFunc);
+                    servFunc.addServico(servico.getDataInicio(), servico);
+                }
+                else
+                    System.out.println("Nenhum médico encontrado para a consulta!");
             }
             else if(servico instanceof Exame)
             {
@@ -141,6 +162,27 @@ public class Clinica
         
         if(logFileHelp.writeFile(filePath, funcionarioList))
             System.out.println("Cancelamentos da clínica salvos com sucesso!");
+    }
+    
+    /**
+     * Filtra a lista de todos os funcionários de acordo com a classe do filtro
+     * 
+     * @param filter Classe do tipo de funcionário buscado
+     * @return Lista de funcionários filtrada pelo tipo
+     */
+    private ArrayList<Funcionario> filterFuncionarioList(Class filter)
+    {
+        ArrayList<Funcionario> filterList = new ArrayList<Funcionario>();
+        
+        for(Funcionario f : funcionarioList) // Percorro a lista de funcionários
+        {
+            if(f.getClass().isAssignableFrom(filter)) // Verifico se a classe do funcionário confere com a do filtro
+            {
+                filterList.add(f);
+            }
+        }
+        
+        return filterList;
     }
     
     /**
