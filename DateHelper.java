@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.Calendar;
@@ -87,12 +88,24 @@ public class DateHelper
         return cal.getTime();
     }
     
-    public int getMinutes(Date date)
+    public static String getDate(Date date)
+    {
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        return dateFormat.format(date);
+    }
+    
+    public static String getTime(Date date)
+    {
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm");
+        return dateFormat.format(date);
+    }
+    
+    /*public int getMinutes(Date date)
     {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
         return cal.get(Calendar.MINUTE);
-    }
+    }*/
     
     public boolean timeFits(Date begin, Date end, int minutes){
         if(begin.before(end)){

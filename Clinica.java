@@ -48,53 +48,34 @@ public class Clinica
     {
         InputFileHelper fileHelp = new InputFileHelper();
         
-        ArrayList<Servico> servicoList = fileHelp.readFile(filePath);
-        
-        for(Servico servico : servicoList)
+        try
         {
-            if(servico instanceof Consulta)
+            ArrayList<Servico> servicoList = fileHelp.readFile(filePath);
+            
+            for(Servico service : servicoList)
             {
-                Funcionario servFunc = null;
-                
-                ArrayList<Funcionario> medicoList = this.filterFuncionarioList(Medico.class);
-                
-                for(Funcionario func : medicoList)
-                {
-                    ArrayList<Servico> servicoListByPaciente = func.findAllServicoByPaciente(servico.getPaciente());
-                    
-                    // Médicos só fazem consultas, se encontrou algo, é porque já tenho consultas marcadas para este médico e este paciente
-                    if(servicoListByPaciente != null) 
-                    {
-                        servFunc = func;
-                        break;
-                    }
-                }
-
-                if(servFunc == null)
-                {
-                    servFunc = this.getMedicoMinServicoByAgenda(servico.getDataInicio());
-                }
+                Funcionario servFunc = this.selectFuncionarioToService(service);
                 
                 if(servFunc != null)
                 {
-                    servico.setFuncionario(servFunc);
-                    servFunc.addServico(servico.getDataInicio(), servico);
+                    try
+                    {
+                        service.setFuncionario(servFunc);
+                        servFunc.addServico(service.getDataInicio(), service);
+                    }
+                    catch(AgendaException ex)
+                    {
+                        System.out.println(ex.getMessage());
+                    }
                 }
                 else
-                    System.out.println("Nenhum médico encontrado para a consulta!");
-            }
-            else if(servico instanceof Exame)
-            {
-                Tecnico tecnico = this.getTecnicoMinServicoByAgenda(servico.getDataInicio());
-                
-                if(tecnico != null)
-                {
-                    servico.setFuncionario(tecnico);
-                    tecnico.addServico(servico.getDataInicio(), servico);
+                    System.out.println("Nenhum funcionário disponível para o serviço!");
                 }
-            }
         }
-                
+        catch(ReflectionException ex)
+        {
+            System.out.println(ex.getMessage());
+        }     
     }
 
     /**
@@ -103,9 +84,9 @@ public class Clinica
      * @param date Data da agenda
      * @return Médico com a menor quantidade de serviços de uma agenda
      */
-    public Medico getMedicoMinServicoByAgenda(Date date)
+    public Medico getMedicoMinServico(Date date)
     {
-        return (Medico)this.getFuncionarioMinServicoByAgenda(date, Medico.class);
+        return (Medico)this.getFuncionarioMinServico(date, filterFuncionarioList(Medico.class));
     }
     
     /**
@@ -114,9 +95,9 @@ public class Clinica
      * @param date Data da agenda
      * @return Técnico com a menor quantidade de serviços de uma agenda
      */
-    public Tecnico getTecnicoMinServicoByAgenda(Date date)
+    public Tecnico getTecnicoMinServico(Date date)
     {
-        return (Tecnico)this.getFuncionarioMinServicoByAgenda(date, Tecnico.class);
+        return (Tecnico)this.getFuncionarioMinServico(date, filterFuncionarioList(Tecnico.class));
     }
     
     /**
@@ -164,6 +145,56 @@ public class Clinica
             System.out.println("Cancelamentos da clínica salvos com sucesso!");
     }
     
+    private Funcionario selectFuncionarioToService(Servico service)
+    {
+        Class filter = null;
+        ArrayList<Funcionario> funcionarioLivreList = new ArrayList<Funcionario>();
+        
+        if(service instanceof Consulta)
+            filter = Medico.class;
+        else if(service instanceof Exame)
+            filter = Tecnico.class;
+        
+        ArrayList<Funcionario> filtredFuncionarioList = this.filterFuncionarioList(filter);
+        
+        if(service instanceof Consulta)
+        {
+            // Se for uma consulta, preciso encontrar o médico da consulta inicial
+            for(Funcionario f : filtredFuncionarioList)
+            {
+                if(((Medico)f).isReturn(service)) // Verifico se é uma consulta de retorno para algum médico
+                    return f;
+            }
+        }
+
+        for(Funcionario f : filtredFuncionarioList) // Percorro a lista filtrada de funcionários para decidir quem tem horários disponíveis
+        {
+            Agenda agendaFunc = f.findAgenda(service.getDataInicio());
+            
+            if(agendaFunc == null) // O funcionário não tem nenhum serviço para este dia, logo, pode ser ele
+                funcionarioLivreList.add(f);
+            else
+            {
+                for(Servico s : agendaFunc.getServicoList())
+                {
+                    if(!s.getDataInicio().equals(service.getDataInicio())) // Funcionário está com o horário livre
+                        funcionarioLivreList.add(f);
+                }
+            }
+        }
+        
+        if(funcionarioLivreList.size() == 1)
+        {
+            // Se eu só tenho um funcionário com esse horário livre, retorno ele
+            return funcionarioLivreList.get(0);
+        }
+        else
+        {
+            // Preciso definir quem tem a menor quantidade de serviços para o dia
+            return this.getFuncionarioMinServico(service.getDataInicio(), funcionarioLivreList);
+        }
+    }
+    
     /**
      * Filtra a lista de todos os funcionários de acordo com a classe do filtro
      * 
@@ -176,7 +207,7 @@ public class Clinica
         
         for(Funcionario f : funcionarioList) // Percorro a lista de funcionários
         {
-            if(f.getClass().isAssignableFrom(filter)) // Verifico se a classe do funcionário confere com a do filtro
+            if(f.getClass().isAssignableFrom(filter)) // Verifico se o funcionário é do tipo do funcionário desejado
             {
                 filterList.add(f);
             }
@@ -192,22 +223,19 @@ public class Clinica
      * @param filter Classe do tipo de funcionário buscado
      * @return Funcionário com a menor quantidade de serviços para uma dada agenda
      */
-    private Funcionario getFuncionarioMinServicoByAgenda(Date date, Class filter)
+    private Funcionario getFuncionarioMinServico(Date date, ArrayList<Funcionario> funcList)
     {
         Funcionario min = null;
         
-        for(Funcionario f : funcionarioList) // Percorro a lista de funcionários
+        for(Funcionario f : funcList) // Percorro a lista de funcionários
         {
-            if(f.getClass().isAssignableFrom(filter)) // Verifico se a classe do funcionário confere com a do filtro
+            if(min != null)
             {
-                if(min != null)
-                {
-                    if(f.getServicoListCount(date) < min.getServicoListCount(date)) // Verifico a quantidade de serviços
-                        min = f;
-                }
-                else
+                if(f.getServicoListCount(date) < min.getServicoListCount(date)) // Verifico a quantidade de serviços
                     min = f;
             }
+            else
+                min = f;
         }
         
         return min;

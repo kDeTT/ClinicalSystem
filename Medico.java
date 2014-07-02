@@ -19,16 +19,17 @@ public class Medico extends Funcionario
     {
         if(servico instanceof Consulta) // Verifico se o serviço é do tipo Consulta
         {
-            servico = isReturn(servico); // Se for, verifico se é uma consulta de Retorno
+            if(isReturn(servico)) // Verifico se é uma consulta de Retorno
+                servico = new Retorno((Medico)servico.getFuncionario(), servico.getPaciente(), servico.getDataInicio());
         }
 
         return super.addServico(data, servico);
     }
     
-    private Servico isReturn(Servico servico)
+    public boolean isReturn(Servico servico)
     {
         if(servico == null)
-            return null;
+            return false;
             
         for(Agenda agenda : this.getAgendaList())
         {
@@ -44,13 +45,13 @@ public class Medico extends Funcionario
                     {
                         if(dateHelper.isInRangeBefore(servico.getDataInicio(), s.getDataInicio(), 20))
                         {
-                            return new Retorno((Medico)servico.getFuncionario(), servico.getPaciente(), servico.getDataInicio());
+                            return true;
                         }
                     }
                 }
             }
         }
         
-        return servico;
+        return false;
     }
 }

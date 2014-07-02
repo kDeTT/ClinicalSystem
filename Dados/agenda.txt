@@ -1,18 +1,41 @@
-Wed Jul 23 16:00:00 BRT 2014
+Dia 23/07/2014
+
+CONSULTA
+Luis
+30
+Inicial
+Sandra
+15:00
+
+CONSULTA
+João
+65
+Inicial
+André
+15:00
+
+Dia 26/11/2014
+
+CONSULTA
+João
+50
+Inicial
+Sandra
+15:00
+
+CONSULTA
+Carlos
+30
+Inicial
+André
+16:00
+
+Dia 23/11/2014
 
 CONSULTA
 Carlos
 30
 Inicial
 Sandra
-Wed Jul 23 16:00:00 BRT 2014
-
-Sat Jul 26 16:00:00 BRT 2014
-
-CONSULTA
-Carlos
-30
-Inicial
-Sandra
-Sat Jul 26 16:00:00 BRT 2014
+16:00
 

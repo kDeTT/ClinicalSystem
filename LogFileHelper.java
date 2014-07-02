@@ -42,7 +42,8 @@ public class LogFileHelper extends FileHelper
                     buffer.write(appendLine(service.getPaciente().getNome(), 1)); // Nome do paciente
                     buffer.write(appendLine(String.valueOf(service.getPaciente().getIdade()), 1)); // Idade do paciente
                     buffer.write(appendLine(service.getClass().getName(), 1)); // Tipo de serviço
-                    buffer.write(appendLine(service.getDataInicio().toString(), 2)); // Data inicial do serviço
+                    buffer.write(appendLine(DateHelper.getDate(service.getDataInicio()), 1)); // Data inicial do serviço
+                    buffer.write(appendLine(DateHelper.getTime(service.getDataInicio()), 2)); // Data inicial do serviço
                 }
             
                 buffer.flush();

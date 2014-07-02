@@ -4,5 +4,5 @@ comment0.target=Medico(java.lang.String)
 comment1.params=data\ servico
 comment1.target=boolean\ addServico(java.util.Date,\ Servico)
 comment2.params=servico
-comment2.target=Servico\ isReturn(Servico)
+comment2.target=boolean\ isReturn(Servico)
 numComments=3

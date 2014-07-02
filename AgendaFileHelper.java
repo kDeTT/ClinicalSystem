@@ -52,7 +52,7 @@ public class AgendaFileHelper extends FileHelper
                 // Percorro a lista das agendas filtradas
                 for(Agenda agenda : filtredAgendaList)
                 {
-                    buffer.write(appendLine(String.valueOf(agenda.getData()), 2)); // Adiciono a data da agenda no arquivo
+                    buffer.write(appendLine(String.format("Dia %s", DateHelper.getDate(agenda.getData())), 2)); // Adiciono a data da agenda no arquivo
                     ArrayList<Servico> servicoList = agenda.getServicoList(); // Pego a lista de serviços da agenda
                     
                     for(Servico servico : servicoList) // Percorro a lista de serviços
@@ -68,7 +68,7 @@ public class AgendaFileHelper extends FileHelper
                         buffer.write(appendLine(String.valueOf(servico.getPaciente().getIdade()), 1)); // Idade do paciente
                         buffer.write(appendLine(servico.getClass().getName(), 1)); // Tipo de serviço
                         buffer.write(appendLine(servico.getFuncionario().getNome(), 1)); // Nome do funcionário
-                        buffer.write(appendLine(servico.getDataInicio().toString(), 2)); // Data de início do serviço
+                        buffer.write(appendLine(DateHelper.getTime(servico.getDataInicio()), 2)); // Data de início do serviço
                     }
                 }
             
