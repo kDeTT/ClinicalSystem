@@ -168,4 +168,12 @@ public class DateHelper
         
         return false;
     }
+    
+    public boolean isBetween(Date inicio, Date fim, Date data){
+        if(data.after(inicio) || data.equals(inicio))
+            if(data.before(fim) || data.equals(fim))
+                return true;
+                
+        return false;
+    }
 }

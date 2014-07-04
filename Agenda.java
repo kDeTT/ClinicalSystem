@@ -1,4 +1,7 @@
 import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
+import Exceptions.*;
 
 /**
  * Write a description of class Agendamento here.
@@ -6,10 +9,6 @@ import java.util.Date;
  * @author (your name) 
  * @version (a version number or a date)
  */
-
-import java.util.ArrayList;
-import Exceptions.*;
-
 public class Agenda
 {
     private Date data;
@@ -135,9 +134,23 @@ public class Agenda
     
     private Date findWindow(int duracao)
     {
-        Date previousEnd = expediente[0];
-        Date nextBegin;
+        Date window;
         
+        //Ordena a lista de serviços de acordo com a data de início 
+        sort();
+        
+        //Procura a janela no expediente da manhã
+        window = findWindow(expediente[0], expediente[1], duracao);
+        
+        if(window != null)
+            return window;
+            
+        //Procura a janela no exédiente da tarde
+        window = findWindow(expediente[2], expediente[3], duracao);
+        
+        return window;
+        
+        /*
         while(true)
         {
             Servico closestService = null;
@@ -193,8 +206,48 @@ public class Agenda
             
             nextBegin = null;
         }
+        */
+    }
+    
+    private Date findWindow(Date inicio, Date fim, int duracao){
+        //Cria uma lista com os serviços que estão entre o inicio e o fim
+        List<Servico> servicos = servicosSubList(inicio, fim);
+        int tamanho = servicos.size();
         
-        return previousEnd;
+        //Se não houver serviços checa se cabe entre o inicio e o fim
+        if(servicos.size() == 0)
+            if(dateHelper.timeFits(inicio, fim, duracao))
+                return inicio;
+        
+        //Checa se cabe entre o inicio do intervalo e o começo primeiro serviço
+        if(dateHelper.timeFits(inicio, servicos.get(0).getDataInicio(), duracao) && isComercialTime(inicio, servicos.get(0).getDataInicio()))
+            return inicio;
+        
+        //Checa se cabe entre os serviços
+        for(int i = 0; i < tamanho - 1; i ++){
+            Servico s1 = servicos.get(i);
+            Servico s2 = servicos.get(i + 1);
+            
+            if(dateHelper.timeFits(s1.getDataFim(), s2.getDataInicio(), duracao) && isComercialTime(s1.getDataFim(), s2.getDataInicio()))
+                return s1.getDataFim();
+        }
+        
+        //Checa se cabe entre o fim do último serviço e o fim do intervalo
+        if(dateHelper.timeFits(servicos.get(tamanho - 1).getDataFim(), fim, duracao) && isComercialTime(servicos.get(tamanho - 1).getDataFim(), fim))
+            return servicos.get(tamanho - 1).getDataFim();
+            
+        return null;
+    }
+    
+    private List<Servico> servicosSubList(Date inicio, Date fim){
+        ArrayList<Servico> subList = new ArrayList<Servico>();
+        
+        for(Servico s : servicoList){
+            if(dateHelper.isBetween(inicio, fim, s.getDataInicio()))
+                subList.add(s);
+        }
+        
+        return subList;
     }
     
     private boolean isConflicted(Servico servico)
@@ -260,18 +313,85 @@ public class Agenda
     
     public boolean isComercialTime(Date inicio, Date fim)
     {
-        if(inicio.after(expediente[0]) || inicio.equals(expediente[0]))
-        {
-            if(fim.before(expediente[1]) || inicio.equals(expediente[1]))
+        if(dateHelper.isBetween(expediente[0], expediente[1], inicio))
+            if(dateHelper.isBetween(expediente[0], expediente[1], fim))
                 return true;
-        }
                 
-        if(inicio.after(expediente[2]) || inicio.equals(expediente[2]))
-        {
-            if(fim.before(expediente[3]) || inicio.equals(expediente[3]))
+        if(dateHelper.isBetween(expediente[2], expediente[3], inicio))
+            if(dateHelper.isBetween(expediente[2], expediente[3], fim))
                 return true;
-        }
                 
         return false;
+    }
+    
+    public void sort(){
+        servicoList = (ArrayList) sort(servicoList);
+    }
+    
+    private List<Servico> sort(List<Servico> servico) {
+        if (servico == null) {
+            return null;
+        }
+        if (servico.size() <= 1) {
+            return servico;
+        }
+
+        final int TAM = servico.size();
+        final int HALF = TAM / 2;
+
+        List<Servico> l1 = sort(servico.subList(0, HALF));
+        List<Servico> l2 = sort(servico.subList(HALF, TAM));
+
+        List<Servico> merge = merge(l1, l2);
+
+        return merge;
+    }
+
+    private List<Servico> merge(List<Servico> vetor1, List<Servico> vetor2) {
+        if (vetor1 == null || vetor1.isEmpty()) {
+            return vetor2;
+        }
+
+        if (vetor2 == null || vetor2.isEmpty()) {
+            return vetor1;
+        }
+
+        //Iterador dos vetores
+        int it1 = 0;
+        int it2 = 0;
+        //Tamanho do vetor
+        final int TAM1 = vetor1.size();
+        final int TAM2 = vetor2.size();
+        //Lista que será a união dos dois vetores
+        ArrayList<Servico> merged = new ArrayList<>();
+        //Servico a ser inserida
+        Servico sv1;
+        Servico sv2;
+
+        while (it1 < TAM1 && it2 < TAM2) {
+            sv1 = vetor1.get(it1);
+            sv2 = vetor2.get(it2);
+            if (sv2.getDataInicio().before(sv1.getDataInicio())) {
+                merged.add(sv2);
+                it2++;
+            } else {
+                merged.add(sv1);
+                it1++;
+            }
+        }
+
+        while (it1 < TAM1) {
+            sv1 = vetor1.get(it1);
+            merged.add(sv1);
+            it1++;
+        }
+
+        while (it2 < TAM2) {
+            sv2 = vetor2.get(it2);
+            merged.add(sv2);
+            it2++;
+        }
+
+        return merged;
     }
 }
