@@ -182,10 +182,35 @@ public class DateHelper
     }
     
     public boolean isBetween(Date inicio, Date fim, Date data){
-        if(data.after(inicio) || data.equals(inicio))
-            if(data.before(fim) || data.equals(fim))
+        if(data.after(inicio) || equals(data,inicio))
+            if(data.before(fim) || equals(data,fim))
                 return true;
                 
         return false;
+    }
+    
+    public boolean equals(Date d1, Date d2){
+        Calendar a = Calendar.getInstance();
+        Calendar b = Calendar.getInstance();
+        
+        a.setTime(d1);
+        b.setTime(d2);
+        
+        if(a.get(Calendar.MINUTE) != b.get(Calendar.MINUTE))
+            return false;
+            
+        if(a.get(Calendar.HOUR) != b.get(Calendar.HOUR))
+            return false;
+            
+        if(a.get(Calendar.DAY_OF_MONTH) != b.get(Calendar.DAY_OF_MONTH))
+            return false;
+            
+        if(a.get(Calendar.MONTH) != b.get(Calendar.MONTH))
+            return false;
+            
+        if(a.get(Calendar.YEAR) != b.get(Calendar.YEAR))
+            return false;
+        
+        return true;
     }
 }
