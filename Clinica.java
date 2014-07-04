@@ -190,8 +190,16 @@ public class Clinica
         }
         else
         {
-            // Preciso definir quem tem a menor quantidade de serviços para o dia
-            return this.getFuncionarioMinServico(service.getDataInicio(), funcionarioLivreList);
+            if(funcionarioLivreList.size() > 1)
+            {
+                // Preciso definir quem tem a menor quantidade de serviços para o dia
+                return this.getFuncionarioMinServico(service.getDataInicio(), funcionarioLivreList);
+            }
+            else
+            {
+                // Nenhum funcionário tem o horário livre, escolho um com menor quantidade de serviços para realocar o horário
+                return this.getFuncionarioMinServico(service.getDataInicio(), filtredFuncionarioList);
+            }
         }
     }
     
@@ -212,7 +220,7 @@ public class Clinica
                 filterList.add(f);
             }
         }
-        
+
         return filterList;
     }
     
@@ -225,16 +233,13 @@ public class Clinica
      */
     private Funcionario getFuncionarioMinServico(Date date, ArrayList<Funcionario> funcList)
     {
-        Funcionario min = null;
+        System.out.println("Count: " + funcList.size());
+        
+        Funcionario min = (funcList.size() > 0) ? funcList.get(0) : null;
         
         for(Funcionario f : funcList) // Percorro a lista de funcionários
         {
-            if(min != null)
-            {
-                if(f.getServicoListCount(date) < min.getServicoListCount(date)) // Verifico a quantidade de serviços
-                    min = f;
-            }
-            else
+            if(f.getServicoListCount(date) < min.getServicoListCount(date)) // Verifico a quantidade de serviços
                 min = f;
         }
         
