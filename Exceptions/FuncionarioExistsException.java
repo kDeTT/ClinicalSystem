@@ -11,6 +11,6 @@ public class FuncionarioExistsException extends FuncionarioException
 {
     public FuncionarioExistsException(String funcName)
     {
-        super(String.format("Erro ao cadastrar o funcionário(a): %s já está cadastrado(a)!", funcName));
+        super(String.format("FuncionarioExistsException > %s já está cadastrado(a)!", funcName));
     }
 }

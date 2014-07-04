@@ -11,6 +11,6 @@ public class OutdatedException extends AgendaException
 {
     public OutdatedException()
     {
-        super("Erro ao agendar: Não é possível fazer um agendamento para datas anteriores as atuais!");
+        super("OutdatedException > Não é possível fazer um agendamento para datas anteriores as atuais!");
     }
 }
