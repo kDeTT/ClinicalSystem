@@ -11,6 +11,6 @@ public class PriorityException extends AgendaException
 {
     public PriorityException()
     {
-        super("Erro ao agendar: Um idoso não tem prioridade sobre outro idoso!");
+        super("Agendamento > Um idoso não tem prioridade sobre outro idoso!");
     }
 }
