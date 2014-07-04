@@ -212,19 +212,21 @@ public class Agenda
     private Date findWindow(Date inicio, Date fim, int duracao){
         //Cria uma lista com os serviços que estão entre o inicio e o fim
         List<Servico> servicos = servicosSubList(inicio, fim);
-        int tamanho = servicos.size();
+        final int TAM = servicos.size();
         
         //Se não houver serviços checa se cabe entre o inicio e o fim
-        if(servicos.size() == 0)
+        if(servicos.isEmpty())
             if(dateHelper.timeFits(inicio, fim, duracao))
                 return inicio;
+            else
+                return null;
         
         //Checa se cabe entre o inicio do intervalo e o começo primeiro serviço
         if(dateHelper.timeFits(inicio, servicos.get(0).getDataInicio(), duracao) && isComercialTime(inicio, servicos.get(0).getDataInicio()))
             return inicio;
-        
+            
         //Checa se cabe entre os serviços
-        for(int i = 0; i < tamanho - 1; i ++){
+        for(int i = 0; i < TAM - 1; i ++){
             Servico s1 = servicos.get(i);
             Servico s2 = servicos.get(i + 1);
             
@@ -233,8 +235,8 @@ public class Agenda
         }
         
         //Checa se cabe entre o fim do último serviço e o fim do intervalo
-        if(dateHelper.timeFits(servicos.get(tamanho - 1).getDataFim(), fim, duracao) && isComercialTime(servicos.get(tamanho - 1).getDataFim(), fim))
-            return servicos.get(tamanho - 1).getDataFim();
+        if(dateHelper.timeFits(servicos.get(TAM - 1).getDataFim(), fim, duracao) && isComercialTime(servicos.get(TAM - 1).getDataFim(), fim))
+            return servicos.get(TAM - 1).getDataFim();
             
         return null;
     }

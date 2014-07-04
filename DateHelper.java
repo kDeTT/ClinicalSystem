@@ -33,6 +33,19 @@ public class DateHelper
         return null;
     }
     
+    public String dataToString(Date data){
+        if(data == null)
+            return null;
+        
+        String dt;
+        String format = "dd/MM/yyyy,HH:mm";
+        SimpleDateFormat dt2 = new SimpleDateFormat(format);
+        
+        dt = dt2.format(data);
+        
+        return dt;
+    }
+    
     /** Método que retorna a data atual
      * 
      * @return String nowDate; 
@@ -114,8 +127,7 @@ public class DateHelper
             b.setTime(begin);
             e.setTime(end);
             
-            int min = (e.get(Calendar.HOUR) - b.get(Calendar.HOUR)) * 60;
-            min = min + (e.get(Calendar.MINUTE) - b.get(Calendar.MINUTE));
+            int min = (int)((end.getTime()/60000) - (begin.getTime()/60000));
             
             if(min > minutes){
                 return true;
