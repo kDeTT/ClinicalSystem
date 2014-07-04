@@ -11,6 +11,6 @@ public class ReflectionInstantiationException extends ReflectionException
 {
     public ReflectionInstantiationException(String errorMsg)
     {
-        super(String.format("Reflection > %s", errorMsg));
+        super(String.format("ReflectionInstantiationException > %s", errorMsg));
     }
 }

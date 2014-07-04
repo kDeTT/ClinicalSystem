@@ -11,6 +11,6 @@ public class ReflectionClassNotFoundException extends ReflectionException
 {
     public ReflectionClassNotFoundException(String className)
     {
-        super(String.format("Reflection > Não foi possível instanciar a classe %s", className));
+        super(String.format("Reflection > Não foi possível instanciar aClasse: %s", className));
     }
 }

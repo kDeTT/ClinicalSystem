@@ -11,6 +11,6 @@ public class OutOfBusinessException extends AgendaException
 {
     public OutOfBusinessException()
     {
-        super("Agendamento > Não é possível fazer um agendamento para horários não comerciais!");
+        super("OutOfBusinessException > Não é possível fazer um agendamento para horários não comerciais!");
     }
 }
