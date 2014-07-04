@@ -233,8 +233,6 @@ public class Clinica
      */
     private Funcionario getFuncionarioMinServico(Date date, ArrayList<Funcionario> funcList)
     {
-        System.out.println("Count: " + funcList.size());
-        
         Funcionario min = (funcList.size() > 0) ? funcList.get(0) : null;
         
         for(Funcionario f : funcList) // Percorro a lista de funcionários

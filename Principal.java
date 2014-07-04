@@ -25,7 +25,7 @@ public class Principal
         }
         catch(Exception ex)
         {
-            System.out.println(ex.getMessage());
+            System.out.println(String.format("Erro no sistema: %s", ex.getMessage()));
         }
     }
 }

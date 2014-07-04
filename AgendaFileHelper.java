@@ -29,7 +29,7 @@ public class AgendaFileHelper extends FileHelper
             {
                 // Lista de agendas filtradas
                 ArrayList<Agenda> filtredAgendaList = new ArrayList<Agenda>();
-            
+                
                 for(int i = 0; i < funcionarioList.size(); i++) // Percorro a lista de funcionários
                 {
                     // Pego a lista de agendas do funcionário
@@ -48,7 +48,7 @@ public class AgendaFileHelper extends FileHelper
                         // Se já contém, eu não preciso fazer nada, porque todos os serviços já foram filtrados para aquela agenda
                     }
                 }
-                
+
                 // Percorro a lista das agendas filtradas
                 for(Agenda agenda : filtredAgendaList)
                 {
