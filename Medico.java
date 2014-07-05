@@ -43,7 +43,7 @@ public class Medico extends Funcionario
                 {
                     if(s instanceof Inicial)
                     {
-                        if(dateHelper.isInRangeBefore(servico.getDataInicio(), s.getDataInicio(), 20))
+                        if(dateHelper.isInRangeBefore(s.getDataInicio(), servico.getDataInicio(), 20))
                         {
                             return true;
                         }
