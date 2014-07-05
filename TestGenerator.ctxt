@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=filePath\ length
+comment0.target=boolean\ writeFile(java.lang.String,\ int)
+numComments=1

@@ -28,7 +28,7 @@ public class LogFileHelper extends FileHelper
                 buffer.write(appendLine("Cancelamentos", 2)); // Adiciona título ao arquivo de saída
                 
                 // Pega a lista de todos os serviços cancelados no sistema
-                ArrayList<Servico> cancelamentoList = this.getAllCancelamentoList(funcionarioList);
+                ArrayList<Servico> cancelamentoList = (ArrayList<Servico>)MergeSort.sort(this.getAllCancelamentoList(funcionarioList));
                 
                 for(Servico service : cancelamentoList)
                 {

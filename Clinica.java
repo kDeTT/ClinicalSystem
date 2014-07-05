@@ -116,7 +116,7 @@ public class Clinica
      * @param filePath Caminho do arquivo de agendamentos
      * @throws AgendaException
      */
-    public void saveAgenda(String filePath) throws AgendaException
+    public void saveAgenda(String filePath)
     {
         AgendaFileHelper agendaFileHelp = new AgendaFileHelper();
         
@@ -163,7 +163,9 @@ public class Clinica
             for(Funcionario f : filtredFuncionarioList)
             {
                 if(((Medico)f).isReturn(service)) // Verifico se é uma consulta de retorno para algum médico
+                {
                     return f;
+                }
             }
         }
 
@@ -172,14 +174,27 @@ public class Clinica
             Agenda agendaFunc = f.findAgenda(service.getDataInicio());
             
             if(agendaFunc == null) // O funcionário não tem nenhum serviço para este dia, logo, pode ser ele
+            {
                 funcionarioLivreList.add(f);
+            }
             else
             {
+                boolean isEmptyTime = true;
+                
                 for(Servico s : agendaFunc.getServicoList())
                 {
-                    if(!s.getDataInicio().equals(service.getDataInicio())) // Funcionário está com o horário livre
-                        funcionarioLivreList.add(f);
+                    if(s.getDataInicio().equals(service.getDataInicio())) // Funcionário não está com o horário livre
+                    {
+                        isEmptyTime = false;
+                        break;
+                    }
                 }
+                
+                if(!isEmptyTime)
+                {
+                    funcionarioLivreList.add(f);
+                }
+                
             }
         }
         

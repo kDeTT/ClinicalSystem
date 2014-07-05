@@ -20,8 +20,7 @@ public class AgendaFileHelper extends FileHelper
      * @param funcionarioList Lista de funcionários do sistema
      * @return (true) Se o arquivo é salvo com sucesso; (false) Se o processo falha
      */
-    // TODO - Devo tratar essas exceções e não lançar para o nível acima!
-    public boolean writeFile(String filePath, ArrayList<Funcionario> funcionarioList) throws AgendaException
+    public boolean writeFile(String filePath, ArrayList<Funcionario> funcionarioList)
     {
         try
         {
@@ -48,7 +47,7 @@ public class AgendaFileHelper extends FileHelper
                         // Se já contém, eu não preciso fazer nada, porque todos os serviços já foram filtrados para aquela agenda
                     }
                 }
-
+                
                 // Percorro a lista das agendas filtradas
                 for(Agenda agenda : filtredAgendaList)
                 {
@@ -93,7 +92,7 @@ public class AgendaFileHelper extends FileHelper
      * @return Agenda filtrada
      * @throws AgendaException
      */
-    private Agenda filterAgenda(Date data, ArrayList<Funcionario> funcionarioList) throws AgendaException
+    private Agenda filterAgenda(Date data, ArrayList<Funcionario> funcionarioList)
     {
         Agenda filtredAgenda = new Agenda(data); // Crio uma nova agenda
         
@@ -107,7 +106,14 @@ public class AgendaFileHelper extends FileHelper
                 
                 for(Servico servico : servicoList) // Adiciono todos os serviços para a agenda filtrada
                 {
-                    filtredAgenda.addServico(servico);
+                    try
+                    {
+                        filtredAgenda.addServico(servico);
+                    }
+                    catch(AgendaException ex)
+                    {
+                        System.out.println(ex.getMessage());
+                    }
                 }
             }
         }
