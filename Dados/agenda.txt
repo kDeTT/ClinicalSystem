@@ -8,30 +8,32 @@ Sandra
 08:00
 
 CONSULTA
-Carlos
-50
-Inicial
-Sandra
-09:00
-
-CONSULTA
-Carlos
-50
-Inicial
-Sandra
-09:00
-
-CONSULTA
 João
 30
 Inicial
 Sandra
-15:00
+08:30
 
 CONSULTA
 Ronaldo
 56
 Inicial
 Sandra
-09:30
+09:00
+
+CONSULTA
+José
+30
+Inicial
+Sandra
+15:00
+
+Dia 26/07/2014
+
+CONSULTA
+José
+30
+Inicial
+Sandra
+15:00
 

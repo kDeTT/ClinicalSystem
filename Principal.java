@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Classe principal do sistema
  * 
  * @author Luis Augusto

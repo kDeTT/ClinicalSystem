@@ -53,7 +53,7 @@ public class AgendaFileHelper extends FileHelper
                 for(Agenda agenda : filtredAgendaList)
                 {
                     buffer.write(appendLine(String.format("Dia %s", DateHelper.getDate(agenda.getData())), 2)); // Adiciono a data da agenda no arquivo
-                    ArrayList<Servico> servicoList = agenda.getServicoList(); // Pego a lista de serviços da agenda
+                    ArrayList<Servico> servicoList = (ArrayList<Servico>)MergeSort.sort(agenda.getServicoList()); // Pego a lista de serviços da agenda
                     
                     for(Servico servico : servicoList) // Percorro a lista de serviços
                     {
