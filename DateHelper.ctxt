@@ -7,6 +7,8 @@ comment10.params=date\ inicio\ range
 comment10.target=boolean\ isInRangeBefore(java.util.Date,\ java.util.Date,\ int)
 comment11.params=inicio\ fim\ data
 comment11.target=boolean\ isBetween(java.util.Date,\ java.util.Date,\ java.util.Date)
+comment12.params=d1\ d2
+comment12.target=boolean\ equals(java.util.Date,\ java.util.Date)
 comment2.params=
 comment2.target=java.util.Date\ getNow()
 comment2.text=\ M\u00E9todo\ que\ retorna\ a\ data\ atual\r\n\ \r\n\ @return\ String\ nowDate;\ \r\n
@@ -28,4 +30,4 @@ comment8.target=boolean\ timeFits(java.util.Date,\ java.util.Date,\ int)
 comment8.text=public\ int\ getMinutes(Date\ date)\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ Calendar\ cal\ \=\ Calendar.getInstance();\r\n\ \ \ \ \ \ \ \ cal.setTime(date);\r\n\ \ \ \ \ \ \ \ return\ cal.get(Calendar.MINUTE);\r\n}
 comment9.params=date
 comment9.target=java.util.Date[]\ comercialTime(java.util.Date)
-numComments=12
+numComments=13
