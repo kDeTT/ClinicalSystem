@@ -41,10 +41,8 @@ public class Clinica
      * Faz o agendamento de serviços a partir de um arquivo de entrada
      * 
      * @param filePath Caminho do arquivo de entrada
-     * @throws AgendaException
-     * @throws ReflectionException
      */
-    public void agendarByFile(String filePath) throws AgendaException, ReflectionException
+    public void agendarByFile(String filePath)
     {
         InputFileHelper fileHelp = new InputFileHelper();
         
@@ -102,10 +100,8 @@ public class Clinica
     
     /**
      * Salva o arquivo de agendamentos da clínica
-     * 
-     * @throws AgendaException
      */
-    public void saveAgenda() throws AgendaException
+    public void saveAgenda()
     {
         this.saveAgenda(AGENDA_FILE_PATH);
     }
@@ -114,7 +110,6 @@ public class Clinica
      * Salva o arquivo de agendamentos da clínica em um caminho fora do caminho padrão do sistema
      * 
      * @param filePath Caminho do arquivo de agendamentos
-     * @throws AgendaException
      */
     public void saveAgenda(String filePath)
     {

@@ -49,7 +49,7 @@ public class MergeSort
         final int TAM2 = vetor2.size();
         //Lista que será a união dos dois vetores
         ArrayList<Servico> merged = new ArrayList<>();
-        //Servico a ser inserida
+        //Servico a ser inserido
         Servico sv1;
         Servico sv2;
 

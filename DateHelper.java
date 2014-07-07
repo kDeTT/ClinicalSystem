@@ -113,13 +113,6 @@ public class DateHelper
         return dateFormat.format(date);
     }
     
-    /*public int getMinutes(Date date)
-    {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        return cal.get(Calendar.MINUTE);
-    }*/
-    
     public boolean timeFits(Date begin, Date end, int minutes){
         if(begin.before(end)){
             Calendar b = Calendar.getInstance();

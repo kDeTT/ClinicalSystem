@@ -27,7 +27,6 @@ comment7.params=date
 comment7.target=java.lang.String\ getTime(java.util.Date)
 comment8.params=begin\ end\ minutes
 comment8.target=boolean\ timeFits(java.util.Date,\ java.util.Date,\ int)
-comment8.text=public\ int\ getMinutes(Date\ date)\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ Calendar\ cal\ \=\ Calendar.getInstance();\r\n\ \ \ \ \ \ \ \ cal.setTime(date);\r\n\ \ \ \ \ \ \ \ return\ cal.get(Calendar.MINUTE);\r\n}
 comment9.params=date
 comment9.target=java.util.Date[]\ comercialTime(java.util.Date)
 numComments=13

@@ -90,7 +90,6 @@ public class AgendaFileHelper extends FileHelper
      * @param data Data da agenda a ser filtrada
      * @param funcionarioList Lista de funcionários
      * @return Agenda filtrada
-     * @throws AgendaException
      */
     private Agenda filterAgenda(Date data, ArrayList<Funcionario> funcionarioList)
     {
