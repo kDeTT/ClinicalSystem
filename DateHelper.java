@@ -8,13 +8,23 @@ import java.util.Locale;
 /**
  * Write a description of class DateHelper here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Igor Pires 
+ * @version 1.0
  */
 public class DateHelper
 {
     private Date data;
     
+    /**
+     * Transforma duas Strings no formato "dd/MM/yyyy" e "HH:mm" em um objeto Date
+     *
+     * @param  String date data no formato "dd/MM/yyyy"
+     * @param  String time horário no formato "HH:mm"
+     * 
+     * @return Date   data da união das Strings
+     * 
+     * @throws ParseException() Quando o String não está no devido formato
+     */
     public Date stringToData(String date, String time)
     {
         try{
@@ -33,6 +43,13 @@ public class DateHelper
         return null;
     }
     
+    /**
+     * Transforma uma data em uma String no formato "dd/MM/yyyy,HH:mm"
+     *
+     * @param  Date data a ser formatada
+     * 
+     * @return  String data no formato "dd/MM/yyyy,HH:mm"
+     */
     public String dataToString(Date data){
         if(data == null)
             return null;
@@ -58,6 +75,7 @@ public class DateHelper
     /** Método que compara a data atual com a data do parâmetro
      * 
      * @param date Data a ser comparada com a atual
+     * 
      * @return (true) se a data atual é menor que a data comparada (false) se a data atual é maior que a data comparada
      */
     public boolean compareDate(Date date)
@@ -69,6 +87,7 @@ public class DateHelper
      * 
      * @param date Date a ser comparada com seconDate
      * @param seconDate Date a ser comparada com date
+     * 
      * @return (true) se a 1ª data é igual que a 2ª data comparada (false) se a 1ª data é diferente que a 2ª data comparada
      */
     public boolean compareDay(Date date, Date seconDate)
@@ -90,6 +109,7 @@ public class DateHelper
      * 
      * @param date Data em que será adicionado minutos
      * @param minutes Quantidade de minutos que será adicionado à data
+     * 
      * @return Date newDate 
      */
     public Date addMinutes(Date date, int minutes)
@@ -113,13 +133,16 @@ public class DateHelper
         return dateFormat.format(date);
     }
     
-    /*public int getMinutes(Date date)
-    {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        return cal.get(Calendar.MINUTE);
-    }*/
-    
+    /**
+     * Recebe um intervalo de datas e verifica se entre estas cabe uma dada quantidade inteira de minutos 
+     *
+     * @param  Date begin  início do intervalo
+     * @param  Date end    fim do intervalo
+     * @param  int minutes tempo a ser verificado, em minutos
+     * 
+     * @return  boolean true se houver espaço, false caso contrário.
+     * 
+     */
     public boolean timeFits(Date begin, Date end, int minutes){
         if(begin.before(end)){
             Calendar b = Calendar.getInstance();
@@ -136,6 +159,13 @@ public class DateHelper
         return false;
     }
     
+    /**
+     * Dado um certo dia retorna um vetor de tamanho 4 com a dupla de intervalos do horário comercial do mesmo dia
+     *
+     * @param  Date date dia em que se cria o vetor
+     * 
+     * @return  Date[]   vetor com os intervalos
+     */
     public Date[] comercialTime(Date date)
     {
         int TAM = 4;
@@ -160,6 +190,15 @@ public class DateHelper
         return comercialTime;
     }
     
+    /**
+     * Verifica a partir de uma data se a outra está anteriormente dentro do alcance
+     *
+     * @param  Date data   data a ser verificada
+     * @param  Date inicio data que será usada como referência
+     * @param  int range   alcance que será verificado
+     * 
+     * @return   boolean se a data está anteriormente dentro do alcance
+     */
     public boolean isInRangeBefore(Date date, Date inicio, int range)
     {
         if(date.before(inicio))
@@ -174,13 +213,22 @@ public class DateHelper
                 dias++;  
               }  
               
-              if(dias <= 20)
+              if(dias <= range)
                 return true;
         }
         
         return false;
     }
     
+    /**
+     * Dado um intervalo, é verificado se a data está contida dentre deste intervalo
+     *
+     * @param Date inicio inicio do intervalo
+     * @param Date fim    fim do intervalo
+     * @param Date data   data a ser verificada
+     * 
+     * @return boolean    se a data esta dentro do intervalo
+     */
     public boolean isBetween(Date inicio, Date fim, Date data){
         if(data.after(inicio) || equals(data,inicio))
             if(data.before(fim) || equals(data,fim))
@@ -189,6 +237,14 @@ public class DateHelper
         return false;
     }
     
+    /**
+     * Verifica se uma data é igual a outra ignorando os milisegundos e o fuso horário
+     *
+     * @param  Date d1 primeira data
+     * @param  Date d2 segunda data
+     * 
+     * @return  boolean   true se as datas forem iguais, false caso contrário
+     */
     public boolean equals(Date d1, Date d2){
         Calendar a = Calendar.getInstance();
         Calendar b = Calendar.getInstance();

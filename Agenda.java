@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import Exceptions.*;
 
 /**
- * Write a description of class Agendamento here.
+ * Classe de gerenciamento da Agenda
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Igor Pires
+ * @version 1.0
  */
 public class Agenda
 {
@@ -34,7 +34,17 @@ public class Agenda
         return this.servicoList;
     }
 
-    //TODO eu preciso imprimir em arquivo qual a consulta que foi marcada e/ou desmarcada
+    /**
+     * Método que adiciona o serviço na agenda, fazendo o tratamento de todas as colisões
+     *
+     * @param  Servico servico serviço a ser adicionado
+     * 
+     * @return  boolean        true se o serviço foi adicionado e false caso contrário
+     * 
+     * @throws OutdatedException()  Quando o serviço a ser adicionado é anterior a data atual
+     * @throws OutOfBusinessException()  Quando o serviço a ser adicionado está fora do horário comercial
+     * @throws NoWindowException()  Quando o serviço precisa realocar outros e não há vagas no horário
+     */
     public boolean addServico(Servico servico) throws AgendaException
     {
         if(!dateHelper.compareDate(servico.getDataInicio()))
@@ -73,10 +83,12 @@ public class Agenda
     /**
      * O metodo recebe o servico que precisa ser encaixado na agenda e abre espaço para este serviço
      *
-     * @param  servico Servico que precisa ser encaixado na agenda
+     * @param  servico Servico serviço que precisa ser encaixado na agenda
+     * 
+     * @return boolean         true se foi possível abrir espaço para o serviço e false caso contrário
+     * 
+     * @throws PriorityException() Quando o horário a ser realocado é tabém de um idoso, idosos não possuem vantagem sobre idosos
      */
-    
-    //TODO - Mandar só o serviço que está conflitando ao invés de percorrer a lista de novo
     private boolean delayServicos(Servico servico) throws PriorityException
     {
         for(Servico s : servicoList)
@@ -116,15 +128,17 @@ public class Agenda
         return this.servicoList.add(servico);
     }
     
+     /**
+     * Dado um serviço que precisa ser realocado, procura-se uma janela para este, se encontrado o serviço é realocado, caso contrário ele é cancelado.
+     *
+     * @param  Servico servico serviço a ser realocado
+     */
     private void reallocate(Servico servico)
     {
         Date data = findWindow(servico.getDuracao());
         
         if(data != null)
         {
-            //cancelServico(servico);
-            //servico.setDataInicio(findWindow(servico.getDuracao()));
-            //this.servicoList.add(servico);
             
             servico.setDataInicio(data);
             
@@ -137,6 +151,13 @@ public class Agenda
         }
     }
     
+    /**
+     * Dada uma duração de um serviço procura-se uma "janela" aonde será encaixado o serviço, precorrendo desde o começo do expediente ao final
+     *
+     * @param int  duracao   duração do serviço a ser encaixado
+     * 
+     * @return   Date window  janela no horário aonde caberá o serviço
+     */
     private Date findWindow(int duracao)
     {
         Date window;
@@ -155,65 +176,18 @@ public class Agenda
         
         return window;
         
-        /*
-        while(true)
-        {
-            Servico closestService = null;
-            nextBegin = null;
-            
-            //Procura o servico mais proximo e seta nextBegin
-            for(Servico s : servicoList)
-            {
-                if(s.getDataInicio().after(previousEnd) && s.getStatus())
-                {
-                    if(nextBegin != null)
-                    {
-                        if(s.getDataInicio().before(nextBegin))
-                        {
-                            closestService = s;
-                            nextBegin = s.getDataInicio();
-                        }
-                    } 
-                    else 
-                    {
-                        closestService = s;
-                        nextBegin = s.getDataInicio();
-                    }
-                }
-            }
-            
-            //Se não houver um próximo servico seta o fim do expediente(matutino ou vespertino)
-            if(nextBegin == null)
-            {
-                if(previousEnd.before(expediente[1]))
-                    nextBegin = expediente[1];
-                else
-                    nextBegin = expediente[3];
-            }
-            
-            //Verifica se o servico cabe e se está no horário comercial
-            if(dateHelper.timeFits(previousEnd, nextBegin, duracao) && isComercialTime(previousEnd, nextBegin))
-                break;
-            
-            //Verifica se já passou do limite do expediente, se não, seta a variavel previousEnd
-            if(nextBegin.equals(expediente[1]))
-            {
-                previousEnd = expediente[2];
-            } 
-            else if(nextBegin.equals(expediente[3]))
-            {
-                return null;
-            } 
-            else 
-            {
-                previousEnd = closestService.getDataFim();
-            }
-            
-            nextBegin = null;
-        }
-        */
     }
     
+    /**
+     *  Dada uma duração de um serviço e um intervalo de tempo procura-se uma "janela" 
+     *  aonde será encaixado o serviço, precorrendo desde o começo do expediente ao final
+     *
+     * @param int duracao  duração do serviço a ser encaixado
+     * @param Date inicio  inicio do intervalo
+     * @param Date fim     fim do intervalo
+     * 
+     * @return   Date window  janela no horário aonde caberá o serviço
+     */
     private Date findWindow(Date inicio, Date fim, int duracao){
         //Cria uma lista com os serviços que estão entre o inicio e o fim
         List<Servico> servicos = servicosSubList(inicio, fim);
@@ -246,6 +220,12 @@ public class Agenda
         return null;
     }
     
+    /**
+     * Cria uma lista dos serviços da agenda entre o intervalo de tempo dado
+     *
+     * @param  Date inicio inicio do intervalo
+     * @param  Date fim    fim do intervalo
+     */
     private List<Servico> servicosSubList(Date inicio, Date fim){
         ArrayList<Servico> subList = new ArrayList<Servico>();
         
@@ -257,6 +237,13 @@ public class Agenda
         return subList;
     }
     
+    /**
+     * Dado um serviço, verifica-se se este causará conflito com outros serviços
+     *
+     * @param  Servico servico serviço que será verificado
+     * 
+     * @return boolean         true se houver algum conflito, false caso contrário
+     */
     private boolean isConflicted(Servico servico)
     {
         for(Servico s : servicoList)
@@ -287,6 +274,12 @@ public class Agenda
         return false;
     }
     
+    /**
+     * Cancela um serviço e mostra na tela qual serviço foi cancelado
+     *
+     * @param  Servico servico
+     * @return     the sum of x and y
+     */
     public boolean cancelServico(Servico servico)
     {
         int index = this.servicoList.indexOf(servico);
@@ -304,6 +297,12 @@ public class Agenda
         return false;
     }
     
+    /**
+     * Procura na lista de serviços da agenda se o paciente
+     *
+     * @param  Paciente paciente    paciente a ser encontrado na agenda
+     * @return  ArraList<Servico>   Servicos em que o paciente está agendado
+     */
     public ArrayList<Servico> findServicoListByPaciente(Paciente paciente)
     {
         ArrayList<Servico> serviceListForPaciente = new ArrayList<Servico>();
@@ -318,6 +317,14 @@ public class Agenda
         return serviceListForPaciente;
     }
     
+    /**
+     * Checa se o intevalo [inicio -> fim] dado se encontra dentro do horário comercial
+     *
+     * @param  Date inicio início do intervalo
+     * @param  Date fim    fim do intervalo
+     * 
+     * @return  boolean  
+     */
     public boolean isComercialTime(Date inicio, Date fim)
     {
         if(dateHelper.isBetween(expediente[0], expediente[1], inicio))
@@ -331,6 +338,11 @@ public class Agenda
         return false;
     }
     
+    
+    /**
+     * Ordena a lista de serviços da agenda pela data
+     *
+     */
     public void sort(){
         servicoList = (ArrayList)MergeSort.sort(servicoList);
     }

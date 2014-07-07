@@ -14,6 +14,14 @@ public class Medico extends Funcionario
         super(nome);
     }
     
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  Date data       data da agenda
+     * @param  Servico servico serviço a ser agendado
+     * 
+     * @return  boolean     true se o serviço foi adicionado, false caso contrário
+     */
     @Override
     public boolean addServico(Date data, Servico servico) throws AgendaException
     {
@@ -26,6 +34,13 @@ public class Medico extends Funcionario
         return super.addServico(data, servico);
     }
     
+    /**
+     * Dado um serviço é verificado se com o mesmo médico há registro de visitas em até 20 dias anteriores, se sim a consulta é de retorno e vice-versa
+     *
+     * @param  Servico servico serviço a ser interpretado
+     * 
+     * @return boolean  true se a consulta for de retorno
+     */
     public boolean isReturn(Servico servico)
     {
         if(servico == null)
