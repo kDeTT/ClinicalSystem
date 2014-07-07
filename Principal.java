@@ -20,12 +20,12 @@ public class Principal
         try
         {
             c.cadastrarFuncionario(new Medico("Sandra"));
-            /*c.cadastrarFuncionario(new Medico("André"));
+            c.cadastrarFuncionario(new Medico("André"));
             c.cadastrarFuncionario(new Medico("Gustavo"));
             c.cadastrarFuncionario(new Medico("Ana"));
         
             c.cadastrarFuncionario(new Tecnico("Jonas"));
-            c.cadastrarFuncionario(new Tecnico("Henrique"));*/
+            c.cadastrarFuncionario(new Tecnico("Henrique"));
             
             c.agendarByFile("Dados/dados.txt");
             c.saveAgenda();

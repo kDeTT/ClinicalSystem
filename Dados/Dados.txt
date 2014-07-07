@@ -1,390 +1,3250 @@
 CONSULTA
 Paciente 0
-33
-06/07/2014
-15:04
+44
+21/07/2014
+16:23
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 1
-27
+74
 06/07/2014
-15:04
+18:57
 
 CONSULTA
 Paciente 2
-33
-06/07/2014
-15:04
+62
+19/07/2014
+18:18
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 3
-23
-06/07/2014
-15:04
+95
+20/07/2014
+08:40
 
 CONSULTA
 Paciente 4
-49
-06/07/2014
-15:04
+14
+16/07/2014
+20:27
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 5
-84
-06/07/2014
-15:04
+54
+21/07/2014
+20:51
 
 CONSULTA
 Paciente 6
-15
-06/07/2014
-15:04
+64
+22/07/2014
+12:32
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 7
-27
-06/07/2014
-15:04
+23
+20/07/2014
+00:40
 
 CONSULTA
 Paciente 8
-17
-06/07/2014
-15:04
+1
+18/07/2014
+10:02
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 9
-44
-06/07/2014
-15:04
+7
+21/07/2014
+20:13
 
 CONSULTA
 Paciente 10
-50
-06/07/2014
-15:04
+27
+15/07/2014
+12:19
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 11
-81
-06/07/2014
-15:04
+86
+07/07/2014
+17:48
 
 CONSULTA
 Paciente 12
-52
-06/07/2014
-15:04
+50
+22/07/2014
+09:33
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 13
-67
-06/07/2014
-15:04
+89
+19/07/2014
+09:24
 
 CONSULTA
 Paciente 14
-49
-06/07/2014
-15:04
+20
+15/07/2014
+07:07
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 15
-22
-06/07/2014
-15:04
+6
+21/07/2014
+09:34
 
 CONSULTA
 Paciente 16
-39
-06/07/2014
-15:04
+50
+16/07/2014
+16:29
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 17
-5
-06/07/2014
-15:04
+49
+14/07/2014
+12:22
 
 CONSULTA
 Paciente 18
-56
-06/07/2014
-15:04
+59
+18/07/2014
+11:09
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 19
-71
-06/07/2014
-15:04
+90
+08/07/2014
+01:47
 
 CONSULTA
 Paciente 20
-83
-06/07/2014
-15:04
+65
+19/07/2014
+23:31
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 21
-3
-06/07/2014
-15:04
+64
+13/07/2014
+06:49
 
 CONSULTA
 Paciente 22
-68
-06/07/2014
-15:04
+46
+05/07/2014
+20:13
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 23
-53
-06/07/2014
-15:04
+23
+09/07/2014
+08:18
 
 CONSULTA
 Paciente 24
-87
-06/07/2014
-15:04
+28
+14/07/2014
+09:49
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 25
-42
-06/07/2014
-15:04
+88
+07/07/2014
+05:08
 
 CONSULTA
 Paciente 26
-29
-06/07/2014
-15:04
+96
+09/07/2014
+12:56
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 27
-94
-06/07/2014
-15:04
+97
+11/07/2014
+08:15
 
 CONSULTA
 Paciente 28
-81
-06/07/2014
-15:04
+21
+18/07/2014
+23:26
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 29
-87
-06/07/2014
-15:04
+50
+22/07/2014
+14:52
 
 CONSULTA
 Paciente 30
-60
-06/07/2014
-15:04
+13
+21/07/2014
+16:07
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 31
-43
-06/07/2014
-15:04
+77
+18/07/2014
+07:00
 
 CONSULTA
 Paciente 32
-60
-06/07/2014
-15:04
+48
+17/07/2014
+03:56
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 33
-61
-06/07/2014
-15:04
+75
+05/07/2014
+20:03
 
 CONSULTA
 Paciente 34
-23
+9
 06/07/2014
-15:04
+17:18
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 35
-15
-06/07/2014
-15:04
+91
+11/07/2014
+02:31
 
 CONSULTA
 Paciente 36
-23
-06/07/2014
-15:04
+5
+20/07/2014
+20:50
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 37
-69
-06/07/2014
-15:04
+73
+11/07/2014
+06:27
 
 CONSULTA
 Paciente 38
-79
-06/07/2014
-15:04
+18
+12/07/2014
+06:57
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 39
-81
-06/07/2014
-15:04
+43
+08/07/2014
+08:05
 
 CONSULTA
 Paciente 40
-29
-06/07/2014
-15:04
+6
+20/07/2014
+15:29
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 41
-16
-06/07/2014
-15:04
+83
+11/07/2014
+23:13
 
 CONSULTA
 Paciente 42
-8
-06/07/2014
-15:04
+72
+18/07/2014
+07:50
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 43
-67
-06/07/2014
-15:04
+11
+10/07/2014
+13:21
 
 CONSULTA
 Paciente 44
-50
-06/07/2014
-15:04
+13
+11/07/2014
+00:21
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 45
-53
-06/07/2014
-15:04
+46
+15/07/2014
+19:03
 
 CONSULTA
 Paciente 46
-41
-06/07/2014
-15:04
+99
+13/07/2014
+01:50
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 47
-57
-06/07/2014
-15:04
+70
+17/07/2014
+15:02
 
 CONSULTA
 Paciente 48
-8
-06/07/2014
-15:04
+32
+16/07/2014
+13:15
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 49
-88
-06/07/2014
-15:04
+23
+14/07/2014
+01:53
 
 CONSULTA
 Paciente 50
-17
-06/07/2014
-15:04
+21
+11/07/2014
+15:03
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 51
-56
-06/07/2014
-15:04
+50
+11/07/2014
+09:32
 
 CONSULTA
 Paciente 52
-72
-06/07/2014
-15:04
+97
+19/07/2014
+22:58
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 53
-67
-06/07/2014
-15:04
+79
+07/07/2014
+22:50
 
 CONSULTA
 Paciente 54
-67
-06/07/2014
-15:04
+74
+15/07/2014
+02:31
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 55
-86
-06/07/2014
-15:04
+31
+08/07/2014
+10:31
 
 CONSULTA
 Paciente 56
-78
-06/07/2014
-15:04
+66
+16/07/2014
+08:57
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 57
-39
-06/07/2014
-15:04
+24
+09/07/2014
+05:03
 
 CONSULTA
 Paciente 58
-6
-06/07/2014
-15:04
+5
+20/07/2014
+08:53
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 59
-18
-06/07/2014
-15:04
+68
+08/07/2014
+20:58
 
 CONSULTA
 Paciente 60
-39
-06/07/2014
-15:04
+93
+12/07/2014
+02:13
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 61
-37
-06/07/2014
-15:04
+48
+20/07/2014
+10:20
 
 CONSULTA
 Paciente 62
-43
-06/07/2014
-15:04
+50
+08/07/2014
+06:01
 
-CONSULTA
+EXAME
+Endoscopia
 Paciente 63
-3
-06/07/2014
-15:04
+58
+14/07/2014
+12:22
 
 CONSULTA
 Paciente 64
+30
+17/07/2014
+19:40
+
+EXAME
+Endoscopia
+Paciente 65
+17
+06/07/2014
+15:13
+
+CONSULTA
+Paciente 66
+61
+13/07/2014
+23:50
+
+EXAME
+Endoscopia
+Paciente 67
+24
+08/07/2014
+22:09
+
+CONSULTA
+Paciente 68
+20
+22/07/2014
+13:29
+
+EXAME
+Endoscopia
+Paciente 69
+1
+08/07/2014
+07:01
+
+CONSULTA
+Paciente 70
+62
+07/07/2014
+03:12
+
+EXAME
+Endoscopia
+Paciente 71
+10
+16/07/2014
+21:41
+
+CONSULTA
+Paciente 72
+75
+14/07/2014
+18:29
+
+EXAME
+Endoscopia
+Paciente 73
+62
+09/07/2014
+20:10
+
+CONSULTA
+Paciente 74
+47
+12/07/2014
+16:32
+
+EXAME
+Endoscopia
+Paciente 75
+70
+08/07/2014
+16:39
+
+CONSULTA
+Paciente 76
+86
+07/07/2014
+13:33
+
+EXAME
+Endoscopia
+Paciente 77
+39
+08/07/2014
+08:34
+
+CONSULTA
+Paciente 78
+3
+13/07/2014
+23:17
+
+EXAME
+Endoscopia
+Paciente 79
+49
+19/07/2014
+15:49
+
+CONSULTA
+Paciente 80
+62
+10/07/2014
+21:19
+
+EXAME
+Endoscopia
+Paciente 81
+39
+10/07/2014
+07:37
+
+CONSULTA
+Paciente 82
+71
+20/07/2014
+19:02
+
+EXAME
+Endoscopia
+Paciente 83
+9
+06/07/2014
+16:20
+
+CONSULTA
+Paciente 84
+14
+11/07/2014
+16:24
+
+EXAME
+Endoscopia
+Paciente 85
+98
+18/07/2014
+01:33
+
+CONSULTA
+Paciente 86
+91
+07/07/2014
+01:08
+
+EXAME
+Endoscopia
+Paciente 87
+83
+10/07/2014
+14:30
+
+CONSULTA
+Paciente 88
+69
+13/07/2014
+05:45
+
+EXAME
+Endoscopia
+Paciente 89
+42
+10/07/2014
+23:45
+
+CONSULTA
+Paciente 90
+30
+21/07/2014
+13:38
+
+EXAME
+Endoscopia
+Paciente 91
+47
+11/07/2014
+09:05
+
+CONSULTA
+Paciente 92
+46
+12/07/2014
+02:07
+
+EXAME
+Endoscopia
+Paciente 93
+84
+20/07/2014
+00:24
+
+CONSULTA
+Paciente 94
+24
+13/07/2014
+06:03
+
+EXAME
+Endoscopia
+Paciente 95
+75
+14/07/2014
+13:06
+
+CONSULTA
+Paciente 96
+45
+10/07/2014
+01:32
+
+EXAME
+Endoscopia
+Paciente 97
+28
+22/07/2014
+11:45
+
+CONSULTA
+Paciente 98
+16
+14/07/2014
+22:03
+
+EXAME
+Endoscopia
+Paciente 99
+21
+18/07/2014
+21:50
+
+CONSULTA
+Paciente 100
+3
+19/07/2014
+17:56
+
+EXAME
+Endoscopia
+Paciente 101
+49
+19/07/2014
+00:13
+
+CONSULTA
+Paciente 102
+26
+09/07/2014
+22:38
+
+EXAME
+Endoscopia
+Paciente 103
+67
+20/07/2014
+19:32
+
+CONSULTA
+Paciente 104
+9
+13/07/2014
+04:30
+
+EXAME
+Endoscopia
+Paciente 105
+80
+15/07/2014
+17:52
+
+CONSULTA
+Paciente 106
+22
+18/07/2014
+19:32
+
+EXAME
+Endoscopia
+Paciente 107
+10
+14/07/2014
+07:32
+
+CONSULTA
+Paciente 108
+21
+11/07/2014
+02:47
+
+EXAME
+Endoscopia
+Paciente 109
+78
+10/07/2014
+20:52
+
+CONSULTA
+Paciente 110
+99
+18/07/2014
+16:39
+
+EXAME
+Endoscopia
+Paciente 111
+98
+07/07/2014
+19:10
+
+CONSULTA
+Paciente 112
+78
+14/07/2014
+15:11
+
+EXAME
+Endoscopia
+Paciente 113
+9
+15/07/2014
+18:50
+
+CONSULTA
+Paciente 114
+71
+15/07/2014
+14:17
+
+EXAME
+Endoscopia
+Paciente 115
+25
+17/07/2014
+07:14
+
+CONSULTA
+Paciente 116
+99
+15/07/2014
+06:38
+
+EXAME
+Endoscopia
+Paciente 117
+21
+22/07/2014
+03:44
+
+CONSULTA
+Paciente 118
+71
+16/07/2014
+10:37
+
+EXAME
+Endoscopia
+Paciente 119
+65
+13/07/2014
+02:10
+
+CONSULTA
+Paciente 120
+97
+13/07/2014
+01:59
+
+EXAME
+Endoscopia
+Paciente 121
+15
+09/07/2014
+07:50
+
+CONSULTA
+Paciente 122
+89
+19/07/2014
+02:23
+
+EXAME
+Endoscopia
+Paciente 123
+5
+10/07/2014
+02:25
+
+CONSULTA
+Paciente 124
+41
+15/07/2014
+01:36
+
+EXAME
+Endoscopia
+Paciente 125
+62
+12/07/2014
+04:44
+
+CONSULTA
+Paciente 126
+78
+08/07/2014
+20:06
+
+EXAME
+Endoscopia
+Paciente 127
+54
+18/07/2014
+12:41
+
+CONSULTA
+Paciente 128
+88
+14/07/2014
+05:21
+
+EXAME
+Endoscopia
+Paciente 129
+31
+11/07/2014
+03:56
+
+CONSULTA
+Paciente 130
+14
+17/07/2014
+22:54
+
+EXAME
+Endoscopia
+Paciente 131
+89
+05/07/2014
+19:59
+
+CONSULTA
+Paciente 132
+58
+06/07/2014
+21:52
+
+EXAME
+Endoscopia
+Paciente 133
+33
+09/07/2014
+23:02
+
+CONSULTA
+Paciente 134
+69
+13/07/2014
+01:57
+
+EXAME
+Endoscopia
+Paciente 135
+19
+12/07/2014
+07:58
+
+CONSULTA
+Paciente 136
+10
+11/07/2014
+10:35
+
+EXAME
+Endoscopia
+Paciente 137
+18
+14/07/2014
+03:15
+
+CONSULTA
+Paciente 138
+87
+20/07/2014
+21:28
+
+EXAME
+Endoscopia
+Paciente 139
+80
+08/07/2014
+02:18
+
+CONSULTA
+Paciente 140
+76
+09/07/2014
+01:53
+
+EXAME
+Endoscopia
+Paciente 141
+18
+09/07/2014
+17:07
+
+CONSULTA
+Paciente 142
+21
+14/07/2014
+05:32
+
+EXAME
+Endoscopia
+Paciente 143
+50
+16/07/2014
+13:00
+
+CONSULTA
+Paciente 144
+95
+17/07/2014
+13:26
+
+EXAME
+Endoscopia
+Paciente 145
+33
+17/07/2014
+19:20
+
+CONSULTA
+Paciente 146
+15
+19/07/2014
+15:31
+
+EXAME
+Endoscopia
+Paciente 147
+95
+20/07/2014
+00:10
+
+CONSULTA
+Paciente 148
+12
+21/07/2014
+23:28
+
+EXAME
+Endoscopia
+Paciente 149
+28
+05/07/2014
+21:43
+
+CONSULTA
+Paciente 150
+33
+12/07/2014
+16:16
+
+EXAME
+Endoscopia
+Paciente 151
+96
+22/07/2014
+10:45
+
+CONSULTA
+Paciente 152
+66
+14/07/2014
+21:29
+
+EXAME
+Endoscopia
+Paciente 153
+9
+20/07/2014
+00:57
+
+CONSULTA
+Paciente 154
+81
+12/07/2014
+07:07
+
+EXAME
+Endoscopia
+Paciente 155
+71
+18/07/2014
+05:09
+
+CONSULTA
+Paciente 156
+14
+20/07/2014
+13:56
+
+EXAME
+Endoscopia
+Paciente 157
+76
+19/07/2014
+22:26
+
+CONSULTA
+Paciente 158
+100
+11/07/2014
+03:11
+
+EXAME
+Endoscopia
+Paciente 159
+30
+06/07/2014
+04:55
+
+CONSULTA
+Paciente 160
+39
+12/07/2014
+02:07
+
+EXAME
+Endoscopia
+Paciente 161
+1
+18/07/2014
+03:50
+
+CONSULTA
+Paciente 162
+16
+12/07/2014
+14:10
+
+EXAME
+Endoscopia
+Paciente 163
+51
+13/07/2014
+00:12
+
+CONSULTA
+Paciente 164
+17
+06/07/2014
+10:50
+
+EXAME
+Endoscopia
+Paciente 165
+72
+10/07/2014
+23:00
+
+CONSULTA
+Paciente 166
+54
+14/07/2014
+07:56
+
+EXAME
+Endoscopia
+Paciente 167
+84
+22/07/2014
+08:47
+
+CONSULTA
+Paciente 168
+56
+20/07/2014
+15:06
+
+EXAME
+Endoscopia
+Paciente 169
+11
+14/07/2014
+19:49
+
+CONSULTA
+Paciente 170
+78
+16/07/2014
+05:32
+
+EXAME
+Endoscopia
+Paciente 171
+26
+09/07/2014
+00:48
+
+CONSULTA
+Paciente 172
+5
+17/07/2014
+04:16
+
+EXAME
+Endoscopia
+Paciente 173
+98
+17/07/2014
+23:05
+
+CONSULTA
+Paciente 174
+31
+12/07/2014
+16:05
+
+EXAME
+Endoscopia
+Paciente 175
+53
+19/07/2014
+15:51
+
+CONSULTA
+Paciente 176
+88
+17/07/2014
+20:33
+
+EXAME
+Endoscopia
+Paciente 177
+27
+21/07/2014
+16:43
+
+CONSULTA
+Paciente 178
+40
+12/07/2014
+13:27
+
+EXAME
+Endoscopia
+Paciente 179
+48
+20/07/2014
+00:11
+
+CONSULTA
+Paciente 180
+59
+06/07/2014
+05:10
+
+EXAME
+Endoscopia
+Paciente 181
+78
+05/07/2014
+16:29
+
+CONSULTA
+Paciente 182
+65
+19/07/2014
+09:36
+
+EXAME
+Endoscopia
+Paciente 183
+31
+20/07/2014
+10:58
+
+CONSULTA
+Paciente 184
+78
+22/07/2014
+10:48
+
+EXAME
+Endoscopia
+Paciente 185
+68
+17/07/2014
+08:59
+
+CONSULTA
+Paciente 186
+9
+06/07/2014
+07:51
+
+EXAME
+Endoscopia
+Paciente 187
+99
+18/07/2014
+19:07
+
+CONSULTA
+Paciente 188
+43
+14/07/2014
+18:14
+
+EXAME
+Endoscopia
+Paciente 189
+27
+15/07/2014
+09:03
+
+CONSULTA
+Paciente 190
+61
+17/07/2014
+15:01
+
+EXAME
+Endoscopia
+Paciente 191
+79
+12/07/2014
+11:24
+
+CONSULTA
+Paciente 192
+10
+18/07/2014
+07:16
+
+EXAME
+Endoscopia
+Paciente 193
+52
+22/07/2014
+14:07
+
+CONSULTA
+Paciente 194
+99
+19/07/2014
+07:09
+
+EXAME
+Endoscopia
+Paciente 195
 95
 06/07/2014
-15:04
+10:45
+
+CONSULTA
+Paciente 196
+89
+20/07/2014
+20:17
+
+EXAME
+Endoscopia
+Paciente 197
+29
+13/07/2014
+13:18
+
+CONSULTA
+Paciente 198
+95
+13/07/2014
+06:53
+
+EXAME
+Endoscopia
+Paciente 199
+64
+10/07/2014
+07:31
+
+CONSULTA
+Paciente 200
+6
+09/07/2014
+05:05
+
+EXAME
+Endoscopia
+Paciente 201
+38
+18/07/2014
+17:55
+
+CONSULTA
+Paciente 202
+63
+16/07/2014
+17:02
+
+EXAME
+Endoscopia
+Paciente 203
+85
+20/07/2014
+20:49
+
+CONSULTA
+Paciente 204
+34
+13/07/2014
+11:40
+
+EXAME
+Endoscopia
+Paciente 205
+34
+12/07/2014
+21:56
+
+CONSULTA
+Paciente 206
+75
+13/07/2014
+15:24
+
+EXAME
+Endoscopia
+Paciente 207
+77
+16/07/2014
+21:11
+
+CONSULTA
+Paciente 208
+90
+10/07/2014
+22:57
+
+EXAME
+Endoscopia
+Paciente 209
+11
+12/07/2014
+10:31
+
+CONSULTA
+Paciente 210
+20
+08/07/2014
+23:06
+
+EXAME
+Endoscopia
+Paciente 211
+80
+13/07/2014
+11:12
+
+CONSULTA
+Paciente 212
+71
+09/07/2014
+00:06
+
+EXAME
+Endoscopia
+Paciente 213
+52
+07/07/2014
+17:28
+
+CONSULTA
+Paciente 214
+80
+07/07/2014
+08:53
+
+EXAME
+Endoscopia
+Paciente 215
+92
+07/07/2014
+16:10
+
+CONSULTA
+Paciente 216
+16
+14/07/2014
+00:22
+
+EXAME
+Endoscopia
+Paciente 217
+39
+07/07/2014
+02:55
+
+CONSULTA
+Paciente 218
+14
+22/07/2014
+08:27
+
+EXAME
+Endoscopia
+Paciente 219
+97
+17/07/2014
+13:26
+
+CONSULTA
+Paciente 220
+66
+13/07/2014
+18:41
+
+EXAME
+Endoscopia
+Paciente 221
+34
+19/07/2014
+05:38
+
+CONSULTA
+Paciente 222
+29
+05/07/2014
+17:10
+
+EXAME
+Endoscopia
+Paciente 223
+94
+20/07/2014
+08:13
+
+CONSULTA
+Paciente 224
+19
+10/07/2014
+12:41
+
+EXAME
+Endoscopia
+Paciente 225
+73
+13/07/2014
+12:11
+
+CONSULTA
+Paciente 226
+100
+06/07/2014
+10:28
+
+EXAME
+Endoscopia
+Paciente 227
+71
+11/07/2014
+14:10
+
+CONSULTA
+Paciente 228
+67
+22/07/2014
+13:31
+
+EXAME
+Endoscopia
+Paciente 229
+89
+10/07/2014
+04:26
+
+CONSULTA
+Paciente 230
+9
+13/07/2014
+02:33
+
+EXAME
+Endoscopia
+Paciente 231
+39
+10/07/2014
+17:34
+
+CONSULTA
+Paciente 232
+23
+20/07/2014
+11:19
+
+EXAME
+Endoscopia
+Paciente 233
+38
+15/07/2014
+22:27
+
+CONSULTA
+Paciente 234
+34
+10/07/2014
+02:47
+
+EXAME
+Endoscopia
+Paciente 235
+46
+09/07/2014
+15:59
+
+CONSULTA
+Paciente 236
+89
+12/07/2014
+17:04
+
+EXAME
+Endoscopia
+Paciente 237
+77
+20/07/2014
+10:05
+
+CONSULTA
+Paciente 238
+89
+06/07/2014
+07:14
+
+EXAME
+Endoscopia
+Paciente 239
+83
+13/07/2014
+02:25
+
+CONSULTA
+Paciente 240
+38
+10/07/2014
+18:18
+
+EXAME
+Endoscopia
+Paciente 241
+50
+08/07/2014
+02:20
+
+CONSULTA
+Paciente 242
+20
+20/07/2014
+18:04
+
+EXAME
+Endoscopia
+Paciente 243
+85
+17/07/2014
+16:47
+
+CONSULTA
+Paciente 244
+96
+13/07/2014
+10:36
+
+EXAME
+Endoscopia
+Paciente 245
+24
+17/07/2014
+18:38
+
+CONSULTA
+Paciente 246
+35
+18/07/2014
+21:15
+
+EXAME
+Endoscopia
+Paciente 247
+31
+19/07/2014
+15:29
+
+CONSULTA
+Paciente 248
+1
+20/07/2014
+06:14
+
+EXAME
+Endoscopia
+Paciente 249
+45
+10/07/2014
+01:24
+
+CONSULTA
+Paciente 250
+19
+18/07/2014
+16:23
+
+EXAME
+Endoscopia
+Paciente 251
+33
+15/07/2014
+20:21
+
+CONSULTA
+Paciente 252
+90
+08/07/2014
+21:07
+
+EXAME
+Endoscopia
+Paciente 253
+3
+09/07/2014
+10:28
+
+CONSULTA
+Paciente 254
+20
+16/07/2014
+04:02
+
+EXAME
+Endoscopia
+Paciente 255
+79
+11/07/2014
+19:41
+
+CONSULTA
+Paciente 256
+23
+13/07/2014
+13:38
+
+EXAME
+Endoscopia
+Paciente 257
+62
+12/07/2014
+07:39
+
+CONSULTA
+Paciente 258
+38
+13/07/2014
+09:23
+
+EXAME
+Endoscopia
+Paciente 259
+19
+09/07/2014
+11:57
+
+CONSULTA
+Paciente 260
+89
+16/07/2014
+19:38
+
+EXAME
+Endoscopia
+Paciente 261
+61
+11/07/2014
+04:44
+
+CONSULTA
+Paciente 262
+62
+10/07/2014
+02:27
+
+EXAME
+Endoscopia
+Paciente 263
+87
+06/07/2014
+05:19
+
+CONSULTA
+Paciente 264
+60
+18/07/2014
+13:31
+
+EXAME
+Endoscopia
+Paciente 265
+32
+13/07/2014
+14:44
+
+CONSULTA
+Paciente 266
+38
+16/07/2014
+22:57
+
+EXAME
+Endoscopia
+Paciente 267
+15
+12/07/2014
+08:24
+
+CONSULTA
+Paciente 268
+27
+18/07/2014
+01:22
+
+EXAME
+Endoscopia
+Paciente 269
+41
+09/07/2014
+21:17
+
+CONSULTA
+Paciente 270
+22
+20/07/2014
+03:46
+
+EXAME
+Endoscopia
+Paciente 271
+30
+14/07/2014
+20:53
+
+CONSULTA
+Paciente 272
+99
+22/07/2014
+13:21
+
+EXAME
+Endoscopia
+Paciente 273
+68
+17/07/2014
+01:21
+
+CONSULTA
+Paciente 274
+68
+22/07/2014
+01:11
+
+EXAME
+Endoscopia
+Paciente 275
+5
+14/07/2014
+03:55
+
+CONSULTA
+Paciente 276
+47
+06/07/2014
+09:01
+
+EXAME
+Endoscopia
+Paciente 277
+33
+22/07/2014
+00:52
+
+CONSULTA
+Paciente 278
+8
+05/07/2014
+23:55
+
+EXAME
+Endoscopia
+Paciente 279
+92
+13/07/2014
+06:02
+
+CONSULTA
+Paciente 280
+37
+08/07/2014
+17:03
+
+EXAME
+Endoscopia
+Paciente 281
+44
+05/07/2014
+20:16
+
+CONSULTA
+Paciente 282
+97
+13/07/2014
+13:02
+
+EXAME
+Endoscopia
+Paciente 283
+55
+06/07/2014
+04:34
+
+CONSULTA
+Paciente 284
+74
+18/07/2014
+04:20
+
+EXAME
+Endoscopia
+Paciente 285
+24
+16/07/2014
+08:35
+
+CONSULTA
+Paciente 286
+83
+15/07/2014
+17:01
+
+EXAME
+Endoscopia
+Paciente 287
+47
+13/07/2014
+00:17
+
+CONSULTA
+Paciente 288
+14
+09/07/2014
+11:51
+
+EXAME
+Endoscopia
+Paciente 289
+87
+11/07/2014
+08:05
+
+CONSULTA
+Paciente 290
+90
+15/07/2014
+09:58
+
+EXAME
+Endoscopia
+Paciente 291
+78
+06/07/2014
+21:24
+
+CONSULTA
+Paciente 292
+2
+10/07/2014
+11:05
+
+EXAME
+Endoscopia
+Paciente 293
+70
+11/07/2014
+15:53
+
+CONSULTA
+Paciente 294
+72
+12/07/2014
+01:32
+
+EXAME
+Endoscopia
+Paciente 295
+24
+13/07/2014
+19:52
+
+CONSULTA
+Paciente 296
+39
+20/07/2014
+16:29
+
+EXAME
+Endoscopia
+Paciente 297
+39
+13/07/2014
+21:22
+
+CONSULTA
+Paciente 298
+72
+13/07/2014
+04:03
+
+EXAME
+Endoscopia
+Paciente 299
+7
+12/07/2014
+03:47
+
+CONSULTA
+Paciente 300
+60
+20/07/2014
+21:55
+
+EXAME
+Endoscopia
+Paciente 301
+23
+20/07/2014
+08:31
+
+CONSULTA
+Paciente 302
+31
+22/07/2014
+09:01
+
+EXAME
+Endoscopia
+Paciente 303
+58
+10/07/2014
+05:31
+
+CONSULTA
+Paciente 304
+37
+08/07/2014
+16:37
+
+EXAME
+Endoscopia
+Paciente 305
+42
+09/07/2014
+16:12
+
+CONSULTA
+Paciente 306
+7
+07/07/2014
+05:05
+
+EXAME
+Endoscopia
+Paciente 307
+68
+20/07/2014
+19:22
+
+CONSULTA
+Paciente 308
+65
+17/07/2014
+16:38
+
+EXAME
+Endoscopia
+Paciente 309
+87
+08/07/2014
+22:48
+
+CONSULTA
+Paciente 310
+78
+16/07/2014
+13:50
+
+EXAME
+Endoscopia
+Paciente 311
+46
+20/07/2014
+03:55
+
+CONSULTA
+Paciente 312
+47
+15/07/2014
+19:39
+
+EXAME
+Endoscopia
+Paciente 313
+50
+12/07/2014
+19:57
+
+CONSULTA
+Paciente 314
+39
+20/07/2014
+17:20
+
+EXAME
+Endoscopia
+Paciente 315
+27
+10/07/2014
+04:27
+
+CONSULTA
+Paciente 316
+99
+19/07/2014
+01:09
+
+EXAME
+Endoscopia
+Paciente 317
+35
+19/07/2014
+21:31
+
+CONSULTA
+Paciente 318
+45
+08/07/2014
+20:00
+
+EXAME
+Endoscopia
+Paciente 319
+61
+20/07/2014
+17:22
+
+CONSULTA
+Paciente 320
+35
+10/07/2014
+23:29
+
+EXAME
+Endoscopia
+Paciente 321
+94
+15/07/2014
+10:20
+
+CONSULTA
+Paciente 322
+44
+22/07/2014
+13:21
+
+EXAME
+Endoscopia
+Paciente 323
+54
+15/07/2014
+15:14
+
+CONSULTA
+Paciente 324
+15
+16/07/2014
+15:36
+
+EXAME
+Endoscopia
+Paciente 325
+13
+08/07/2014
+15:50
+
+CONSULTA
+Paciente 326
+52
+18/07/2014
+11:13
+
+EXAME
+Endoscopia
+Paciente 327
+70
+10/07/2014
+14:03
+
+CONSULTA
+Paciente 328
+50
+10/07/2014
+13:34
+
+EXAME
+Endoscopia
+Paciente 329
+18
+08/07/2014
+20:46
+
+CONSULTA
+Paciente 330
+33
+08/07/2014
+20:20
+
+EXAME
+Endoscopia
+Paciente 331
+25
+07/07/2014
+10:06
+
+CONSULTA
+Paciente 332
+35
+21/07/2014
+10:39
+
+EXAME
+Endoscopia
+Paciente 333
+95
+09/07/2014
+08:05
+
+CONSULTA
+Paciente 334
+47
+06/07/2014
+08:47
+
+EXAME
+Endoscopia
+Paciente 335
+52
+15/07/2014
+13:29
+
+CONSULTA
+Paciente 336
+10
+13/07/2014
+01:19
+
+EXAME
+Endoscopia
+Paciente 337
+22
+18/07/2014
+14:10
+
+CONSULTA
+Paciente 338
+56
+21/07/2014
+15:25
+
+EXAME
+Endoscopia
+Paciente 339
+73
+07/07/2014
+06:28
+
+CONSULTA
+Paciente 340
+50
+07/07/2014
+03:36
+
+EXAME
+Endoscopia
+Paciente 341
+86
+10/07/2014
+03:08
+
+CONSULTA
+Paciente 342
+77
+13/07/2014
+18:22
+
+EXAME
+Endoscopia
+Paciente 343
+2
+22/07/2014
+14:34
+
+CONSULTA
+Paciente 344
+98
+13/07/2014
+03:35
+
+EXAME
+Endoscopia
+Paciente 345
+53
+09/07/2014
+05:41
+
+CONSULTA
+Paciente 346
+78
+19/07/2014
+20:38
+
+EXAME
+Endoscopia
+Paciente 347
+51
+21/07/2014
+04:10
+
+CONSULTA
+Paciente 348
+97
+11/07/2014
+09:42
+
+EXAME
+Endoscopia
+Paciente 349
+83
+06/07/2014
+19:36
+
+CONSULTA
+Paciente 350
+73
+15/07/2014
+19:04
+
+EXAME
+Endoscopia
+Paciente 351
+8
+20/07/2014
+06:03
+
+CONSULTA
+Paciente 352
+30
+06/07/2014
+02:23
+
+EXAME
+Endoscopia
+Paciente 353
+12
+06/07/2014
+10:12
+
+CONSULTA
+Paciente 354
+12
+09/07/2014
+04:54
+
+EXAME
+Endoscopia
+Paciente 355
+72
+07/07/2014
+17:04
+
+CONSULTA
+Paciente 356
+61
+18/07/2014
+18:24
+
+EXAME
+Endoscopia
+Paciente 357
+15
+15/07/2014
+11:30
+
+CONSULTA
+Paciente 358
+69
+22/07/2014
+13:07
+
+EXAME
+Endoscopia
+Paciente 359
+28
+12/07/2014
+15:21
+
+CONSULTA
+Paciente 360
+14
+15/07/2014
+08:25
+
+EXAME
+Endoscopia
+Paciente 361
+98
+11/07/2014
+03:04
+
+CONSULTA
+Paciente 362
+42
+09/07/2014
+21:57
+
+EXAME
+Endoscopia
+Paciente 363
+99
+20/07/2014
+09:28
+
+CONSULTA
+Paciente 364
+74
+12/07/2014
+21:33
+
+EXAME
+Endoscopia
+Paciente 365
+14
+12/07/2014
+23:00
+
+CONSULTA
+Paciente 366
+4
+10/07/2014
+12:57
+
+EXAME
+Endoscopia
+Paciente 367
+68
+21/07/2014
+18:07
+
+CONSULTA
+Paciente 368
+36
+19/07/2014
+19:19
+
+EXAME
+Endoscopia
+Paciente 369
+100
+21/07/2014
+08:21
+
+CONSULTA
+Paciente 370
+78
+19/07/2014
+13:36
+
+EXAME
+Endoscopia
+Paciente 371
+33
+07/07/2014
+09:43
+
+CONSULTA
+Paciente 372
+66
+11/07/2014
+07:24
+
+EXAME
+Endoscopia
+Paciente 373
+80
+08/07/2014
+12:50
+
+CONSULTA
+Paciente 374
+75
+07/07/2014
+18:25
+
+EXAME
+Endoscopia
+Paciente 375
+72
+12/07/2014
+13:55
+
+CONSULTA
+Paciente 376
+40
+17/07/2014
+18:05
+
+EXAME
+Endoscopia
+Paciente 377
+67
+08/07/2014
+19:18
+
+CONSULTA
+Paciente 378
+57
+08/07/2014
+00:05
+
+EXAME
+Endoscopia
+Paciente 379
+26
+07/07/2014
+15:25
+
+CONSULTA
+Paciente 380
+88
+17/07/2014
+12:55
+
+EXAME
+Endoscopia
+Paciente 381
+57
+05/07/2014
+22:36
+
+CONSULTA
+Paciente 382
+56
+11/07/2014
+03:52
+
+EXAME
+Endoscopia
+Paciente 383
+11
+15/07/2014
+10:46
+
+CONSULTA
+Paciente 384
+92
+20/07/2014
+01:47
+
+EXAME
+Endoscopia
+Paciente 385
+43
+21/07/2014
+03:22
+
+CONSULTA
+Paciente 386
+85
+19/07/2014
+22:43
+
+EXAME
+Endoscopia
+Paciente 387
+17
+14/07/2014
+03:04
+
+CONSULTA
+Paciente 388
+30
+22/07/2014
+01:35
+
+EXAME
+Endoscopia
+Paciente 389
+49
+10/07/2014
+07:11
+
+CONSULTA
+Paciente 390
+42
+21/07/2014
+23:16
+
+EXAME
+Endoscopia
+Paciente 391
+41
+22/07/2014
+14:02
+
+CONSULTA
+Paciente 392
+27
+10/07/2014
+03:20
+
+EXAME
+Endoscopia
+Paciente 393
+29
+05/07/2014
+15:18
+
+CONSULTA
+Paciente 394
+67
+21/07/2014
+01:28
+
+EXAME
+Endoscopia
+Paciente 395
+41
+06/07/2014
+23:14
+
+CONSULTA
+Paciente 396
+70
+10/07/2014
+01:53
+
+EXAME
+Endoscopia
+Paciente 397
+84
+20/07/2014
+22:43
+
+CONSULTA
+Paciente 398
+29
+15/07/2014
+03:11
+
+EXAME
+Endoscopia
+Paciente 399
+89
+17/07/2014
+13:50
+
+CONSULTA
+Paciente 400
+1
+21/07/2014
+19:40
+
+EXAME
+Endoscopia
+Paciente 401
+34
+14/07/2014
+02:41
+
+CONSULTA
+Paciente 402
+38
+10/07/2014
+20:04
+
+EXAME
+Endoscopia
+Paciente 403
+52
+18/07/2014
+12:46
+
+CONSULTA
+Paciente 404
+30
+17/07/2014
+09:35
+
+EXAME
+Endoscopia
+Paciente 405
+72
+06/07/2014
+22:14
+
+CONSULTA
+Paciente 406
+80
+12/07/2014
+15:35
+
+EXAME
+Endoscopia
+Paciente 407
+63
+18/07/2014
+01:09
+
+CONSULTA
+Paciente 408
+36
+17/07/2014
+12:28
+
+EXAME
+Endoscopia
+Paciente 409
+33
+12/07/2014
+01:10
+
+CONSULTA
+Paciente 410
+55
+13/07/2014
+22:09
+
+EXAME
+Endoscopia
+Paciente 411
+2
+15/07/2014
+10:46
+
+CONSULTA
+Paciente 412
+35
+12/07/2014
+05:08
+
+EXAME
+Endoscopia
+Paciente 413
+83
+06/07/2014
+01:42
+
+CONSULTA
+Paciente 414
+79
+10/07/2014
+01:17
+
+EXAME
+Endoscopia
+Paciente 415
+25
+11/07/2014
+21:16
+
+CONSULTA
+Paciente 416
+34
+21/07/2014
+13:06
+
+EXAME
+Endoscopia
+Paciente 417
+21
+21/07/2014
+20:12
+
+CONSULTA
+Paciente 418
+51
+06/07/2014
+12:52
+
+EXAME
+Endoscopia
+Paciente 419
+22
+20/07/2014
+02:47
+
+CONSULTA
+Paciente 420
+70
+10/07/2014
+11:47
+
+EXAME
+Endoscopia
+Paciente 421
+69
+13/07/2014
+17:08
+
+CONSULTA
+Paciente 422
+33
+11/07/2014
+21:36
+
+EXAME
+Endoscopia
+Paciente 423
+63
+06/07/2014
+02:23
+
+CONSULTA
+Paciente 424
+81
+11/07/2014
+11:42
+
+EXAME
+Endoscopia
+Paciente 425
+8
+06/07/2014
+00:43
+
+CONSULTA
+Paciente 426
+6
+20/07/2014
+14:12
+
+EXAME
+Endoscopia
+Paciente 427
+67
+13/07/2014
+20:45
+
+CONSULTA
+Paciente 428
+52
+05/07/2014
+17:28
+
+EXAME
+Endoscopia
+Paciente 429
+96
+17/07/2014
+06:45
+
+CONSULTA
+Paciente 430
+90
+12/07/2014
+18:17
+
+EXAME
+Endoscopia
+Paciente 431
+76
+19/07/2014
+11:06
+
+CONSULTA
+Paciente 432
+87
+08/07/2014
+23:59
+
+EXAME
+Endoscopia
+Paciente 433
+24
+12/07/2014
+19:58
+
+CONSULTA
+Paciente 434
+31
+11/07/2014
+23:56
+
+EXAME
+Endoscopia
+Paciente 435
+28
+11/07/2014
+01:07
+
+CONSULTA
+Paciente 436
+64
+07/07/2014
+17:56
+
+EXAME
+Endoscopia
+Paciente 437
+26
+06/07/2014
+04:31
+
+CONSULTA
+Paciente 438
+89
+20/07/2014
+15:31
+
+EXAME
+Endoscopia
+Paciente 439
+91
+07/07/2014
+01:13
+
+CONSULTA
+Paciente 440
+57
+16/07/2014
+22:33
+
+EXAME
+Endoscopia
+Paciente 441
+81
+14/07/2014
+10:10
+
+CONSULTA
+Paciente 442
+21
+16/07/2014
+10:23
+
+EXAME
+Endoscopia
+Paciente 443
+63
+09/07/2014
+06:51
+
+CONSULTA
+Paciente 444
+8
+20/07/2014
+17:23
+
+EXAME
+Endoscopia
+Paciente 445
+82
+05/07/2014
+21:05
+
+CONSULTA
+Paciente 446
+39
+20/07/2014
+06:25
+
+EXAME
+Endoscopia
+Paciente 447
+41
+09/07/2014
+19:34
+
+CONSULTA
+Paciente 448
+92
+17/07/2014
+05:08
+
+EXAME
+Endoscopia
+Paciente 449
+41
+06/07/2014
+05:29
+
+CONSULTA
+Paciente 450
+28
+06/07/2014
+12:01
+
+EXAME
+Endoscopia
+Paciente 451
+76
+18/07/2014
+00:46
+
+CONSULTA
+Paciente 452
+28
+06/07/2014
+09:31
+
+EXAME
+Endoscopia
+Paciente 453
+78
+13/07/2014
+13:29
+
+CONSULTA
+Paciente 454
+8
+09/07/2014
+23:50
+
+EXAME
+Endoscopia
+Paciente 455
+92
+10/07/2014
+07:52
+
+CONSULTA
+Paciente 456
+58
+06/07/2014
+22:17
+
+EXAME
+Endoscopia
+Paciente 457
+57
+20/07/2014
+08:41
+
+CONSULTA
+Paciente 458
+49
+09/07/2014
+21:16
+
+EXAME
+Endoscopia
+Paciente 459
+75
+10/07/2014
+08:47
+
+CONSULTA
+Paciente 460
+72
+13/07/2014
+01:47
+
+EXAME
+Endoscopia
+Paciente 461
+32
+11/07/2014
+18:15
+
+CONSULTA
+Paciente 462
+47
+07/07/2014
+03:17
+
+EXAME
+Endoscopia
+Paciente 463
+23
+11/07/2014
+15:56
+
+CONSULTA
+Paciente 464
+48
+20/07/2014
+21:48
+
+EXAME
+Endoscopia
+Paciente 465
+71
+05/07/2014
+20:49
+
+CONSULTA
+Paciente 466
+57
+21/07/2014
+03:24
+
+EXAME
+Endoscopia
+Paciente 467
+95
+22/07/2014
+01:28
+
+CONSULTA
+Paciente 468
+30
+19/07/2014
+13:57
+
+EXAME
+Endoscopia
+Paciente 469
+59
+14/07/2014
+09:23
+
+CONSULTA
+Paciente 470
+8
+08/07/2014
+14:58
+
+EXAME
+Endoscopia
+Paciente 471
+17
+13/07/2014
+20:47
+
+CONSULTA
+Paciente 472
+5
+14/07/2014
+05:31
+
+EXAME
+Endoscopia
+Paciente 473
+9
+12/07/2014
+04:53
+
+CONSULTA
+Paciente 474
+41
+07/07/2014
+20:04
+
+EXAME
+Endoscopia
+Paciente 475
+49
+10/07/2014
+06:33
+
+CONSULTA
+Paciente 476
+80
+06/07/2014
+05:12
+
+EXAME
+Endoscopia
+Paciente 477
+34
+16/07/2014
+01:13
+
+CONSULTA
+Paciente 478
+50
+21/07/2014
+21:41
+
+EXAME
+Endoscopia
+Paciente 479
+13
+21/07/2014
+13:55
+
+CONSULTA
+Paciente 480
+28
+09/07/2014
+19:19
+
+EXAME
+Endoscopia
+Paciente 481
+98
+09/07/2014
+02:52
+
+CONSULTA
+Paciente 482
+91
+10/07/2014
+05:51
+
+EXAME
+Endoscopia
+Paciente 483
+37
+16/07/2014
+22:53
+
+CONSULTA
+Paciente 484
+15
+13/07/2014
+18:09
+
+EXAME
+Endoscopia
+Paciente 485
+83
+20/07/2014
+04:13
+
+CONSULTA
+Paciente 486
+37
+17/07/2014
+17:39
+
+EXAME
+Endoscopia
+Paciente 487
+3
+12/07/2014
+06:09
+
+CONSULTA
+Paciente 488
+14
+06/07/2014
+10:36
+
+EXAME
+Endoscopia
+Paciente 489
+95
+08/07/2014
+17:01
+
+CONSULTA
+Paciente 490
+78
+22/07/2014
+00:06
+
+EXAME
+Endoscopia
+Paciente 491
+13
+21/07/2014
+03:11
+
+CONSULTA
+Paciente 492
+80
+11/07/2014
+14:58
+
+EXAME
+Endoscopia
+Paciente 493
+62
+14/07/2014
+18:03
+
+CONSULTA
+Paciente 494
+67
+05/07/2014
+14:33
+
+EXAME
+Endoscopia
+Paciente 495
+13
+11/07/2014
+02:18
+
+CONSULTA
+Paciente 496
+47
+11/07/2014
+10:43
+
+EXAME
+Endoscopia
+Paciente 497
+93
+06/07/2014
+20:47
+
+CONSULTA
+Paciente 498
+7
+07/07/2014
+12:31
+
+EXAME
+Endoscopia
+Paciente 499
+35
+12/07/2014
+00:02
 

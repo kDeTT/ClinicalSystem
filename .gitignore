@@ -1,3 +1,6 @@
 package.bluej
 package.bluej
 package.bluej
+*.class
+package.bluej
+*.class

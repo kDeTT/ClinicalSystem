@@ -24,8 +24,8 @@ public class TestGenerator extends FileHelper
             {
                 for(int i = 0; i < length; i++)
                 {
-                    //if((i % 2) == 0)
-                    if(true)
+                    if((i % 2) == 0)
+                    //if(true)
                         buffer.write(appendLine(CONSULTA_PATTERN, 1));
                     else
                     {
@@ -41,9 +41,9 @@ public class TestGenerator extends FileHelper
                     buffer.write(appendLine(String.valueOf(idade), 1)); // Idade do paciente
 
                     long ms = 1404581592853L + (Math.abs(rnd.nextLong()) % (1 * 365 * 24 * 60 * 60 * 1000));
-                    //Date date = new Date(ms);
+                    Date date = new Date(ms);
                     
-                    Date date = new DateHelper().addMinutes(new DateHelper().getNow(), 1440);
+                    //Date date = new DateHelper().addMinutes(new DateHelper().getNow(), 1440);
 
                     buffer.write(appendLine(DateHelper.getDate(date), 1)); // Data inicial do serviço
                     buffer.write(appendLine(DateHelper.getTime(date), 2)); // Data inicial do serviço
