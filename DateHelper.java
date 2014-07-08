@@ -203,18 +203,13 @@ public class DateHelper
     {
         if(date.before(inicio))
         {
-              Calendar a = Calendar.getInstance();
-              a.setTime(date);
-              int dias = 0; 
-              
-              while (a.before(inicio)) 
-              {  
-                a.add(Calendar.DAY_OF_MONTH, 1);  
-                dias++;  
-              }  
-              
-              if(dias <= range)
+            long diff = inicio.getTime() - date.getTime();
+            long days = (diff / (1000 * 60 * 60 * 24));
+
+            if (days <= range) 
+            {
                 return true;
+            }
         }
         
         return false;

@@ -124,7 +124,8 @@ public class Agenda
                 }
             }
         }
-
+        
+        servico.setStatus(true);
         return this.servicoList.add(servico);
     }
     

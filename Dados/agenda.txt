@@ -1,851 +1,126 @@
-Dia 21/07/2014
-
-EXAME
-Paciente 369
-100
-Endoscopia
-Jonas
-08:21
+Dia 09/07/2014
 
 CONSULTA
-Paciente 30
-13
-Inicial
-André
-08:30
-
-EXAME
-Paciente 177
-27
-Endoscopia
-Henrique
-09:00
-
-EXAME
-Paciente 15
-6
-Endoscopia
-Jonas
-09:34
-
-CONSULTA
-Paciente 332
-35
-Inicial
-Gustavo
-10:39
-
-CONSULTA
-Paciente 338
-56
+Ana Maria
+70
 Inicial
 Ana
-15:25
+08:20
 
 CONSULTA
-Paciente 0
-44
-Inicial
-Sandra
-16:23
-
-Dia 18/07/2014
-
-CONSULTA
-Paciente 18
-59
-Inicial
-André
-08:00
-
-CONSULTA
-Paciente 250
-19
-Inicial
-Ana
-08:30
-
-CONSULTA
-Paciente 8
-1
-Inicial
-Sandra
-10:02
-
-CONSULTA
-Paciente 326
-52
-Inicial
-Sandra
-11:13
-
-EXAME
-Paciente 337
-22
-Endoscopia
-Jonas
-14:10
-
-CONSULTA
-Paciente 110
-99
-Inicial
-Gustavo
-16:39
-
-Dia 22/07/2014
-
-CONSULTA
-Paciente 302
-31
-Inicial
-Ana
-08:00
-
-EXAME
-Paciente 167
-84
-Endoscopia
-Jonas
-08:47
-
-CONSULTA
-Paciente 12
-50
-Inicial
-Sandra
-09:33
-
-CONSULTA
-Paciente 218
-14
-Inicial
-Gustavo
-10:03
-
-CONSULTA
-Paciente 184
-78
-Inicial
-André
-10:48
-
-EXAME
-Paciente 343
-2
-Endoscopia
-Jonas
-11:18
-
-EXAME
-Paciente 193
-52
-Endoscopia
-Henrique
-14:07
-
-EXAME
-Paciente 29
-50
-Endoscopia
-Jonas
-14:52
-
-EXAME
-Paciente 391
-41
-Endoscopia
-Henrique
-15:22
-
-Dia 16/07/2014
-
-CONSULTA
-Paciente 442
-21
-Inicial
-André
-08:00
-
-CONSULTA
-Paciente 56
-66
-Inicial
-André
-08:57
-
-EXAME
-Paciente 285
-24
-Endoscopia
-Jonas
-09:27
-
-CONSULTA
-Paciente 118
-71
-Inicial
-Gustavo
-10:37
-
-CONSULTA
-Paciente 324
-15
-Inicial
-Sandra
-15:36
-
-CONSULTA
-Paciente 16
-50
-Inicial
-Sandra
-16:29
-
-CONSULTA
-Paciente 202
+Luiz Costa
 63
 Inicial
 Ana
-17:02
+09:00
+
+CONSULTA
+Eder Oliveira
+32
+Inicial
+Sandra
+09:30
+
+CONSULTA
+Carlos Eduardo
+40
+Inicial
+André
+10:00
+
+CONSULTA
+Fernanda Silva
+25
+Inicial
+Gustavo
+11:30
+
+Dia 21/08/2014
+
+CONSULTA
+Ana Maria
+70
+Inicial
+Sandra
+17:00
+
+Dia 25/08/2014
+
+CONSULTA
+Ana Maria
+70
+Retorno
+Sandra
+17:00
 
 Dia 14/07/2014
 
 CONSULTA
-Paciente 24
-28
-Inicial
-Sandra
-08:00
-
-EXAME
-Paciente 469
-59
-Endoscopia
-Henrique
-09:23
-
-EXAME
-Paciente 441
-81
-Endoscopia
-Jonas
-10:10
-
-CONSULTA
-Paciente 112
-78
-Inicial
-André
-15:11
-
-Dia 20/07/2014
-
-CONSULTA
-Paciente 314
-39
-Inicial
-André
-08:00
-
-EXAME
-Paciente 3
-95
-Endoscopia
-Jonas
-08:40
-
-CONSULTA
-Paciente 168
-56
-Inicial
-Gustavo
-09:23
-
-EXAME
-Paciente 363
-99
-Endoscopia
-Henrique
-09:28
-
-EXAME
-Paciente 237
-77
-Endoscopia
-Jonas
-10:05
-
-CONSULTA
-Paciente 40
-6
-Inicial
-Sandra
-10:23
-
-CONSULTA
-Paciente 232
-23
-Inicial
-Ana
-11:19
-
-CONSULTA
-Paciente 426
-6
-Inicial
-Gustavo
-14:12
-
-CONSULTA
-Paciente 58
-5
-Inicial
-André
-14:42
-
-CONSULTA
-Paciente 438
-89
-Inicial
-Ana
-15:31
-
-CONSULTA
-Paciente 296
-39
-Inicial
-Sandra
-16:29
-
-CONSULTA
-Paciente 444
-8
-Inicial
-Sandra
-17:23
-
-Dia 11/07/2014
-
-EXAME
-Paciente 27
-97
-Endoscopia
-Jonas
-08:15
-
-CONSULTA
-Paciente 50
-21
-Inicial
-Sandra
-09:00
-
-CONSULTA
-Paciente 348
-97
-Inicial
-Ana
-09:42
-
-CONSULTA
-Paciente 136
-10
-Inicial
-Gustavo
-10:12
-
-CONSULTA
-Paciente 496
-47
-Inicial
-André
-10:43
-
-EXAME
-Paciente 91
-47
-Endoscopia
-Jonas
-11:13
-
-EXAME
-Paciente 227
-71
-Endoscopia
-Henrique
-14:10
-
-CONSULTA
-Paciente 492
-80
-Inicial
-Sandra
-14:58
-
-EXAME
-Paciente 293
+Ana Maria
 70
-Endoscopia
-Jonas
-15:53
-
-CONSULTA
-Paciente 84
-14
-Inicial
-André
-16:24
-
-EXAME
-Paciente 51
-50
-Endoscopia
-Henrique
-16:54
-
-EXAME
-Paciente 463
-23
-Endoscopia
-Henrique
-17:24
-
-Dia 12/07/2014
-
-CONSULTA
-Paciente 150
-33
-Inicial
-André
-08:00
-
-CONSULTA
-Paciente 174
-31
-Inicial
+Retorno
 Ana
-08:30
-
-EXAME
-Paciente 267
-15
-Endoscopia
-Jonas
-09:00
-
-EXAME
-Paciente 359
-28
-Endoscopia
-Henrique
-09:30
-
-EXAME
-Paciente 209
-11
-Endoscopia
-Henrique
-10:31
-
-EXAME
-Paciente 191
-79
-Endoscopia
-Jonas
-11:24
-
-CONSULTA
-Paciente 162
-16
-Inicial
-Gustavo
-14:10
-
-CONSULTA
-Paciente 406
-80
-Inicial
-André
-15:35
-
-CONSULTA
-Paciente 74
-47
-Inicial
-Sandra
-16:32
-
-CONSULTA
-Paciente 236
-89
-Inicial
-Sandra
-17:04
-
-Dia 15/07/2014
-
-CONSULTA
-Paciente 360
-14
-Inicial
-Ana
-08:25
-
-EXAME
-Paciente 189
-27
-Endoscopia
-Jonas
-09:03
-
-CONSULTA
-Paciente 290
-90
-Inicial
-Gustavo
-09:58
-
-EXAME
-Paciente 383
-11
-Endoscopia
-Jonas
-10:46
-
-EXAME
-Paciente 411
-2
-Endoscopia
-Jonas
-11:16
-
-CONSULTA
-Paciente 114
-71
-Inicial
-Sandra
-14:17
-
-EXAME
-Paciente 323
-54
-Endoscopia
-Jonas
-15:14
-
-EXAME
-Paciente 357
-15
-Endoscopia
-Henrique
-15:44
-
-CONSULTA
-Paciente 286
-83
-Inicial
-André
-17:01
+08:20
 
 Dia 19/07/2014
 
-EXAME
-Paciente 175
-53
-Endoscopia
-Jonas
-08:00
-
-EXAME
-Paciente 79
-49
-Endoscopia
-Henrique
-08:30
-
-EXAME
-Paciente 247
-31
-Endoscopia
-Henrique
-09:00
-
 CONSULTA
-Paciente 182
-65
-Inicial
-André
-09:36
-
-EXAME
-Paciente 431
-76
-Endoscopia
-Jonas
-11:06
-
-CONSULTA
-Paciente 146
-15
-Inicial
-Sandra
-15:31
-
-Dia 17/07/2014
-
-CONSULTA
-Paciente 190
-61
-Inicial
-Sandra
-08:00
-
-EXAME
-Paciente 185
-68
-Endoscopia
-Henrique
-08:59
-
-CONSULTA
-Paciente 404
-30
-Inicial
-Gustavo
-09:35
-
-EXAME
-Paciente 47
+Ana Maria
 70
+Retorno
+Ana
+16:00
+
+Dia 12/07/2014
+
+EXAME
+David Borges
+20
 Endoscopia
 Jonas
-15:02
+14:00
 
-CONSULTA
-Paciente 308
-65
-Inicial
-André
-16:38
+EXAME
+Leonardo Filho
+44
+Biopsia
+Henrique
+15:00
 
 Dia 13/07/2014
 
-CONSULTA
-Paciente 258
-38
-Inicial
-Gustavo
-09:23
-
-CONSULTA
-Paciente 244
-96
-Inicial
-André
-10:36
-
 EXAME
-Paciente 211
-80
-Endoscopia
-Jonas
-11:12
-
-EXAME
-Paciente 265
-32
-Endoscopia
-Henrique
-14:44
-
-CONSULTA
-Paciente 206
-75
-Inicial
-Sandra
-15:24
-
-EXAME
-Paciente 421
-69
-Endoscopia
-Jonas
-17:08
-
-Dia 07/07/2014
-
-EXAME
-Paciente 371
-33
-Endoscopia
+Paulo Freire
+44
+Biopsia
 Jonas
 08:00
 
-CONSULTA
-Paciente 214
-80
-Inicial
-Sandra
-08:53
-
 EXAME
-Paciente 213
-52
+Luiz Gustavo
+29
 Endoscopia
-Jonas
-09:23
+Henrique
+08:20
 
 EXAME
-Paciente 331
+Amanda Paiva
 25
-Endoscopia
-Jonas
-10:06
-
-EXAME
-Paciente 379
-26
-Endoscopia
+Ressonancia
 Henrique
-15:25
+08:50
 
 EXAME
-Paciente 215
-92
-Endoscopia
-Henrique
-16:10
+Gilmara Campos
+33
+Biopsia
+Jonas
+16:50
 
 EXAME
-Paciente 355
-72
-Endoscopia
-Henrique
-17:04
-
-Dia 08/07/2014
-
-CONSULTA
-Paciente 304
-37
-Inicial
-André
-08:00
-
-EXAME
-Paciente 39
-43
+Gilese Oliveira
+78
 Endoscopia
 Jonas
-08:30
-
-CONSULTA
-Paciente 280
-37
-Inicial
-Sandra
-09:00
-
-EXAME
-Paciente 77
-39
-Endoscopia
-Henrique
-09:30
-
-EXAME
-Paciente 55
-31
-Endoscopia
-Henrique
-10:31
-
-CONSULTA
-Paciente 470
-8
-Inicial
-Gustavo
-14:58
-
-EXAME
-Paciente 325
-13
-Endoscopia
-Jonas
-15:50
-
-EXAME
-Paciente 75
-70
-Endoscopia
-Jonas
-16:39
-
-Dia 10/07/2014
-
-EXAME
-Paciente 459
-75
-Endoscopia
-Jonas
-08:47
-
-CONSULTA
-Paciente 292
-2
-Inicial
-Sandra
-11:05
-
-EXAME
-Paciente 87
-83
-Endoscopia
-Jonas
-14:30
-
-Dia 09/07/2014
-
-EXAME
-Paciente 333
-95
-Endoscopia
-Henrique
-08:05
-
-EXAME
-Paciente 305
-42
-Endoscopia
-Jonas
-08:48
-
-EXAME
-Paciente 23
-23
-Endoscopia
-Jonas
-09:18
-
-EXAME
-Paciente 253
-3
-Endoscopia
-Henrique
-10:28
-
-EXAME
-Paciente 235
-46
-Endoscopia
-Jonas
-15:59
-
-EXAME
-Paciente 141
-18
-Endoscopia
-Henrique
-17:07
+17:30
 
